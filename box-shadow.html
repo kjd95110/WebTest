@@ -1,0 +1,96 @@
+<!doctype html>
+<html>
+<head>
+	<title>박스새도우연습</title>
+	<script type="text/javascript" src="./js/jquery/jquery.js"></script>
+	<script type="text/javascript">
+		
+
+
+	</script>
+	<style type="text/css">
+		/* Text-Shadow와 비슷 
+		   Box-Shadow는 박스에 그림자
+			Text-Shadow는 텍스트에 그림자를 넣는다. 적용대상의 차이
+
+			inset 자기자신도형 안쪽의 그림자넣기
+			offset-x:수평그림자의 offset값
+			offset-y:수직그림자의 offset값
+			blur:그림자 가장자리를 부드럽게 처리하는 정도,퍼지는것을 반듯하게(말끔하게)
+			spread:몇픽셀만큼 퍼질것이냐(그림자크기)
+			box-shadow (inset offset-x,offset-y,blur,spread,color)
+			blur:기본값은?
+		*/
+
+		div{
+			width:200px;
+			height:100px;
+			background:dodgerblue;
+			border-radius:15px;
+			display:inline-block;
+			margin:20px;
+		}
+		.box1{
+			box-shadow:5px 5px 10px rgba(0,0,0,0.3) ;
+			/* x:5 y:5 spread:10px color:black의 30% 투명도*/
+			/* inset???*/
+			/*blur:???*/
+		}
+		.box2{
+			box-shadow:0px 1px 3px rgba(0,0,0,0.74) ;
+			/* x:0 y:1 spread:3px color:black의 74% 투명도*/
+		}
+		.box3{
+			box-shadow:0 0 15px rgba(0,0,0,0.4);
+			/* x:0 y:0 spread:15px color:black 40% 투명도*/
+		}
+		.box4{
+			box-shadow:5px 5px 0px rgba(0,0,0,0.2);
+			/* x:5 y:5 spread:0px color:black 20% 투명도*/
+
+		}
+		.box5{
+				box-shadow:inset 5px 3px 4px rgba(0,0,0,0.4);
+				/*box-shadow:  5px 3px 4px rgba(0,0,0,0.4);*/
+			/* [inset] x:5 y:5 spread:0px color:black 20% 투명도*/
+		}
+		.box6{
+			box-shadow:inset 0px 0px 20px white;
+				/*box-shadow: 5px 3px 4px white;*/
+			/* inset안쪽그림자주기 x:0 y:0 spread:0px color:black 40% 투명도*/
+		}
+		.box7{
+			box-shadow:inset 1px 1px 150px black;
+			/*box-shadow: 1px 1px 150px black; 비교해볼것*/
+		}
+		.box8{
+			box-shadow: inset 0px 0px 10px #10b7ec, inset 0 0 0 14px white ;
+			/* 중첩 부여 가능*/
+		}
+		.box9{
+			box-shadow: 5px 5px 0 #fff, 5px 10px 0 rgba(0,0,0,0.28) ;
+		}
+
+		.box10{
+			background:#fff;
+			border:1px solid gray;
+			box-shadow: 10px 10px #35e535,
+				 20px 20px #82e682,
+				30px 30px #b0e8b0;
+		}
+
+	</style>
+</head>
+<body>
+	<div class="box1" ></div>
+	<div class="box2"></div>
+	<div class="box3"></div>
+	<div class="box4"></div>
+	<div class="box5"></div>
+	<div class="box6"></div>
+	<div class="box7"></div>
+	<div class="box8"></div>
+	<div class="box9"></div>
+	<div class="box10"></div>
+</body>
+</html>

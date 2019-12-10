@@ -1,0 +1,135 @@
+﻿<!doctype html>
+<html>
+  <head>
+      <meta charset="utf-8">
+    <title>탭메뉴만들기</title>    
+    <!-- <link href="./css/Test_TabMenu.css" rel="stylesheet" /> -->
+    <script type="text/javascript" src="./js/jquery/jquery.js"></script>
+    <script type="text/javascript" src="./js/jquery/external/jquery.alphanumeric.js"></script>
+
+
+    <script type="text/javascript">
+    
+    $(document).ready(function(){
+
+    	$(".tab_type1 ul li a").click(function (e) {
+    		if (e.target.id == 'dummy2' || e.target.id == 'dummy1') {
+    			return false;
+    		}
+            $(".tab_type1 ul li a").removeClass("on");
+            $(this).addClass("on");
+        });
+    });
+    
+    </script>
+
+    <style type="text/css">
+    *{padding:0px;margin:0px;list-style:none;}
+    body{padding:30px;width:1051px; }
+
+.tab_type1 ul {  
+  /* border-bottom: 2px solid #5da62b;  */
+  height: 60px;   
+}
+
+.tab_type1 ul li {
+  float:left;
+  border:1px solid #ddd;
+  border-left:none ;
+  width:120px;  
+  height: 60px;
+  text-align: center;
+  line-height: 60px;
+}
+
+.tab_type1 ul li:first-child{ 
+
+	border-top:1px solid white;
+	border-left:0px; 
+	/*display: inline-block;*/
+	width:20px;
+/* border-bottom: 1px solid #5da62b;  */
+/* background-color: aquamarine; */
+}
+
+.tab_type1 ul li:last-child {
+    border-top:1px solid white;
+    border-right:0px;
+    width:20px;
+    /* border-bottom: 1px solid #5da62b;  */
+    /* background-color: aquamarine;  */
+  }
+
+  .tab_type1 ul li a{
+    display:block;
+    height:59px;    
+    border:0px solid #ddd;
+    /*border-left:none;
+    border-right:none;
+    border-bottom: none;
+    border-top: none;*/ 
+    border-bottom: 2px solid #5da62b; /* 초록색*/
+    font-size:14px;
+    color:#505050;
+    text-align:center; 
+    line-height:60px;    
+    text-decoration:none; 
+	z-index:999;
+} 
+
+.tab_type1 ul li a.on{   
+    height:55px;
+    border:1px solid #ddd;
+    border-color:#5da62b;
+    border-top-width: 3px;
+    line-height: 60px;
+    border-bottom: 3px solid #fff;
+    border-left: 3px solid #5da62b;
+    border-right: 3px solid #5da62b;
+    font-weight:bold;
+    font-size:18px;
+    color:red;
+}
+    /* border-left:solid 1px #ddd ; */
+  /* 
+  
+  .tab_type1 ul li:last-child {
+    border-top:0px;
+    border-right:0px;
+    width:20px;
+  }
+   */
+  
+   /* .tab_type1 ul li a{
+    display:block;
+    height:59px;    
+    border:1px solid #ddd;
+    border-left:none;
+    border-right:none;
+    border-bottom: none;
+    font-size:14px;
+    color:#505050;text-align:center; line-height:59px;
+    
+    text-decoration:none; 
+} 
+
+
+  */
+
+    </style>
+
+  </head>
+  <body>
+    <nav class="tab_type1">
+      <ul>
+        <li><a href="#a" id="dummy1" ></a></li>
+        <li><a href="#a"  > 브랜드별</a></li>
+        <li><a href="#a" class="on" > 일반기능도료</a></li>
+        <li><a href="#a" > 특수기능도료</a></li>
+        <li><a href="#a" > DIY(가정용)</a></li>
+        <li><a href="#a" > KS규격도료</a></li>
+        <li><a href="#a" id="dummy2"></a></li>
+      </ul>
+    </nav> 
+  </body>
+</html>

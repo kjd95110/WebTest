@@ -1,0 +1,99 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Responsive Mega  Menu</title>
+    <link rel="stylesheet" href="./css/bootsnav.css" />
+
+    <script type="text/javascript" src="./js/jquery/jquery.js"></script>
+    <script type="text/javascript" src="./js/jquery/external/jquery.alphanumeric.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script type="text/javascript" src="./js/bootsnav.js"></script>
+
+    <script src="https://use.fontawesome.com/releases/v5.2.0/js/all.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"></script>
+
+    <script type="text/javascript">
+
+
+    </script>
+
+    <style type="text/css">
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            box-sizing: border-box;
+            font-family: sans-serif;
+            background-size:cover;
+            background-repeat:no-repeat;
+            height:750px;
+            overflow:hidden;
+        }
+
+        nav.navbar.bootsnav{
+            border:none;
+            background:none;
+            margin-bottom:150px;
+        }
+
+        nav.navbar.bootsnav ul.nav > li {
+            margin-right: 20px;
+        }
+        nav.navbar.bootsnav ul.nav > li > a{
+            padding:10px 20px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <nav class="navbar navbar-default navbar-mobile bootsnav on">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                    </div>
+
+                        <div class="collapse navbar-collapse" id="navbar-menu">
+                            <ul class="nav navbar-nav" data-in="fadeInDown" data-out="fadeOutUp">
+                                <li class="active"><a data-hover="About" href="#">Home<span></span></a></li>
+                                <li><a href="#">About<span></span></a></li>
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle"  data-toggle="dropdown" data-hover="shortcodes">Shortcodes<i class="fas fa-angle-double-down"></i></a>
+                                    <ul class="dropdown-menu animated">
+                                        <li><a href="#">Custom Menu1</a></li>
+                                        <li><a href="#">Custom Menu2</a></li>
+                                    </ul>
+
+                                    <!--as we put all the menus in the sequence as you 
+                                    have to do now i am skipping some parts of menus 
+                                    linking with dropdown same work you have to 
+                                    repeat as i put earlier okey so we have code here
+                                    what i am goint go put here now then we will
+                                    refer for style.css parts to style it. And one 
+                                    thing why i am putting some codes by copying coz 
+                                    it has no less than 150 lines of code if i keep
+                                    putting all one by one then surely it will take 
+                                    30 mins more and lastly it will make you bore-->
+                                </li>
+
+                            </ul>
+                        </div>
+
+                </nav>
+            </div>
+
+        </div>
+    </div>
+</body>
+
+</html>

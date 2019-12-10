@@ -1,0 +1,72 @@
+<!doctype html>
+<html>
+<head>
+	<title>Transform 테스트</title>
+	<script type="text/javascript" src="./js/jquery/jquery.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+
+		});
+
+	</script>
+	<style type="text/css">
+		* {
+			margin: 0;
+			padding: 0;
+		}
+
+		/* 
+			ransform
+			scale(x,y):가로 세로 크기를 변환 ex) transform:scale(1.5,2);
+
+			scaleX(x): 가로(x)크기를 변환 ex) transform:scaleX(2);
+			scaleY(y) 세로(y)크기를 변환 ex)transform:scaleY(1.5);
+			scaleZ(z) 앞뒤( z) 크기를 변환 ex) transform:scaleZ(2);
+			-> 원근감 perspective translateZ값이 같이 있어야만 적용
+			-> 정확한이해는 대수학을 이해해야 가능
+			rotate(angle) 지정한 각도로 회전 ex) transform:rotate(30deg);
+			rotateX(angle) X축을 기준으로 회전 
+
+			translate3d(x,y,z):가로방향,세로방향,앞뒤로( z) 이동
+			ex)transform:tranlate3d(10px,10px,50px);
+			transform-origin:0 0 ;  ->왼쪽상단이 기준이되어 늘어나는 기준을 바꿀수 있다.
+			기본값은 50%:50%  (중간에서 좌우로 늘어난다)
+
+
+		*/
+		/* x축 중간 y축 맨위 */
+		/*div{
+			perspective:1000px;
+			perspective-origin:50% 0; 
+		}*/
+
+
+        div img {
+            /*transition:all 0.35s;
+			transform-origin:50% 0% ;
+			transform:scale(1) translateZ(100px);*/
+            /*transition:all 0.35s;*/
+            /*transform-origin:right bottom;*/
+            /*transform-origin:right top;*/
+            transform: scaleY(0);
+        }
+
+		div:hover img{
+			/*transition:all 0.5s; */
+			/*transform-origin:50% 50% ;
+			transform:scale(0);*/
+			/*transform:scale(2,2); 인자가 2개들어가야 하는데 1개만 들어가면 x,y가 같은값으로 간주함*/
+
+			/*transform:scale(2) translateZ(100px);*/
+			transform:rotate(-45deg);
+		}
+	</style>
+</head>
+<body>
+
+	<div>
+		<img src="./img/flower.jpg" alt="국화꽃" />
+	</div>
+
+</body>
+</html>

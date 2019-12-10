@@ -1,0 +1,44 @@
+﻿function xl() {
+    try {
+        var oIE = new ActiveXObject('InternetExplorer.Application');
+        
+        oIE.navigate('http://noly.xperp.co.kr');
+        oIE.visible = true;
+        
+        while (oIE.busy) {
+            sleep(1000);
+        }
+
+        var frmCol = oIE.document.frames;
+        var HTMLDoc = frmCol.item(0).document;
+
+        HTMLDoc.all('inpUserId').value = 'testIMC';
+        sleep(500);
+        HTMLDoc.all('inpUserPw').value = 'test111114';
+        sleep(500);
+
+        var link = HTMLDoc.getElementsByTagName("a");
+        for (var i = 0; i < link.length; i++) {
+            if (link[i].innerHTML == '<IMG src="./other/noly/res/img/btn_login.gif">') {
+                link[i].click();
+            }
+        }
+    }
+    catch (e) {
+        var msg = '죄송합니다. 연결도중 오류가 발생했습니다.\n\n';
+        if (e.message == '') {
+            msg += '관리자 권한으로 인터넷창을 실행해주세요';
+        } else if (e.message.indexOf('자동화 서버는 개체를 작성할 수 없습니다.') == -1) {
+            msg += e.message;
+        } else {
+            msg += '1. 고객센터 좌측메뉴에 "신뢰할 수 있는 사이트 추가"를 클릭 등록\n\n2. 인터넷창을 닫고, "관리자 권한"으로 인터넷창을 새로 실행';
+        }
+        alert(msg);
+    }
+    window.close();
+}
+
+function sleep(milliseconds) {
+    var now = new Date().getTime();
+    while (new Date().getTime() < now + milliseconds) { /* do nothing */ }
+}

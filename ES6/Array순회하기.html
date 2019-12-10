@@ -1,0 +1,95 @@
+<!doctype html>
+<html>
+<head>
+<title>Array 순회하기</title>
+
+<script type="text/javascript" src="../js/index.js"></script>
+<script type="text/javascript" src="../js/jquery/jquery.js"></script>
+<script type="text/javascript" src="../js/jquery/index2.js"></script>
+
+<script type="text/javascript">
+
+$(document).ready(function(){      
+    
+    Home3();  
+});
+
+
+function Home3(){
+Array.prototype.getIndex= function(){}
+var data=[1,2,undefined,NaN,null,""];    
+for(let value of data){
+    console.log(value);
+}
+
+var str ="hello world!!!!";
+
+for(let value of str){
+console.log(value);
+}
+}
+
+
+/* 
+
+for in -> **** 상위의 추가된 값도 나타낼수 있어서 조심해야됨.(배열에서 사용하지말껏.) ****
+
+Array.prototype.getIndex= function(){}
+
+원하지않는 function(){} 값이 배열에 추가될수 있으므로....For in을 Array에서 쓰면 안된다.
+
+forEach를 많이 써야 겠다. for of 도 나왔으니 For of를 사용하세요
+*/
+
+function Home2(){
+
+    Array.prototype.getIndex= function(){}
+    var data=[1,2,undefined,NaN,null,""];    
+    for(let idx in data){
+        console.log(data[idx]);
+    }
+
+}
+
+
+
+function Home(){
+var data=[1,2,undefined,NaN,null,""];
+data.forEach(function(value){
+    console.log("value is " , value);
+
+});
+   
+}
+
+</script>
+<style type="text/css">
+body{
+    background-color: peru;
+}
+
+ul li{
+    display: block;
+    border:1px solid #000;
+    height:35px;
+    width:200px;
+    padding:5px 0px 0px 0px;
+    text-align: center;
+}
+
+</style>
+
+</head> 
+
+<body>
+
+    <ul>
+        <li>Javascript</li>
+        <li>Java</li>
+        <li>python</li>
+        <li>django</li>
+    </ul>
+
+</body>
+
+</html> 

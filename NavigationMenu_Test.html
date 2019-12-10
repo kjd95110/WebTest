@@ -1,0 +1,115 @@
+<!doctype html>
+<html>
+<head>
+   
+    <title>네비게이션메뉴 Menu</title>
+
+    <script src="https://use.fontawesome.com/releases/v5.2.0/js/all.js"></script>
+    <script type="text/javascript" src="./js/jquery/jquery.js"></script>
+    <script type="text/javascript" src="./js/jquery/external/jquery.alphanumeric.js"></script>
+    <script type="text/javascript">
+
+		$(document).ready(function () {
+
+
+		});
+
+		//function openSlideMenu(){
+		//	$('#menu').css('width','250px');
+  //          $('#content').css('marginLeft', '250px');
+  //          $('.slide').hide();
+		//}
+
+		//function closeSlideMenu() {
+		//	$('#menu').css('width', '0');
+  //          $('#content').css('marginLeft', '0');
+  //          $('.slide').show();
+		//}
+
+
+    </script>
+
+    <style type="text/css">
+        @import url('https://fonts.googleapis.com/css?family=Alegreya+Sans:800');
+        @import url('<link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap" rel="stylesheet"> ');
+
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif;
+            list-style: none;
+            text-decoration: none;
+        }
+
+        body {
+            font-family: 'Alegreya Sans',sans-serif;
+            overflow-x: hidden;
+        }
+
+        #content {
+            padding: 15px;
+            transition: margin-left 0.7s;
+            overflow: hidden;
+            width: 100%;
+        }
+
+        .nav .close {
+            position: absolute;
+            top: 8px;
+            right: 22px;
+            margin-left: 50px;
+            font-size: 30px;
+            color: #ccc;
+        }
+
+        .nav {
+            height: 100%;            
+            width: 0;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            background: #282828;
+            overflow-x: hidden;
+            padding-top: 60px;
+            transition: 0.7s;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div id="content">
+
+        <span class="slide">
+            <a href="#" onclick="openSlideMenu()">
+                <i class="fas fa-bars"></i>
+            </a>
+        </span>
+
+        <div id="menu" class="nav">
+            <a href="#" class="close" onclick="closeSlideMenu();">
+                <i class="fas fa-times"></i>
+            </a>
+            <a href="#" class="item"><i class="fas fa-home icon"></i>Home</a>
+            <a href="#" class="item"><i class="fas fa-user-circle icon"></i>About</a>
+            <a href="#" class="item"><i class="fas fa-images icon"></i>Portfolio</a>
+            <a href="#" class="item"><i class="fas fa-map-marker icon"></i>Location</a>
+            <a href="#" class="item last"><i class="fas fa-wpforms icon"></i>Contact</a>
+
+
+            <ul>
+                <li><a href="#" class="inline"><i class="fab fa-facebook icon"></i></a></li>
+                <li><a href="#" class="inline"><i class="fab fa-twitter icon"></i></a></li>
+                <li><a href="#" class="inline"><i class="fab fa-snapchat icon"></i></a></li>
+                <li><a href="#" class="inline"><i class="fab fa-instagram icon"></i></a></li>
+                <li><a href="#" class="inline"><i class="fab fa-youtube icon"></i></a></li>
+            </ul>
+        </div>
+        <!--<h1>HTML5/CSS3 Animated Slidebar Menu</h1>-->
+        <h1>HTML5/CSS3 Social Slide Out Sidebar Nav</h1>
+
+    </div>
+
+</body>
+</html>

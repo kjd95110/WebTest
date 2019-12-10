@@ -1,0 +1,71 @@
+<!doctype html>
+<html>
+<head>
+<title>From Method</title>
+
+<script type="text/javascript" src="../js/index.js"></script>
+<script type="text/javascript" src="../js/jquery/jquery.js"></script>
+<script type="text/javascript" src="../js/jquery/index2.js"></script>
+
+<script type="text/javascript">
+
+$(document).ready(function(){      
+    
+ addMark(1,2,3,4,5,7,8,9);
+
+});
+
+
+
+function addMark(){
+    //let newData=[];
+    // for(let i=0;i<arguments.length;i++){
+    //     newData.push(arguments[i] + "!");
+    // }
+
+    // let newData= arguments.map(function(value){
+    //     return value + '!';        
+    // })
+
+    let newArray= Array.from(arguments);
+    let newData = newArray.map(function(value){
+        return value + "!";
+ });
+
+
+    console.log(newData);
+}
+
+
+
+</script>
+<style type="text/css">
+body{
+    background-color: peru;
+}
+
+ul li{
+    display: block;
+    border:1px solid #000;
+    height:35px;
+    width:200px;
+    padding:5px 0px 0px 0px;
+    text-align: center;
+}
+
+</style>
+
+</head> 
+
+<body>
+
+    <ul>
+        <li>Javascript</li>
+        <li>Java</li>
+        <li>python</li>
+        <li>django</li>
+    </ul>
+
+</body>
+
+</html> 

@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+
+    <title>네비게이션메뉴 테스트</title>
+    <script type="text/javascript" src="./js/jquery/jquery.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("nav div a").click(function (e) {
+                //$("nav div a").removeClass("on");
+                $(this).siblings().removeClass("on");
+                $(this).addClass("on");
+            });
+        });
+
+    </script>
+    <style type="text/css">
+
+        * {
+            margin: 0;
+            padding: 0;
+            text-decoration: none;
+        }
+
+        nav {
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 100%;
+            background: #fff;
+            box-shadow:0 0 5px rgba(0,0,0,0.5);
+        }
+
+            nav div {
+                display: flex;
+                width: 500px;
+                margin: 0 auto;
+                position: relative;
+            }
+
+                nav div a {
+                    flex: 1;
+                    display: block;
+                    height: 40px;
+                    line-height: 40px;
+                    text-align: center;
+                }
+
+                nav div > span {
+                    position: absolute;
+                    left: 0;
+                    bottom: 0;
+                    height: 3px;
+                    background: #279d76;
+                    width: 100px;
+                    transition:all .6s;
+                    opacity:0;
+                }
+
+            nav div a:nth-child(1).on ~ span{left:0;opacity:1;}
+
+            /* 지정된 요소가 기준이되면서 span까지 */
+                nav div a:nth-child(1).on ~ span {
+                    left: 0;
+                    opacity: 1;
+                }
+                nav div a:nth-child(2).on ~ span {
+                    left: 100px;
+                    opacity: 1;
+                }
+                nav div a:nth-child(3).on ~ span {
+                    left: 200px;
+                    opacity: 1;
+                }
+                nav div a:nth-child(4).on ~ span {
+                    left: 300px;
+                    opacity: 1;
+                }
+                nav div a:nth-child(5).on ~ span {
+                    left: 400px;
+                    opacity: 1;
+                }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div>
+            <a href="#a"><span>1</span></a>
+            <a href="#a"><span>2</span></a>
+            <a href="#a" ><span>3</span></a>
+            <a href="#a"><span>4</span></a>
+            <a href="#a" class="on"><span>5</span></a>
+            <span></span>
+        </div>
+    </nav>
+
+</body>
+</html>

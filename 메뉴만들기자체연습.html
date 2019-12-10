@@ -1,0 +1,79 @@
+<!doctype html>
+<html>
+<head>
+	<title>네비게이션메뉴 테스트</title>
+	<script type="text/javascript" src="./js/jquery/jquery.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+
+		});
+
+	</script>
+
+
+
+<style type="text/css">
+
+	body{
+		padding:0;
+		margin:0;
+			font-family:"Open Sans","Noto Sans KR",sans-serif;
+		font-size:1.2em;
+	}
+	
+
+	input[type="radio"] {
+		display:none;
+
+	}
+
+	.radioGroup{
+		position:fixed;		
+		display:inline-flex;
+		border:1px solid ;		
+		background-color:#F4BB00;
+		color:white;
+		overflow:hidden;
+		border-radius:9px;		
+
+	}
+
+	input[type="radio"] + label {
+	
+	
+	}
+		
+
+	
+</style>
+
+</head>
+<body>
+
+	<div class="radioGroup">
+		<input type="radio" name="options" id="option1" />
+		<label for="option1">카이저센터</label>
+
+		<input type="radio" name="options" id="option2" />
+		<label for="option2">메뉴테스트&nbsp;</label>
+
+		<input type="radio" name="options" id="option3" />
+		<label for="option3">Joynoly관리&nbsp;</label>
+
+		<input type="radio" name="options" id="option4" />
+		<label for="option4">중대작품들</label>
+
+		<input type="radio" name="options" id="option5" />
+		<label for="option5">ITS</label>
+
+		<input type="radio" name="options" id="option6" />
+		<label for="option6">ETC.&nbsp;</label>
+
+		<input type="radio" name="options" id="option7" />
+		<label for="option7">관리자</label>
+		<!--<span class="indicator"></span>-->
+	</div>
+
+
+</body>
+</html>

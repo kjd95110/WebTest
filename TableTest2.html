@@ -1,0 +1,74 @@
+<!doctype html>
+<html>
+<head>
+	<title>TableÅ×½ºÆ®</title>
+    <style>
+      table{
+          width:600px;
+          border-collapse: collapse;
+          table-layout: fixed;
+      }
+      td,th{
+          border-bottom:1px solid lightgray;
+          text-align: center;
+          padding:3px;
+      }
+      th{
+           background-color:#7ec314;
+          color:#fff; 
+      }
+      /* td{
+          background-color: teal;
+          color:#fff;
+      } */
+      tfoot td{
+        background-color: teal;
+          color:#fff;
+      }
+
+      table caption{
+          caption-side: bottom;
+          text-align: right;
+          font-size: 13px;
+          color:red;
+          margin-top:10px;
+      }
+      
+    </style>
+
+</head>
+<body>
+   <table border="0">
+       <caption>Clean Topia male medical pricing</caption>
+      <thead>
+            <tr>
+                <th>Room name</th>
+                <th>Hour of use</th>
+                <th>fee</th>
+            </tr>
+        </thead>
+            <tbody>
+                <tr>
+                    <td>Standard Room</td>
+                    <td>2:00pm-10:00am</td>
+                    <td>$100</td>
+                </tr>
+                <tr>
+                    <td>Party room</td>
+                    <td>2:00pm-10:00am</td>
+                    <td>$300</td>
+                </tr>
+                <tr>
+                    <td>Couples room</td>
+                    <td>2:00pm-10:00am</td>
+                    <td>$250</td>
+                </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="3"> Cleanupia Customer Care Center:080-888-8888 /Hours: 9:00 am to 6:00 pm</td>
+            </tr>
+        </tfoot>
+   </table>
+</body>
+</html>

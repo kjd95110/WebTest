@@ -1,0 +1,160 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>끝말잇기</title>
+
+<script type="text/javascript" src="../js/jquery/jquery.js"></script>
+
+<script type="text/javascript">
+
+/* 
+
+    document는 window내에 브라우저가 지원하는 객체이고
+    html 태그를 가르키고 있고,html tag를 자바스크립트 번역해주는
+    통역사같은 역할 -> DOM객체
+    그안에 브라우저가 Document를 지원해주시면서 body를 선택할수있게 해주고
+    CreateElement로 tag를 ㅅㅐ로 만들수 있게해주고 Apeend로 새로추가해주는 역할.
+
+
+*/
+
+$(document).ready(function(){
+
+
+    var word='제로초';
+    var body=document.body;
+    var myword=document.createElement('div') ;
+    myword.textContent=word;
+    document.body.append(myword);
+
+    var form = document.createElement('form');
+    document.body.append(form);
+    
+    
+    var 입력창=document.createElement('input');
+    form.append(입력창);
+    var button=document.createElement('button');
+    button.textContent='실행';
+    form.append(button);
+
+    var result=document.createElement('div'); 
+    document.body.append(result);
+
+
+    form.addEventListener('submit',function callback(event){
+        event.preventDefault(); // 기본적인 submit동작 Refresh작동을 막아준다.
+        if(myword.textContent[myword.textContent.length-1]==입력창.value[0]){
+        myword.textContent=입력창.value; 
+        입력창.value="";
+         alert('ok');
+         입력창.focus();
+
+              
+     }else{
+         alert('fail');            
+     }
+
+});
+
+    // button.addEventListener('click',function(){
+        
+    //         if(myword.textContent[myword.textContent.length-1]==입력창.value[0]){
+    //         myword.textContent=입력창.value; 
+    //         입력창.value="";
+    //          alert('ok');
+    //          입력창.focus();
+
+                  
+    //      }else{
+    //          alert('fail');            
+    //      }
+
+    // });
+
+    /*
+
+    크롬에서 F12  개발자모드에서
+    Console창에서
+    document.body
+ ** 중요함 **
+    console.dir(document.body) **
+
+    body
+
+    children확인할것.
+
+    참고로 console.log(document.body) ->이건 안됨.
+
+    */
+    /*
+        //콜백함수-나중에 실행하는 함수?
+
+        다른함수의 인자로 넘길수있다.리턴값으로,변수에 함수를 대입할수도있다.
+        이를 1급객체라 한다.
+        다른 함수를 호출할때 인자로 넘긴수있다.
+
+        setTimeout(function(){
+            console.log('heelo');
+        },0);
+
+
+        Exam_sample
+
+        function fakesetTimeout(callback,delay){
+            callback();
+        }
+
+        fakeSetTimeout(function(){
+            console.log();
+        },0);
+
+    샘플예제의 fakesetTimeout은 동기적으로 (순차적으로)콜백을실행되고
+    진짜 setTimeout은 비동기적으로  콜백을 실행한다.
+
+    콜백은 나중에 실행하라고 인자로서 다른 함수에게넘겨주는데
+    콜백을 받은 함수가 받은콜백을 실행한다.
+    외부에 Titmer를 이용하는 setTimeout을 이용한다거나,
+    서버에서 데이타를 가지고 온다거나 외부API에 콜백함수를 인자로 넘긴다면
+    콜스택에서 실행하는것이  아니라 큐에서 실행될수도있다.
+
+    대표적인예로 button에 onclick 이벤트를 넣을때.
+     돔에다가 넣는것이다. 이것은 자바스크립트 외부에 있는 다른세상인것.
+     돔에있는거에도 특정버튼에다가 콜백을 연결시켜준거고 큐에 들어간다.
+
+
+
+    */ 
+
+    // while(true){
+    //     var answer=prompt(word);
+    //     if(word[word.length-1]==answer[0]){
+    //         alert('ok');
+    //         word=answer;            
+    //     }else{
+    //         alert('fail');            
+    //     }
+    // }
+       
+});
+
+
+</script>
+<style type="text/css">
+body{
+    background-color: peru;
+}
+
+h1{
+    color:#fff;
+}
+</style>
+
+</head> 
+
+<body>
+    
+
+</body>
+
+</html> 

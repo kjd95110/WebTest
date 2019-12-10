@@ -1,0 +1,82 @@
+<!doctype html>
+<html>
+<head>
+	<title>네비게이션메뉴 테스트</title>
+	<script type="text/javascript" src="./js/jquery/jquery.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$(".menu li a").click(function (e) {				
+				$(".menu li a").removeClass("selected");
+				$(this).addClass("selected");
+			});
+		});
+		
+	</script>
+	<style type="text/css">		
+
+*{
+	margin:0;
+	padding:0;
+}
+
+div.bottombar{ /* bar that runs across the bottom of the menu */
+height: 10px;
+background: #1a1109;
+}
+
+.main{
+	position:absolute;
+	top:5%;
+	left:50%;
+	transform:translate(-50%,-50%);
+}
+
+ul.menu{	
+	margin-top:20px;
+	display:flex;
+	font: bold 14px Georgia ;
+}
+ul.menu li{
+/*display: inline;*/
+	flex:1;
+	list-style:none;
+	background-color:#ddd;
+	padding:10px 20px;
+	margin: 0;
+    margin-left:2px;
+    border-radius:10px 10px 0 0;
+    
+}
+
+    .menu li a {
+        text-decoration: none;
+        padding: 5px 10px; /* padding of the 4 sides of each menu link */
+        display: block;
+        text-align: center;
+    }
+
+        .menu li a:hover, .selected {
+            box-shadow: 3px 3px 25px #595959;
+            padding: 5px 10px;
+            color: crimson;
+        }
+
+	</style>
+</head>
+<body>
+	<div class="main">
+		<ul class="menu">
+			
+			<li><a href="#">Home</a></li>
+			<li><a href="#" class="selected">CSS&nbsp;Codes</a></li>
+			<li><a href="#">Forums</a></li>
+			<li><a href="#">Webmaster&nbsp;Tools</a></li>
+			<li><a href="#">JavaScript</a></li>
+			<li><a href="#">Gallery</a></li>
+			
+
+		</ul>
+		<div class="bottombar"></div>
+	</div>
+</body>
+</html>

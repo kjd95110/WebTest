@@ -1,0 +1,188 @@
+﻿<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Accordion Menu2</title>
+	<script src="https://use.fontawesome.com/releases/v5.2.0/js/all.js"></script>
+	<script type="text/javascript" src="./js/jquery/jquery.js"></script>
+	<script type="text/javascript" src="./js/jquery/external/jquery.alphanumeric.js"></script>
+	<script type="text/javascript">
+
+	</script>
+
+	<style type="text/css">
+		* {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+			
+		}
+
+		/*html {
+			font-size: 20px;
+		}*/
+
+		body {
+			font-family: Poppins;
+			list-style: none;
+			background-color: #ececec;
+		}
+
+        .wrapper {
+            width: 100%;
+            height: 100%;
+            background-color:yellow;
+           
+        }
+
+        .left_content {
+            display: block;
+            float: left;
+            width: 200px;
+            height: 100vh;
+            background-color: #bc382d;            
+        }
+		.right-content{
+			
+		    float:left;
+			width:calc(100% - 200px);
+			height:100%;
+			background-color:#fff;			
+			overflow:auto;
+			padding:40px;
+
+		}
+
+		.right-content h1 {
+			font-weight: bold;
+			margin-bottom: 50px;
+			font-size: 55px;
+			text-align: center;
+		}
+        
+        li, label, ul, a {
+            width: 100%;
+            color: #fff;
+            display: block;
+            font-weight: bold;
+        }
+
+		.nav-area ul li{
+			height: 35px;
+			overflow: hidden;
+			transition: all .4s;		
+			background-color:#bc382d;
+
+		}
+
+		.nav-area label{
+			font-size:14px;
+			background:linear-gradient(to top, #262626 30%,#bc382d 80%);
+			padding:10px 15px;
+			cursor:pointer;
+			transition:all .30s;
+		}
+		.nav-area a{
+			font-size:12px;
+			text-decoration:none;
+			color:#fff;			
+			padding:8px 25px;
+			transition:all .3s;
+		}
+
+		.nav-area a:hover{
+			background-color:#262626;
+		}
+
+		.nav-area input[type=radio]{
+			display:none;
+		}
+
+    	input[type=radio]:checked + li{
+			height: 250px;
+			transition: all .7s;
+		}
+
+		@media screen and (max-width: 600px){
+			nav{
+				width:100%;
+				position:relative;
+			}
+			.right-content h1{
+				font-size:28px;
+			}
+		}
+	</style>
+</head>
+<body>
+	<div class="wrapper">
+		<nav class="nav-area">
+            <div class="left_content">
+                <ul>
+                    <li><label>Home</label></li>
+                    <input type="radio" name="nav-area" id="about" />
+                    <li>
+                        <label for="about">About</label>
+                        <a href="#">OutHistory</a>
+                        <a href="#">OutVision</a>
+                        <a href="#">Our Mission</a>
+                        <a href="#">Our Goal</a>
+                    </li>
+                    <input type="radio" name="nav-area" id="services" />
+                    <li>
+                        <label for="services">Services</label>
+                        <a href="#">Graphics Design</a>
+                        <a href="#">Web Design</a>
+                        <a href="#">Web Development</a>
+                        <a href="#">Digital Marketing</a>
+                    </li>
+
+                    <input type="radio" name="nav-area" id="portfolio" />
+                    <li>
+                        <label for="portfolio">Portfolio</label>
+                        <a href="#">Project One</a>
+                        <a href="#">Project Two</a>
+                        <a href="#">Project Three</a>
+                        <a href="#">Project Four</a>
+                    </li>
+                    <li><label>Contact</label></li>
+                </ul>
+            </div>
+			<div class="right-content">
+				<h1>Welcome to our Website</h1>
+				<p>
+					Lorem Ipsum is simply dummy text of the printing and type setting industry. Lorem Ipsum has been the industry's
+					standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen boo.
+					It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
+					It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,
+					and more recently with desktop publisheing software like Aidus pageMaker including versions of Lorem Ipsum.
+				</p>
+				<p>
+					Lorem Ipsum is simply dummy text of the printing and type setting industry. Lorem Ipsum has been the industry's
+					standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen boo.
+					It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
+					It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,
+					and more recently with desktop publisheing software like Aidus pageMaker including versions of Lorem Ipsum.
+				</p>
+				<p>
+					Lorem Ipsum is simply dummy text of the printing and type setting industry. Lorem Ipsum has been the industry's
+					standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen boo.
+					It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
+					It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,
+					and more recently with desktop publisheing software like Aidus pageMaker including versions of Lorem Ipsum.
+				</p>
+				<p>
+					Lorem Ipsum is simply dummy text of the printing and type setting industry. Lorem Ipsum has been the industry's
+					standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen boo.
+					It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
+					It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,
+					and more recently with desktop publisheing software like Aidus pageMaker including versions of Lorem Ipsum.
+				</p>
+			</div>
+		</nav>
+	
+	</div>
+
+
+</body>
+</html>

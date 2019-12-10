@@ -1,0 +1,103 @@
+<!doctype html>
+<html>
+<head>
+	<title>탭메뉴 연습3</title>
+	<script type="text/javascript" src="./js/jquery/jquery.js"></script>
+	<script type="text/javascript">
+
+		$(document).ready(function () {
+
+			$('.tab ul li a').click(function (e) {
+
+				if (e.target.id == 'dummy1' || e.target.id == 'dummy2') {
+					return false;
+				}
+
+				$('.tab ul li a').removeClass('on');
+				$(this).addClass('on');
+
+			});
+
+		});
+
+
+	</script>
+	<style type="text/css">
+
+
+		*{
+			padding:0px;
+			margin:0px;			
+			list-style:none;			
+		}
+
+		body{
+			width:850px;
+		}
+		.tab ul{
+			margin-top:100px;
+			margin-left:100px;
+			display:flex;
+			text-decoration:none;
+			border-bottom:2px solid #4cff00;
+		}
+		.tab ul li{
+			text-decoration:none;
+			border:solid 1px #ddd;
+			border-left:0px;
+			text-align:center;
+			height:62px;
+			line-height:60px;
+			border-bottom:solid 1px #ffffff;
+		}
+
+		.tab ul li a{
+			display:block;
+			text-decoration:none;
+			width:140px;
+			height:60px;
+
+		}
+
+		.tab ul li:first-child{
+			width:20px;
+			border-top:none;
+
+		}
+
+		.tab ul li:last-child{
+			width:20px;
+			border-top:none;
+			border-right:0px;
+		}
+
+		.tab ul li a.on{
+			border-top:3px solid #ff0000;			
+			border-left:1px solid #ff0000;
+			border-right:1px solid #ff0000;
+			height:60px;
+			border-bottom:2px solid #fff;
+			color:#ff0000;
+		}
+
+	</style>
+</head>
+<body>
+
+
+	<nav class="tab">
+		<ul>
+			<li><a href="#" id="dummy1"></a> </li>
+			<li><a href="#">브랜드별</a> </li>
+			<li><a href="#" class="on">일반기능도료</a> </li>
+			<li><a href="#">특수기능도료</a> </li>
+			<li><a href="#">DIY(가정용)</a> </li>
+			<li><a href="#">KS규격도료</a> </li>
+			<li><a href="#" id="dummy2"></a> </li>
+		</ul>
+
+	</nav>
+
+</body>
+
+</html>

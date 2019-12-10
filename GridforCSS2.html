@@ -1,0 +1,79 @@
+<!doctype html>
+<html>
+<head>
+    <title>Grid Study</title>
+    <script type="text/javascript" src="./js/jquery/jquery.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+        });
+
+    </script>
+
+
+
+    <style type="text/css">
+        body {
+            margin: 40px;
+            height:830px;
+        }
+
+
+        .container {
+
+            display: grid;
+            grid-template-columns: 20% 1fr;
+            grid-template-rows:100px 1fr 100px;
+            height:100%;
+            grid-gap:20px;
+            grid-template-areas:"header header"
+                                "side main" 
+                                "footer footer";
+        }
+        div > div {
+            border-radius: 5px;
+            background-color: #ddd;
+            border: 1px solid #000;
+            padding: 5px;
+           
+        }
+
+        .header{
+            grid-area:header;
+        }
+        .side {
+            grid-area: side;
+         
+            min-height:300px;
+        }
+        .main {
+            grid-area: main;
+            /*height: 500px;*/
+            min-height: 300px;
+        }
+        .footer{
+            grid-area:footer;
+        }
+
+        @media all and (max-width:575px) {
+            .container {
+                grid-template-columns: 1fr;
+                grid-template-rows: 100px 1fr 1fr 100px;
+                grid-gap: 20px;
+                grid-template-areas: "header" "main" "side" "footer";
+            }
+        }
+        
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="header">Header</div>
+        <div class="side">Side</div>
+        <div class="main">Main</div>
+        <div class="footer">Footer</div>
+    </div>
+
+</body>
+</html>

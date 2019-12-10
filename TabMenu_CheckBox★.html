@@ -1,0 +1,123 @@
+<!doctype html>
+<html>
+<head>
+	<title>TabMenu_CheckBox	</title>
+
+	<script type="text/javascript" src="./js/jquery/jquery.js"></script>
+	<script type="text/javascript" src="./js/jquery/external/jquery.alphanumeric.js"></script>
+
+
+	<script type="text/javascript">
+
+    $(document).ready(function(){
+
+
+
+    });
+
+	</script>
+	<style type="text/css">
+		
+	body {		
+			line-height:1;
+			font-family:"Open Sans","Noto Sans KR",sans-serif;
+			font-size:1em;
+		}
+
+	.container{
+		position:fixed;	
+		/* 拳搁吝居沥纺 规过
+			top:0;
+		bottom:0;
+		right:0;
+		left:0;
+		margin:auto;*/
+		top:50%;
+		left:50%;
+			
+		transform:translate(-50%,-50%);
+		display:flex;
+		justify-content:center;
+		align-items:center;
+	}
+
+	.radioGroup{
+		position:fixed;		
+		display:inline-flex;
+		border:1px solid ;
+		position:relative;
+		background-color:#0089FF;
+		color:white;
+		overflow:hidden;
+		border-radius:9px;					
+	}
+
+	
+	input[type="radio"] {
+		display: none;
+	}
+	input[type="radio"] + label {
+		padding:1rem;
+		display:inline-flex;
+		z-index:2;
+		/*border-radius:5px;*/
+		font-size:1.2rem;
+		text-transform:uppercase;
+		/*border:1px solid red;*/
+		box-shadow:0px 0px 1px rgba(0,0,0,0.6);		
+		/*border-radius:30px;*/	
+	}
+
+
+	/*input[type="radio"]:not(:checked) +  label:hover{*/
+	input[type="radio"]:checked + label {
+
+		cursor:pointer;
+		background-color:#00559B;
+
+	}
+
+	input[type="radio"]:not(:checked) + label:hover {
+		cursor:pointer;
+		background-color:#007CEB;
+
+	}
+	.indicator{
+		display:inline-flex;
+		position:absolute;
+		height:100%;
+		width:100%;
+		background-color:#005999;
+		top:0;
+		bottom:0;
+		z-index:1;
+	}
+	
+	</style>
+</head>
+<body>
+
+	<div class="container">
+		<div class="radioGroup">
+			<input type="radio" name="options" id="option1"  />
+			<label for="option1" >可记1</label>
+
+			<input type="radio" name="options" id="option2" />
+			<label for="option2" >可记2</label>
+
+			<input type="radio" name="options" id="option3" />
+			<label for="option3" >可记3</label>
+
+			<input type="radio" name="options" id="option4" />
+			<label for="option4" >可记4</label>
+
+			<input type="radio" name="options" id="option5" />
+			<label for="option5" >可记5</label>
+			<!--<span class="indicator"></span>-->
+		</div>
+
+	</div>
+
+</body>
+</html> 
+

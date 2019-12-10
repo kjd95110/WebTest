@@ -1,0 +1,155 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>틱택토게임.</title>
+
+<script type="text/javascript" src="../js/jquery/jquery.js"></script>
+
+
+<style type="text/css">
+    table{
+        border: 1px solid black;
+    }
+    
+    td{
+
+        width:50px;
+        height:50px;
+        border:1px solid black;
+        text-align: center;
+        font-size:40px;
+    }
+    </style>
+
+<script type="text/javascript">
+
+$(document).ready(function(){
+
+    var body=document.body;
+    var table=document.createElement('table');
+
+    var lines=[];
+    var cells=[];
+    var tern='X';
+
+    var result=document.createElement('div');
+
+/* 
+    event.target=> 클릭된아이
+    event.target.parentNode
+*/
+     var asyncCallBack = function(event){
+        console.log(event.target);
+        console.log(event.target.parentNode);
+        console.log(event.target.parentNode.parentNode);        
+
+        // Table을 배열과 연결해두었기 때문에 클릭한셀이 몇줄몇칸인지 가능한것입니다.
+
+        var Alines=lines.indexOf(event.target.parentNode);
+        var Acells=cells[Alines].indexOf(event.target);
+        console.log(Alines,Acells);
+
+if($.trim(cells[Alines][Acells].textContent) != ''){ //칸이 이미 쳐워져 있는가?
+    console.log('빈칸X');
+    //cells[Alines][Acells].textContent=tern;
+   
+}else{
+    cells[Alines][Acells].textContent=tern;
+
+    //세칸 다 채워졌나?
+    var full=false;
+    //가로줄 검사
+    if(cells[Alines][0].textContent==tern && 
+       cells[Alines][1].textContent==tern &&
+       cells[Alines][2].textContent==tern){
+           full=true;
+    }
+    //세로줄검사
+    if(cells[0][Acells].textContent==tern &&
+       cells[1][Acells].textContent==tern &&
+       cells[2][Acells].textContent==tern){
+           full=true;
+       }
+    //대각선검사
+    if(Alines - Acells==0 ){ //대각선 검사가 필요한경우이면
+    if(cells[0][0].textContent==tern &&
+       cells[1][1].textContent==tern &&
+       cells[2][2].textContent==tern ){
+           full=true;
+       }
+
+    }
+
+    if( Math.abs(Alines - Acells)==2){  //반대편 대각선 검사
+        if(cells[0][0].textContent==tern &&
+       cells[1][1].textContent==tern &&
+       cells[2][2].textContent==tern ){
+           full=true;
+       }
+
+    }
+
+    if(full){
+        console.log(tern + "님의 승리");
+        result.textContent= tern + '님의 승리';
+        body.appendChild(result);
+        tern='X';
+        //배열에 대한 반복문 forEach
+        cells.forEach(function(line){
+            line.forEach(function(cell){
+                cell.textContent='';
+
+            });
+
+        })
+
+    }else{
+
+        if(tern=='X'){
+            tern='O';
+        }else{
+            tern='X';
+        }
+        console.log("빈칸0");
+
+    }
+        
+
+    }
+
+};
+        
+    for(var i=1;i<=3;i++){
+        var line=document.createElement('tr');
+        lines.push(line);
+        cells.push([]);
+        for(var j=1;j<=3;j++){
+            var cell=document.createElement('td');   
+
+            cell.addEventListener('click',asyncCallBack);                       
+
+            cells[i-1].push(cell);
+            line.appendChild(cell);
+        }
+        table.appendChild(line);
+    }
+    body.appendChild(table);
+    console.log(lines,cells);
+
+});
+
+
+</script>
+
+
+
+</head>
+
+<body>
+
+
+</body>
+
+
+</html> 

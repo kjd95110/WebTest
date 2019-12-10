@@ -1,0 +1,313 @@
+<!doctype html>
+<html>
+<head>
+
+    <title>Building a Mega Menu with CSS</title>
+
+    <script type="text/javascript" src="./js/jquery/jquery.js"></script>
+    <script type="text/javascript" src="./js/jquery/external/jquery.alphanumeric.js"></script>
+    <script type="text/javascript">
+    </script>
+
+    <style type="text/css">
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body{
+            background:#ddd;
+            margin:0;
+            font-family:Roboto,sans-serif;
+        }
+
+        .container{
+            max-width:1000px;
+            margin:0 auto;
+            /*background-color:#F00;*/
+        }
+
+        nav{ background:#fff;
+             box-shadow:0 0 15px 0 rgba(0,0,0,.1);
+        }
+
+        nav ul{
+            margin:0;
+            padding:0;
+            list-style:none;
+            position:relative;
+            text-align:left;
+        }
+
+       
+        nav li{
+            display:inline-block;
+        }
+
+          
+            nav a {
+                color:#444;
+                text-decoration: none;
+                display: block;
+                padding: .75em 1.75em;
+            }
+
+
+            nav li:hover  {
+                background: #444;
+            }
+            nav li:hover a {
+                color: #fff;
+            }
+        .menu-sub {
+            position: absolute;
+            left:0;
+            background: #444;
+            width: 100%;
+            display: none;
+            color:#fff;
+            padding:2em;
+        }        
+          
+        nav ul li:hover .menu-sub {
+            display: block;          
+        }
+        .menu-sub li{
+            display:block;
+        }
+
+        .menu-sub a {
+            padding:0;
+            margin-bottom:.35em;
+        }
+
+        .menu-sub a:hover{
+            text-decoration:underline;
+        }
+
+        .menu-sub h3{
+            padding:10px;
+        }
+
+        .menu-category{
+            margin-top:2.5em 0 .5em;
+        }
+
+        .menu-category:first-of-type{
+            margin-top:0;
+        }
+
+        .menu-col-1,.menu-col-2,.menu-col-3,.menu-col-4{
+            float:left;
+        }
+
+        .menu-col-1 {
+            width:25%;
+        }
+
+        .menu-col-2 {
+            width: 50%;
+        }
+
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="container">
+            <ul class="menu-main">
+                <li><a href="#">탭메뉴1</a>
+                    <div class="menu-sub">
+                        <div class="menu-col-1">
+                            <h3 class="menu-category">카테고리</h3>
+                            <ul>
+                                <li><a href="#">Link 01</a></li>
+                                <li><a href="#">Link 02</a></li>
+                                <li><a href="#">Link 03</a></li>
+                                <li><a href="#">Link 04</a></li>
+                                <li><a href="#">Link 05</a></li>
+                            </ul>
+                            <h3 class="menu-category">카테고리</h3>
+                            <ul>
+                                <li><a href="#">Link 01</a></li>
+                                <li><a href="#">Link 02</a></li>
+                                <li><a href="#">Link 03</a></li>
+                                <li><a href="#">Link 04</a></li>
+                                <li><a href="#">Link 05</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="menu-col-1">
+                            <h3 class="menu-category">카테고리</h3>
+                            <ul>
+                                <li><a href="#">Link 01</a></li>
+                                <li><a href="#">Link 02</a></li>
+                                <li><a href="#">Link 03</a></li>
+                                <li><a href="#">Link 04</a></li>
+                                <li><a href="#">Link 05</a></li>
+                            </ul>
+                            <h3 class="menu-category">카테고리</h3>
+                            <ul>
+                                <li><a href="#">Link 01</a></li>
+                                <li><a href="#">Link 02</a></li>
+                                <li><a href="#">Link 03</a></li>
+                                <li><a href="#">Link 04</a></li>
+                                <li><a href="#">Link 05</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="menu-col-1">
+                            <h3 class="menu-category">카테고리</h3>
+                            <ul>
+                                <li><a href="#">Link 01</a></li>
+                                <li><a href="#">Link 02</a></li>
+                                <li><a href="#">Link 03</a></li>
+                                <li><a href="#">Link 04</a></li>
+                                <li><a href="#">Link 05</a></li>
+                            </ul>
+                            <h3 class="menu-category">카테고리</h3>
+                            <ul>
+                                <li><a href="#">Link 01</a></li>
+                                <li><a href="#">Link 02</a></li>
+                                <li><a href="#">Link 03</a></li>
+                                <li><a href="#">Link 04</a></li>
+                                <li><a href="#">Link 05</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="menu-col-1">
+                            <h3 class="menu-category">카테고리</h3>
+                            <ul>
+                                <li><a href="#">Link 01</a></li>
+                                <li><a href="#">Link 02</a></li>
+                                <li><a href="#">Link 03</a></li>
+                                <li><a href="#">Link 04</a></li>
+                                <li><a href="#">Link 05</a></li>
+                            </ul>
+                            <h3 class="menu-category">카테고리</h3>
+                            <ul>
+                                <li><a href="#">Link 01</a></li>
+                                <li><a href="#">Link 02</a></li>
+                                <li><a href="#">Link 03</a></li>
+                                <li><a href="#">Link 04</a></li>
+                                <li><a href="#">Link 05</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <a href="#">탭메뉴2</a>
+                    <div class="menu-sub">
+                        <div class="menu-col-2">
+                            <h3 class="menu-category">카테고리</h3>
+                            <ul>
+                                <li><a href="#">Link 01</a></li>
+                                <li><a href="#">Link 02</a></li>
+                                <li><a href="#">Link 03</a></li>
+                                <li><a href="#">Link 04</a></li>
+                                <li><a href="#">Link 05</a></li>
+                            </ul>
+                            <h3 class="menu-category">카테고리</h3>
+                            <ul>
+                                <li><a href="#">Link 01</a></li>
+                                <li><a href="#">Link 02</a></li>
+                                <li><a href="#">Link 03</a></li>
+                                <li><a href="#">Link 04</a></li>
+                                <li><a href="#">Link 05</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="menu-col-2">
+                            <h3 class="menu-category">카테고리</h3>
+                            <ul>
+                                <li><a href="#">Link 01</a></li>
+                                <li><a href="#">Link 02</a></li>
+                                <li><a href="#">Link 03</a></li>
+                                <li><a href="#">Link 04</a></li>
+                                <li><a href="#">Link 05</a></li>
+                            </ul>
+                            <h3 class="menu-category">카테고리</h3>
+                            <ul>
+                                <li><a href="#">Link 01</a></li>
+                                <li><a href="#">Link 02</a></li>
+                                <li><a href="#">Link 03</a></li>
+                                <li><a href="#">Link 04</a></li>
+                                <li><a href="#">Link 05</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="menu-col-2">
+                            <h3 class="menu-category">카테고리</h3>
+                            <ul>
+                                <li><a href="#">Link 01</a></li>
+                                <li><a href="#">Link 02</a></li>
+                                <li><a href="#">Link 03</a></li>
+                                <li><a href="#">Link 04</a></li>
+                                <li><a href="#">Link 05</a></li>
+                            </ul>
+                            <h3 class="menu-category">카테고리</h3>
+                            <ul>
+                                <li><a href="#">Link 01</a></li>
+                                <li><a href="#">Link 02</a></li>
+                                <li><a href="#">Link 03</a></li>
+                                <li><a href="#">Link 04</a></li>
+                                <li><a href="#">Link 05</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="menu-col-2">
+                            <h3 class="menu-category">카테고리</h3>
+                            <ul>
+                                <li><a href="#">Link 01</a></li>
+                                <li><a href="#">Link 02</a></li>
+                                <li><a href="#">Link 03</a></li>
+                                <li><a href="#">Link 04</a></li>
+                                <li><a href="#">Link 05</a></li>
+                            </ul>
+                            <h3 class="menu-category">카테고리</h3>
+                            <ul>
+                                <li><a href="#">Link 01</a></li>
+                                <li><a href="#">Link 02</a></li>
+                                <li><a href="#">Link 03</a></li>
+                                <li><a href="#">Link 04</a></li>
+                                <li><a href="#">Link 05</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <a href="#">탭메뉴3</a>
+                    <div class="menu-sub">
+                        <ul>
+                            <li><a href="#">Link 01</a></li>
+                            <li><a href="#">Link 02</a></li>
+                            <li><a href="#">Link 03</a></li>
+                            <li><a href="#">Link 04</a></li>
+                            <li><a href="#">Link 05</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="#">탭메뉴4</a></li>
+                <li><a href="#">탭메뉴5</a></li>
+                <li>
+                    <a href="#">탭메뉴6</a>
+                    <div class="menu-sub">
+                        <h3 class="menu-category">카테고리</h3>
+                        <ul>
+                            <li><a href="#">Link 01</a></li>
+                            <li><a href="#">Link 02</a></li>
+                            <li><a href="#">Link 03</a></li>
+                            <li><a href="#">Link 04</a></li>
+                            <li><a href="#">Link 05</a></li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+
+        </div>
+    </nav>
+
+</body>
+
+</html>

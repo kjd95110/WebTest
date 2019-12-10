@@ -1,0 +1,75 @@
+<!doctype html>
+<html>
+<head>
+<title>펼침_연산자+활용</title>
+
+<script type="text/javascript" src="../js/index.js"></script>
+<script type="text/javascript" src="../js/jquery/jquery.js"></script>
+<script type="text/javascript" src="../js/jquery/index2.js"></script>
+
+<script type="text/javascript">
+
+$(document).ready(function(){      
+    
+    Home2();  
+});
+
+
+function Home2(){
+    let pre=[100,200,"hello",null];
+    let newData=[0,1,2,3,...pre,4];
+
+   // console.log(newData);
+
+
+    let pre2=[100,200,300];
+    console.log(sum.apply(null,pre2));
+    console.log(sum(...pre2));
+}
+
+function sum(a,b,c){
+    return a+b+c;
+}
+
+function Home(){
+
+    let pre= ["apple","oragne",100];
+    let newData = [...pre]; // 어떤값을 펼쳐서 보여주거나 할당해준다.
+    console.log(pre,newData);
+    console.log(pre==newData);
+
+}
+
+
+
+</script>
+<style type="text/css">
+body{
+    background-color: peru;
+}
+
+ul li{
+    display: block;
+    border:1px solid #000;
+    height:35px;
+    width:200px;
+    padding:5px 0px 0px 0px;
+    text-align: center;
+}
+
+</style>
+
+</head> 
+
+<body>
+
+    <ul>
+        <li>Javascript</li>
+        <li>Java</li>
+        <li>python</li>
+        <li>django</li>
+    </ul>
+
+</body>
+
+</html> 

@@ -1,0 +1,109 @@
+<!doctype html>
+<html>
+<head>
+    <title>TabMenu_Test4	</title>
+
+    <script type="text/javascript" src="./js/jquery/jquery.js"></script>
+    <script type="text/javascript" src="./js/jquery/external/jquery.alphanumeric.js"></script>
+
+
+    <script type="text/javascript">
+
+    $(document).ready(function(){
+
+    	$('#tab02').prop('checked', true);
+
+    });
+
+    </script>
+    <style type="text/css">
+
+        .tab_content {
+            background-color: #ddd;
+            width: 100%;
+            text-align: center; /* ÀÚ½ÄÀÌ inline-blockÀÏ¶§ ºÎ¸ğ¿¡ text-align:centerÁÖ¸é Áß°£Á¤·ÄµÊ */
+            /*margin-left*/
+        }
+
+        input[type="radio"] {
+            display: none;
+        }
+
+
+        .conbox {
+            width: 500px;
+            background: #aaa;
+            height: 500px;
+            display: none;
+        }
+
+        .btn{padding:10px;text-align:center;}
+
+       
+        label[for*='tab']{
+            display:inline-block;
+            padding:10px;
+            background:#ccc;
+            cursor:pointer;
+            margin:5px;
+            border-radius:100%;
+        }
+        
+        .tabs input[id="tab01"]:checked ~ .con1 {
+            display: block;
+            margin: 0 auto;
+        }
+
+        .tabs input[id="tab02"]:checked ~ .con2 {
+            display: block;
+            margin: 0 auto;
+        }
+
+        .tabs input[id="tab03"]:checked ~ .con3 {
+            display: block;
+            margin: 0 auto;
+        }
+
+        input[id=tab01]:checked ~ .btn > label[for=tab01]{
+            background:red;
+        }
+
+        input[id=tab02]:checked ~ .btn > label[for=tab02] {
+            background: green;
+        }
+
+        input[id=tab03]:checked ~ .btn > label[for=tab03] {
+            background: blue;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="tab_content">
+        <div class="tabs">
+
+            <input type="radio" name="tabmenu" id="tab01" />
+            <input type="radio" name="tabmenu" id="tab02" />
+            <input type="radio" name="tabmenu" id="tab03" />
+            
+            
+            <div id="ddd1" class="conbox con1">ÄÁÅÙÃ÷ÅÇ ³»¿ë1</div>
+            <div id="ddd2" class="conbox con2">ÄÁÅÙÃ÷ÅÇ ³»¿ë2</div>
+            <div id="ddd3" class="conbox con3">ÄÁÅÙÃ÷ÅÇ ³»¿ë3</div>
+
+
+            <div class="btn">
+                <label for="tab01" class="left"></label>
+                <label for="tab02" class="left"></label>
+                <label for="tab03" class="left"></label>
+            </div>
+
+        </div>
+
+    </div>
+
+
+</body>
+
+</html> 

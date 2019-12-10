@@ -1,0 +1,210 @@
+<!doctype html>
+<html>
+<head>
+	<title>TabMenu_올라오는메뉴</title>
+
+	<script type="text/javascript" src="./js/jquery/jquery.js"></script>
+	<script type="text/javascript" src="./js/jquery/external/jquery.alphanumeric.js"></script>
+
+
+	<script type="text/javascript">
+
+    $(document).ready(function(){
+
+	
+
+    });
+
+
+    //Top 메뉴를 선택했을때...
+    function MenuChange(obj, no, Url, TopName) {
+
+    	var tabcnt = document.getElementById("hTabCnt").value;
+    	var currenttabcnt = obj.substring(3, 5);
+
+    	for (var i = 0; i < tabcnt ; i++) {
+    		if (i != currenttabcnt) {
+    			document.getElementById("tab" + i).className = "";
+    		}
+    	}
+    	document.getElementById(obj).className = "active";
+    	document.getElementById("hMenuID").value = no;
+    	location.href = Url + "?No=" + no + "&TopName=" + TopName;
+
+    }
+
+	</script>
+	<style type="text/css">
+		
+ul.slideuptabs {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    text-align: left; /* change to "center" or "right" to align differently */
+    border-bottom: 10px solid green; /* bottom border */
+    background: #ffffff;
+    background: -moz-linear-gradient(top, #ffffff 0%, #d8d8d8 100%); /* gray gradient background */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(100%,#d8d8d8));
+    background: -webkit-linear-gradient(top, #ffffff 0%,#d8d8d8 100%);
+    background: -o-linear-gradient(top, #ffffff 0%,#d8d8d8 100%);
+    background: -ms-linear-gradient(top, #ffffff 0%,#d8d8d8 100%);
+    background: linear-gradient(to bottom, #ffffff 0%,#d8d8d8 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#d8d8d8',GradientType=0 );
+}
+
+
+    ul.slideuptabs li {
+        display: inline;
+    }
+
+        ul.slideuptabs li:first-of-type {
+            margin-left: 10px;
+        }
+
+    ul.slideuptabs a {
+        position: relative;
+        display: inline-block;
+        overflow: hidden;
+        color: green; /* font color */
+        text-decoration: none;
+        padding: 20px 20px 5px;
+        font-size: 14px; /* font size */
+        font-weight: bold;
+        vertical-align: bottom;
+        -webkit-transition: color 0.5s; /* transition property and duration */
+        -moz-transition: color 0.5s;
+        transition: color 0.5s;
+    }
+
+        ul.slideuptabs a span {
+            position: relative;
+            z-index: 10;
+        }
+
+        ul.slideuptabs a::before {
+            content: '';
+            color: white;
+            display: block;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: green; /* tab background */
+            left: 0;
+            top: 110%; /* extra 10% is to account for shadow dimension */
+            box-shadow: -2px 2px 10px rgba(255,255,255,.5) inset;
+            border-radius: 15px 15px 0 0 / 12px 12px; /* oval shaped border for top-left and top-right corners */
+            -webkit-transition: top 0.5s; /* transition property and duration */
+            -moz-transition: top 0.5s;
+            transition: top 0.5s;
+        }
+
+        ul.slideuptabs a:hover {
+            color: yellow; /* hover color */
+        }
+
+            ul.slideuptabs a:hover::before {
+                top: 0; /* slide tab up */
+            }
+
+/****** Responsive Code ******/
+
+@media screen and (max-width: 640px) {
+
+    ul.slideuptabs li:first-of-type {
+        margin-left: 0;
+    }
+}
+
+/****** Theme Red ******/
+
+ul.slideuptabs.red {
+    border-bottom-color: darkred;
+}
+
+    ul.slideuptabs.red a::before {
+        background: darkred;
+    }
+
+/****** Theme Orange ******/
+
+ul.slideuptabs.orange {
+    border-bottom-color: #F4BB00;
+}
+
+    ul.slideuptabs.orange li a {
+        color: black;
+    }
+
+    ul.slideuptabs.orange a::before {
+        background: #F4BB00;
+    }
+
+        ul.slideuptabs.orange .active > a {
+        content: '';
+        color: white;
+        display: table-cell;
+        position: relative;
+        width: 100%;
+        height: 120%;
+        background: #F4BB00; /* tab background */
+        left: 0;
+        top: 5px; /* extra 10% is to account for shadow dimension */
+        box-shadow: -2px 2px 10px rgba(255,255,255,.5) inset;
+        border-radius: 15px 15px 0 0 / 12px 12px; /* oval shaped border for top-left and top-right corners */
+        -webkit-transition: top 0.5s; /* transition property and duration */
+        -moz-transition: top 0.5s;
+        transition: top 0.5s;
+    }
+
+/****** Theme Blue ******/
+
+ul.slideuptabs.blue {
+    border-bottom-color: #259AD1;
+}
+
+    ul.slideuptabs.blue a::before {
+        background: #259AD1;
+    }
+
+    ul.slideuptabs.blue .active > a {
+        content: '';
+        color: white;
+        display: table-cell;
+        position: relative;
+        width: 100%;
+        height: 120%;
+        background: #259AD1; /* tab background */
+        left: 0;
+        top: 5px; /* extra 10% is to account for shadow dimension */
+        box-shadow: -2px 2px 10px rgba(255,255,255,.5) inset;
+        border-radius: 15px 15px 0 0 / 12px 12px; /* oval shaped border for top-left and top-right corners */
+        -webkit-transition: top 0.5s; /* transition property and duration */
+        -moz-transition: top 0.5s;
+        transition: top 0.5s;
+    }
+
+
+ul.slideuptabs a:hover {
+    color: black; /* hover color for IE8 where tabs don't slide up */
+}
+
+	</style>
+
+</head>
+<body>
+
+	<ul class="slideuptabs orange">
+		<li id="tab0" class="myTest"><a href="javascript:MenuChange('tab0','1','/CC/CounselingList.aspx','카이저센터');"><span>카이저센터</span>&nbsp;</a></li>
+		<li id="tab1" class="myTest"><a href="javascript:MenuChange('tab1','2','/MenuTest/CSSMenu_1.aspx','메뉴테스트');"><span>메뉴테스트&nbsp;</span></a></li>
+		<li id="tab2" class="myTest"><a href="javascript:MenuChange('tab2','5','/Joynoly/CARS/Car1031.aspx','Joynoly관리');"><span>Joynoly관리&nbsp;</span></a></li>
+		<li id="tab3" class="myTest"><a href="javascript:MenuChange('tab3','7','/J_Art/Comp_Net.aspx','중대작품들');"><span>중대작품들&nbsp;</span></a></li>
+		<li id="tab4" class="myTest"><a href="javascript:MenuChange('tab4','18','/ITS/ITS_IssueList.aspx','ITS');"><span>ITS&nbsp;</span></a></li>
+		<li id="tab5" class="myTest"><a href="javascript:MenuChange('tab5','19','/ETC/MsgDanji.aspx','ETC.');"><span>ETC.&nbsp;</span></a></li>
+		<li id="tab6" class="myTest"><a href="javascript:MenuChange('tab6','20','/Admin/Admin_bpr2.aspx','관리자');"><span>관리자&nbsp;</span></a></li>
+	</ul>
+
+
+</body>
+
+</html>

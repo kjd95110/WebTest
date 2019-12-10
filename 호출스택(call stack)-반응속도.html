@@ -1,0 +1,104 @@
+<!doctype html>
+<html>
+<head>
+    <title>Call Stack</title>
+    <script type="text/javascript" src="./js/jquery/jquery.js"></script>
+    <script type="text/javascript">
+      
+        //d();
+        //e();
+        //a();
+
+         var startTime;
+         var endTime
+        $(document).ready(function () {
+
+            //$('#screen').css({ 'background': 'green' });
+
+            $('#screen').click(function () {
+                
+                //alert($('#screen').css('backgroundColor') );
+
+                if ($('#screen').css('backgroundColor') == 'rgb(255, 0, 0)') {
+
+                    setTimeout(function () {
+                        startTime = new Date();
+                        callScreen();
+                        //}, Math.floor(Math.random() * 1000) + 3000);
+                    }, 2500);
+                    callScreen();
+                    return false;
+                } else if ($('#screen').css('backgroundColor') == 'rgb(0, 128, 0)') {
+
+                    //alert('green');
+                                        
+                    $('#screen').css({ 'background': 'red' });                  
+                    var endTime = new Date();
+
+                    //var result=endTime-startTime
+                    $('#screen')[0].innerText = '당신의_반응속도는? ';
+                    console.log('반응속도', endTime - startTime);
+                }
+                
+
+            });
+        });
+                      
+               
+        function callScreen() {
+            $('#screen')[0].innerText = '초록색이되면 클릭하세요_반응속도';
+            $('#screen').css({ 'background': 'green' });            
+        }
+
+        function d() {
+            console.log('d');
+        }
+
+        function e() {
+            console.log('e');
+        }
+
+        function a() {
+            function b() {
+                function c() {
+                    console.log('c');
+                }
+                c();
+                console.log('b');
+            }
+            b();
+            console.log('a');            
+        }
+        /* 크롬 개발자도구 ctrl + shift + I(아이)  Or F12 */
+        /*  파이어 폭스 개발자도구 F12 크롬과 같음 */
+        /* IE 개발자도구 F12 */
+    </script>
+
+
+
+    <style type="text/css">
+       
+        #screen{
+            position:absolute;
+            top:25%;
+            left:50%;
+            transform:translate(-50%,-50%);
+            width:300px;
+            height:200px;
+            background-color:red;
+            text-align:center;
+            padding-top:30px;
+            cursor:pointer;
+        }
+
+    </style>
+
+</head>
+<body>
+
+    <div id="screen">클릭하세요-시작-</div>
+
+
+</body>
+
+</html>

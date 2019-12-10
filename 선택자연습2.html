@@ -1,0 +1,84 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>선택자연습</title>
+	<script type="text/javascript" src="./js/jquery/jquery.js"></script>
+	<script type="text/javascript" src="./js/jquery/external/jquery.alphanumeric.js"></script>
+
+	<script type="text/javascript">
+
+
+	</script>
+
+
+	<style type="text/css">
+			
+		
+		div{
+			background-color:pink;
+		}
+
+		section{
+			background-color:gray;
+		}
+
+		a {
+			font-size:10rem;
+			color:gold;			
+			font-weight:300;
+		}
+
+		/* 후손 선택자*/
+		div a{ 
+			color:green;
+		}
+		/* 자식선택자(바로밑에만 선택) */
+		div > a{ 
+			color:red;
+		}
+
+		div > nav > a{ 
+			color:orangered;
+		}
+		ul > li:nth-child(1){
+			background-color:red;
+		}
+
+
+		/* 동생들 선택자 */
+		/* ul>li의 첫번째 의 동생들중에 li인 요소*/
+		ul > li:nth-child(1)~ li{
+			background-color:pink;
+		}
+
+		/* 인접동생 선택자 */
+		/* ul>li의 첫번째 의 인접동생 li인 요소*/
+		ul > li:nth-child(1) + li{
+			background-color:pink;
+		}
+				
+	</style>
+
+</head>
+
+<body>
+	<div>안녕하세요~</div>
+
+	<div>
+		<a href="#">안녕</a>
+		<nav><a href="#">또봐</a></nav>
+	</div>
+	<section>
+		<a href="#">잘가</a>
+	</section>
+
+	<ul>
+		<li>내용1</li>
+		<li>내용2</li>
+		<li>내용3</li>
+	</ul>
+	
+</body>
+</html>

@@ -1,0 +1,107 @@
+﻿<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Vertical DropDownMenu</title>
+	<script src="https://use.fontawesome.com/releases/v5.2.0/js/all.js"></script>
+	<script type="text/javascript" src="./js/jquery/jquery.js"></script>
+	<script type="text/javascript" src="./js/jquery/external/jquery.alphanumeric.js"></script>
+	<script type="text/javascript">
+
+	</script>
+
+	<style type="text/css">
+		* {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+
+		body{
+			/*font-family:sans-serif;*/
+			font-family:Arial,sans-serif;
+			/*font-family: Poppins;*/
+		}
+
+		a{text-decoration:none;}
+		li{list-style:none;}
+
+		/* Navigation Styling*/
+		.main_nav{
+			width:250px;
+			background:rgba(180,205,203,1.0);
+			background:rgba(27, 205, 230,.9);
+		}
+
+		.main_nav a{
+			text-transform:uppercase;
+			letter-spacing:.2em;
+			display:block;
+			padding:10px 0 10px 20px;
+			color:#fff;
+			border-bottom:1px dotted gray;
+		}
+
+		.main_nav a:hover{
+			background:rgba(121,165,162,1.00);
+		}
+
+		.main_nav-ul ul{
+			display:none;
+		}
+		.main_nav-ul li:hover ul{
+			display:block;
+		}
+		.main_nav-ul ul a:before{
+			content:'\203A';
+			margin-right:20px;
+		}
+
+		.main_nav .sub-arrow:after{
+			content:'\203A';
+			float:right;
+			margin-right:20px;
+			transform:rotate(90deg);
+			-webkit-transform:rotate(90deg);
+			-moz-transform:rotate(90deg);
+
+		}
+		
+		.main_nav li:hover .sub-arrow:after{
+			content:'\2039';
+		}
+
+		span{
+		margin-right:15px;
+	}
+		
+	</style>
+</head>
+<body>
+	<nav class="main_nav">
+		<ul class="main_nav-ul">
+			<li><a href="#">Home</a></li>
+			<li><a href="#">Products<span class="sub-arrow"></span></a>
+				<ul>
+					<li><a href="#">Item 1</a></li>
+					<li><a href="#">Item 2</a></li>
+					<li><a href="#">Item 3</a></li>
+					<li><a href="#">Item 4</a></li>
+				</ul>
+			</li>
+			<li><a href="#">Services</a></li>
+			<li><a href="#">About<span class="sub-arrow"></span></a>
+				<ul>
+					<li><a href="#">Item 1</a></li>
+					<li><a href="#">Item 2</a></li>
+					<li><a href="#">Item 3</a></li>
+					<li><a href="#">Item 4</a></li>
+				</ul>
+			</li>
+			<li><a href="#">Contact</a></li>
+		</ul>
+	</nav>
+
+
+</body>
+</html>

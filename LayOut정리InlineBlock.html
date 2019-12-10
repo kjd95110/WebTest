@@ -1,0 +1,72 @@
+<!doctype html>
+<html>
+<head>
+
+    <title>LayOut 정리</title>
+    <style type="text/css">
+        /* Css Reset 에릭마이어 유명함*/
+       * {
+            margin: 0;
+            padding: 0;                      
+            
+        }
+        
+        body {
+            line-height: 1;
+        }
+
+        ol, ul {
+            list-style: none;
+        }     
+        blockquote:before, blockquote:after,
+        q:before, q:after {
+            content: '';
+            content: none;
+        }
+
+     
+
+        .container{
+            max-width:1000px;
+            font-size:0px;
+            margin:0 auto;
+        }
+
+        .item {
+            padding: 5%;
+            font-size: 1rem; /* root em -> html default 사용하겠다는 의미 (16px) */
+            display: inline-block;
+        }
+
+        .item-a {
+            width:22%;
+            background-color:yellow;
+            vertical-align:top;
+           
+        }
+
+        .item-b {
+            width: 40%;
+            background-color: yellowgreen;
+           
+        }
+
+    </style>
+    </head>
+<body>
+    <div class="container">
+        <section class="item item-a">
+            <h1>Section a</h1>
+            One of the pioneers of the CSS Reset method, Eric Meyer, created a Reset stylesheet that is still in use on millions of websites today. Most people use it in its unedited form, despite Meyer’s recommendation against this:
+        </section>
+
+
+
+
+        <section class="item item-b">
+            <h1>Section b</h1>
+            The reset styles given here are intentionally very generic. There isn’t any default color or background set for the body element, for example. I don’t particularly recommend that you just use this in its unaltered state in your own projects. It should be tweaked, edited, extended, and otherwise tuned to match your specific reset baseline. Fill in your preferred colors for the page, links, and so on.
+        </section>
+    </div>
+</body>
+</html>

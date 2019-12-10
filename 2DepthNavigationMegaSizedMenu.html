@@ -1,0 +1,137 @@
+<!doctype html>
+<html>
+<head>
+
+    <title>Building a Mega Menu with CSS</title>
+
+    <script type="text/javascript" src="./js/jquery/jquery.js"></script>
+    <script type="text/javascript" src="./js/jquery/external/jquery.alphanumeric.js"></script>
+    <script type="text/javascript">
+
+       // $(function () {
+
+        $(document).ready(function () {
+
+            var $firstMenu = $('nav > ul > li'),
+                $header = $('header'),
+                $headerHeight = $header.outerHeight();
+
+            $firstMenu.mouseenter(function () {
+
+                var subHeight = $(this).find('ul').outerHeight();
+                $header.stop().animate({ height: $headerHeight + subHeight + 'px' }, 300);
+            }).mouseleave(function () {
+
+                $header.stop().animate({ height: $headerHeight  + 'px' }, 300);
+
+            });
+
+
+        });
+        
+        /* 
+         
+         $(this) 마우스가 올라가 요소.
+
+         첫번째 메뉴에 마우스가 들어오면 마우스가 들어온 그메뉴의 서브메뉴의높이를
+         변수명subHeight로 저장하고 기존 header 높이에 더한값을 header의 높이로 .3s걸처
+         애니메니트 되도록한다.
+
+마우스가 떠나면 
+
+A.height()  컨텐츠 알맹이 높이
+a.innerHeight() 컨텐츠 바깥 패딩까지 높이
+a.outerHeight() 컨텥츠 바깥 보더 까지 높이 (****)
+a.outerHeight(true) 컨텐츠 바깥 마진가지 높이          
+          
+          */
+    </script>
+
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        ul li {
+            list-style: none;
+        }
+
+        .clearfix:after {
+            content: '';
+            display: block;
+            clear: both;
+        }
+
+        body {
+            background: green;
+            overflow-y: scroll;
+        }
+
+        header {
+            margin-top: 20px;
+            background: linear-gradient(white 50px, rgba(255,255,255,0.5) 50px, rgba(255,255,255,0.5) );
+            height: 50px;
+            overflow: hidden;
+        }
+
+        nav {
+            width: 960px;
+            margin: 0 auto;
+        }
+
+            nav > ul > li {
+                float: left;
+                line-height: 50px;
+                margin-right: 40px;
+            }
+
+                nav > ul > li ul {
+                    width: 100%;
+                }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav>
+            <ul class="clearfix">
+                <li>
+                    1st menu
+                    <ul>
+                        <li>2nd menu</li>
+                      
+                    </ul>
+                </li>
+                <li>
+                    1st menu
+                    <ul>
+                        <li>2nd menu</li>
+                        <li>2nd menu</li>
+                      
+                    </ul>
+                </li>
+                <li>
+                    1st menu
+                    <ul>
+                        <li>2nd menu</li>
+                        <li>2nd menu</li>
+                        <li>2nd menu</li>
+                      
+                    </ul>
+                </li>
+                <li>
+                    1st menu
+                    <ul>
+                        <li>2nd menu</li>
+                        <li>2nd menu</li>                      
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+</body>
+
+</html>

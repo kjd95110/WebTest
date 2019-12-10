@@ -1,0 +1,90 @@
+<!doctype html>
+<html>
+<head>
+	<title>BeforeAfterClass</title>
+	<script type="text/javascript" src="./js/jquery/jquery.js"></script>
+	<script type="text/javascript" src="./js/jquery/external/jquery.alphanumeric.js"></script>
+	<!--<script type="text/javascript">
+		$(document).ready(function () {
+		});
+	</script>-->
+
+	<style type="text/css">
+		ul li.new,.hot{
+			list-style:decimal;
+			
+
+		}
+
+		ul li.new:after{
+			content:'new';
+			background-color:dodgerblue;
+			color:#fff;
+			border-radius:3px;
+			font-size:13px;
+			padding:0 5px;
+			margin-left:5px;
+		}
+		ul li.hot:before{
+
+			content:'hot';
+			background-color:crimson;
+			border-radius:3px;
+			font-size:13px;
+			padding:0 5px;
+			margin-right:5px;
+		}
+	
+
+		ul li.none{
+			list-style:none;
+		}
+
+		ul li.none:after{
+
+			content:'ÁÖ¹®ºÒ°¡';			
+			color:crimson;
+			border-radius:3px;
+			font-size:18px;
+			padding:0 5px;
+			margin-left:5px;
+			
+
+		}
+
+		ul li.none:before{
+
+			content:'*';			
+			color:crimson;
+			border-radius:3px;			
+			padding:25px 5px 0px 5px;
+			margin-right:5px;
+			font-size:30px;
+			
+
+		}
+	</style>
+</head>
+<body>
+
+
+	<ul>
+		<li class="new">ºòÄ¡Å²¸¶¿ä-3,500¿ø</li>
+		<li>µ·Ä¡¸¶¿ä-2,500¿ø</li>
+		<li>Ä¡Å² »ø·¯µå¸¶¿ä-3,400¿ø</li>
+		<li class="hot">Ä¡Å²¸¶¿ä-2,900¿ø</li>
+
+	</ul>
+
+	<ul>
+		<li class="none">¸¶¿ä</li>
+		<li class="none">Ä«·¹</li>
+		<li class="none">Ã¶ÆÇººÀ½¹ä</li>
+		<li class="none">ÇÁ¸®¹Ì¾öÂî°³</li>
+		<li class="none">µ¤¹ä</li>
+		<li class="none">ºñºö¹ä</li>
+	</ul>
+
+	
+</body>
+</html>

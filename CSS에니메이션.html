@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+<head>
+
+    <title>트랜지션, 에니메이션</title>
+   
+    
+    <style type="text/css">
+           
+        @keyframes foo{
+            50%{ width:600px;}
+            75%{ width:75px;background-color:blue; }
+        }
+
+        .item1{
+            padding:1rem;
+            font-size:3rem;
+            color:white;
+            background-color:green;
+            transition:padding 0.5s;
+        }
+
+        .item2 {
+            width:100px;
+            padding: 1rem;
+            font-size: 3rem;
+            color: red;
+            background-color: green;
+            animation:foo 1s  ease;
+        }
+
+         /*.item1:hover{
+            padding:2em;
+            background-color:red;
+        }*/
+
+         .item2:hover{
+
+         }
+
+         button.item1:hover{
+             background:red;
+         }
+
+    </style>
+
+</head>
+<body>
+
+    <button class="item1">버튼1</button>
+
+    <button class="item2">에니메이션버튼2</button>
+
+</body>
+</html>

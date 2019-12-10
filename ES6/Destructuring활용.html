@@ -1,0 +1,77 @@
+<!doctype html>
+<html>
+<head>
+<title>Destructuring 활용</title>
+
+<script type="text/javascript" src="../js/index.js"></script>
+<script type="text/javascript" src="../js/jquery/jquery.js"></script>
+<script type="text/javascript" src="../js/jquery/index2.js"></script>
+
+<script type="text/javascript">
+
+
+var news=[
+    {
+        "title":"sbs",
+        "imgurl":"http://static.naver.net/newsstand/2017/0313/article_img/9054/173200/001.jpg",
+        "newslist":[
+            "[가보니] 가상 경주도 즐기고, 내 손으로 자동차도 만들고",
+            "리캡차'가 사라진다",
+            "갤럭시s8' 출시? '갤럭시노트' 처리 계획부터 밝혀야",
+            "블로코-삼성SDS,  블럭체인 사업'맞손",
+            "[블럭체인 돌아보기] 퍼블릭 블록체인의 한계와 프라이빗 블록체인"
+        ]
+    },
+    {
+        "title":"mbc",
+        "imgurl":"http://static.naver.net/newsstand/2017/0313/article_img/9033/220451/001.jpg",
+        "newslist":[
+            "Lorem ipsum dolor sit amet, consectetur adipisicin",
+            "ipsum dolor sit amet, consectetur adipisicin",
+            "dolor sit amet, consectetur adipisicin",
+            "amet, consectetur adipisicin"
+            
+        ]
+    }
+]
+
+$(document).ready(function(){
+
+ Home();
+       
+});
+
+
+
+function Home(){
+    let [,mbc] = news;
+    
+    let{title,imgurl}=mbc;
+    console.log(title,imgurl);
+}
+
+
+</script>
+<style type="text/css">
+body{
+    background-color: peru;
+}
+
+h1{
+    color:#fff;
+}
+</style>
+
+</head> 
+
+<body>
+<ul>
+    <li>apple</li>
+    <li>orang</li>
+    <li>banana</li>
+    <li>strawberry</li>
+</ul>
+
+</body>
+
+</html> 

@@ -1,0 +1,155 @@
+<!doctype html>
+<html>
+<head>
+
+    <title>Building a Mega Menu with CSS</title>
+
+    <script type="text/javascript" src="./js/jquery/jquery.js"></script>
+    <script type="text/javascript" src="./js/jquery/external/jquery.alphanumeric.js"></script>
+    <script type="text/javascript">
+
+       // $(function () {
+
+        $(document).ready(function () {
+
+
+            $('nav > ul > li').mouseenter(function () {
+
+                $('header').stop().animate({ height: '260px' }, 300);
+                //alert('mouseenter');
+
+            }).mouseleave(function () {
+
+                $('header').stop().animate({ height: '50px' }, 300);
+                //alert('mouseleave');
+
+            });
+
+        });
+
+            //var $firstMenu = $('nav > ul > li');
+            //var $header = $('header');
+
+            //$firstMenu.mouseenter(function () {
+
+            //    $header.stop().animate({height:'300px'},300)
+
+            //}).mouseleave(function () {
+
+            //    $header.stop().animate({ height: '50px' }, 300)
+
+            //});
+                            
+        
+
+    </script>
+
+    <style type="text/css">
+        * {
+            padding: 0;
+            margin: 0;
+            
+        }
+        ul li{ list-style:none;}
+       
+        .clearfix:after{
+            content:'';
+            display:block;
+            clear:both;
+        }
+
+        body{background:green;overflow-y:scroll;}
+        
+        header{
+            margin-top:20px;
+            background:linear-gradient(white 50px,rgba(255,255,255,.5) 50px,rgba(255,255,255,.5));
+            /*background-color:white;*/
+            height:50px; /*1st menu 만 보이고*/
+            overflow:hidden; /* 그밑으로는 2nd menu는 안보임*/
+            /* jquery에서 2nd menu(안보이는메뉴)를 보이게 해준다.*/
+        }
+        /* 
+            중요.
+            내려오는 메뉴의 배경은 header 이다 
+            배경이 흰색인데 rgba에서 50% 투명으로 연한 녹색?처럼 보인다.
+
+
+            jquery-> 첫번쩨 메뉴에 마우스를 올리면 header높이를 300px 0.3s 애니메이션
+            첫번째 메뉴에서 마우스아웃되면 원상복쉬 50px 0.3s 애니메이션
+        */
+
+        nav {
+            width: 960px;
+            margin: 0 auto;
+        }
+
+            nav > ul > li {
+                float: left;
+                line-height: 50px;
+                margin-right: 40px;
+                cursor:pointer;
+            }
+
+                nav > ul > li ul {
+                    width: 100%;
+                    padding:5px 20px;
+                    /*background-color:dodgerblue;*/
+                }
+
+            nav ul li a {
+                text-decoration: none;
+            }
+
+                nav > ul > li ul li a {
+                    /*text-decoration:none;*/
+                    color:white;
+                }
+
+    </style>
+    </head>
+<body>
+
+    <header>
+        <nav>
+            <ul class="clearfix">
+                <li><a href="#">입주 &middot; 예약관리</a>
+                    <ul>
+                        <li><a href="#">이사예약 등록</a></li>
+                        <li><a href="#">입주정보 등록</a></li>
+                        <li><a href="#">키불출 &middot; 검침 등록</a></li>
+                        <li><a href="#">SMS 전송</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">현황조회</a>
+                    <ul>
+                       <li><a href="#">이사예약 현황</a></li>
+                       <li><a href="#">입주 현황</a></li>
+                       <li><a href="#">선수금 현황</a></li>
+                       <li><a href="#">키불출 현황</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">기초설정</a>
+                    <ul>
+                        <li><a href="#">동호정보 등록</a></li>
+                        <li><a href="#">선수금 생성</a></li>
+                        <li><a href="#">승강기 &middot; 사다리 등록</a></li>
+                        <li><a href="#">이사예약시간 등록</a></li>
+                        <li><a href="#">입주예약기간 등록</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">CC플러스</a>
+                    <ul>
+                        <li><a href="#" target="_blank">CC플러스</a></li>
+                     
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+</body>
+
+</html>

@@ -1,0 +1,87 @@
+﻿<!doctype html>
+<html>
+  <head>
+      <meta charset="utf-8">
+    <title>MoveMenuButton</title>    
+    
+    <script type="text/javascript" src="./js/jquery/jquery.js"></script>
+    <script type="text/javascript" src="./js/jquery/external/jquery.alphanumeric.js"></script>
+
+
+    <style type="text/css">
+
+       input[id*="menuicon"]{ display:none;  }
+	   /*#menuicon{display:none;}*/
+       input[id="menuicon"] + label {
+           display:block;
+           width:60px;
+           height:40px;
+           position: relative;
+           cursor:pointer;
+       }
+
+       input[id="menuicon"] + label  span{
+           display: block;
+           position: absolute;
+           width:100%;
+           height:5px;
+           border-radius:30px;
+           background:#000;
+           transition:all .35s;
+       }
+
+       input[id="menuicon"] + label  span:nth-child(1){
+           top: 0;
+        }
+        input[id="menuicon"] + label  span:nth-child(2){
+           top: 50%;
+           transform:translateY(-50%);
+        }
+        input[id="menuicon"] + label  span:nth-child(3){
+           bottom: 0;         
+        }
+
+
+
+        input[id="menuicon"]:checked + label  span:nth-child(1){
+           top:50%;
+           transform:translateY(-50%) rotate(45deg);
+        }
+        input[id="menuicon"]:checked + label  span:nth-child(2){
+           opacity:0.05;
+        }
+        input[id="menuicon"]:checked + label  span:nth-child(3){
+            bottom: 50%;
+           transform:translateY(50%) rotate(-45deg);
+        }
+
+
+
+        /* 
+        가운데 정렬
+
+            1.transform:translateY(-50%);
+            2.top:calc(50%-2.5px)
+               margin-top:-2.5px;
+        */  
+        
+        
+        </style>
+<script type="text/javascript">    
+    $(document).ready(function(){      
+    });   
+</script>    
+
+</head>
+  <body>
+
+  <input type="checkbox" id="menuicon">
+  <label for="menuicon">
+      <span></span>
+      <span></span>
+      <span></span>
+  </label>
+
+
+  </body>
+</html>

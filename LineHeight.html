@@ -1,0 +1,106 @@
+<!doctype html>
+<html>
+<head>
+    <title>y축 가운데정렬</title>
+    
+ 
+    <style type="text/css">
+        *{padding:0;margin:0;list-style:none}
+        body{padding:20px;}
+        h2{margin:150px 0 10px;font-size:15px;}
+        div{border:1px solid red;width:200px;height:200px;}
+        p{width:50px;height:50px;background:tomato;}
+
+    
+    </style>
+</head>
+<body>
+    <h2>Line-height-한줄일때만 가능함</h2>
+    <style type="text/css">
+        .line-height {
+            line-height: 200px;
+        }
+
+            .line-height p {
+                display: inline;
+            }
+    </style>
+    <div class="line-height">
+        <p>y축</p>
+    </div>
+
+    <h2>position-추천방식</h2>
+    <style type="text/css">
+        .position {
+            position: relative
+        }
+
+            .position p {
+                position: absolute;
+                /*top:50%;
+                left:0;*/
+                /*top: 50%;
+                left:0;*/
+                /*margin: -25px 0 0;*/
+                /*transform:translate(0%,-50%);*/
+                margin: 50% 0 0;
+                transform: translateY(-50%);
+            }
+    </style>
+    <div class="position">
+        <p>y축</p>
+    </div>
+
+
+    <h2>table-추천방식</h2>
+    <style type="text/css">
+        .table {
+            display: table;
+            border-collapse: collapse;
+            border-spacing: 0;
+        }
+
+            .table article {
+                display: table-cell;
+                vertical-align: middle;
+            }
+    </style>
+    <div class="table">
+        <article>
+            <p>y축</p>
+        </article>
+
+    </div>
+
+    <h2>margin + transform</h2>
+    <style type="text/css">
+        .calc p {
+            margin: 50% 0 0;
+            transform: translateY(-50%);
+        }
+
+        .table article {
+            display: table-cell;
+            vertical-align: middle;
+        }
+    </style>
+    <div class="calc">
+        <p>y축</p>
+    </div>
+
+
+    <h2>flex ie10</h2>
+    <style type="text/css">
+        .flex {
+            display:flex;
+            align-items:center;
+        }
+        
+    </style>
+    <div class="flex">
+        <p>y축</p>dd
+    </div>
+
+
+</body>
+</html>

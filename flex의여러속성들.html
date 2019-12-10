@@ -1,0 +1,121 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>DropDownMenu Design Easy~</title>
+
+	<script type="text/javascript" src="./js/jquery/jquery.js"></script>
+	<script type="text/javascript" src="./js/jquery/external/jquery.alphanumeric.js"></script>
+	<script type="text/javascript">
+
+
+
+	</script>
+
+	<style type="text/css">
+		* {
+			padding: 0;
+			margin: 0;
+			list-style: none;
+		}
+
+		body {
+			padding: 30px;
+						
+		}
+
+		div{
+			display:inline-block;
+			position:absolute;
+			top:50%;
+			left:50%;
+			transform:translate(-50%,-50%);		
+		}
+
+		ul{
+			display:flex;			
+			flex-direction:column-reverse;
+			flex-wrap:wrap-reverse;
+			/*no-wrap:기본값
+				 아이템들이 커다면 줄바꿈이되서 내려간다. 
+				
+
+			*/
+			align-items:center;
+			/* 
+				row
+				align-items:수평과 관련된 배치 
+				direction:기본값 row 
+				align-item:기본값은 stretch
+				flex-start:container의 위에서 시작
+				flex-end:container의 아래에서 시작
+				center:부모(container)의 가운데 배치
+
+			*/
+			justify-content:center;
+			/*
+				justify-content:수직과 관련된 배치 
+			*/
+
+			align-content:space-between;
+
+			/* 하나의 row를 그룹으로 봤을때 그룹과 그룹사이를
+				정렬를 설정한다.
+			*/
+
+			align-self:center;
+			/* 기본적으로 container말고  flex item 을 위한 속성
+
+
+			*/
+			order:inherit;
+
+			/* 순서 z-index와 비슷 기본값0 입니다.*/
+		}
+
+		ul li{
+			flex:1;
+		
+			width:100px;
+			height:100px;
+			background:#595959;
+			text-align:center;
+			line-height:100px;
+			border-radius:10px;
+		}
+				
+	
+		ul li:first-child{
+			background:green;
+		}
+		ul li:nth-child(2){
+			background:crimson;
+		}
+		ul li:nth-child(3){
+			background:orange;
+		}
+		ul li:nth-child(4){
+			background:dodgerblue;
+		}
+		ul li:last-child{
+			background:#ddd;
+		}
+
+		
+	</style>
+
+</head>
+<body>
+	<div>
+		<ul>
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+			<li>5</li>
+		</ul>
+
+	</div>
+</body>
+
+</html>

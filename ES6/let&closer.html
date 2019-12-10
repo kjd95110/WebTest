@@ -1,0 +1,73 @@
+<!doctype html>
+<html>
+<head>
+<title>Scope 실습</title>
+
+<script type="text/javascript" src="../js/index.js"></script>
+<script type="text/javascript" src="../js/jquery/jquery.js"></script>
+<script type="text/javascript" src="../js/jquery/index2.js"></script>
+
+<script type="text/javascript">
+
+var name="global var";
+$(document).ready(function(){
+    Home();    
+});
+
+
+/*
+let 블럭Scope로서 블럭내에서만 사용가능
+var 함수 Scope로서 함수내에서만 사용가능
+
+
+Home() 내의 var i 변수는 closer변수라고 할수있다.
+외부에 있는 i변수를 공유하면서 생기는 상황.
+
+해결상황-> var -> let 로
+
+*/
+
+function Home(){
+
+    var list = document.querySelectorAll('li');
+for(let i=0;i<list.length;i++){
+    list[i].addEventListener('click',function(){
+
+        console.log(i + "번째 리스트입니다. ");
+
+    });
+}
+    
+}
+
+</script>
+<style type="text/css">
+body{
+    background-color: peru;
+}
+
+ul li{
+    display: block;
+    border:1px solid #000;
+    height:35px;
+    width:200px;
+    padding:5px 0px 0px 0px;
+    text-align: center;
+}
+
+</style>
+
+</head> 
+
+<body>
+
+    <ul>
+        <li>Javascript</li>
+        <li>Java</li>
+        <li>python</li>
+        <li>django</li>
+    </ul>
+
+</body>
+
+</html> 

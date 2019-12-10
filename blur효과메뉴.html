@@ -1,0 +1,135 @@
+<!doctype html>
+<html>
+<head>
+    <title>blur 메뉴효과</title>
+
+    <script type="text/javascript" src="./js/jquery/jquery.js"></script>
+    <script type="text/javascript" src="./js/jquery/external/jquery.alphanumeric.js"></script>
+
+
+    <script type="text/javascript">
+
+    $(document).ready(function(){
+    	
+
+    });
+
+    </script>
+
+    <style type="text/css">
+        *{
+            margin:0;
+            padding:0;
+        }
+
+        html,body{
+            margin:0;
+            padding:0;
+        }
+
+        body{
+            background-color:transparent;
+            background:url(http://wooreeweb.com/sampleimg/bsptn.png),url(http://wooreeweb.com/sampleimg/sky.jpg);
+            background-repeat:repeat,no-repeat;
+            background-attachment:fixed;
+            background-size:auto,cover;
+            color:#fff;
+            font-family:sans-serif,'Malgun Gothic';
+            font-size:13px;
+        }
+        table{
+            border-collapse:collapse;/* 셀의 테두리선을 겹쳐서 표시*/
+            border-spacing:0 /* 테이블 셀요소의 테두리 간격지정*/
+        }
+
+        input{
+            border:1px solid #b0b0b0;
+            padding:3px 5px 4px;
+            color:#979797;
+            width:190px;
+        }
+
+        fieldset,img{
+            border:0;
+        }
+
+        address,caption,cite,code,dfn,th,var{
+            font-style:normal;
+            font-weight:normal;
+        }
+
+        ol,ul{
+            list-style:none;
+        }
+
+        caption,th{ /* 가운데 정렬되므로 ...*/
+                text-align:left;
+        }
+
+        h1,h2,h3,h4,h5{
+            font-size:100%;
+            font-weight:normal;
+        }
+
+        q:before,q:after{
+            content:'';
+        }
+        abbr,acronym{
+            border:0;
+        }
+
+        .container{ position:relative;}
+        .content{position:relative;
+                 width:600px;
+                 margin:0 auto;
+                 background-color:#ddd;
+        }
+
+        h1{margin:0;padding:20px;font-size:40px;text-align:left;color:#000;}
+
+        a{ text-decoration:none;}
+
+        .menu{
+            padding:0;
+            margin:0 0 10px 0;/* margin-bottom:10px */
+            position:relative;
+        }
+        .menu li { font-size:50px;display:block;}
+            .menu li a {
+                color: transparent;
+                display: block;
+                text-transform: uppercase;
+                text-shadow: 0px 0px 4px #fff;
+                letter-spacing: 1px;
+                transition: all 0.2s ease-in-out
+            }
+        .menu:hover li a{text-shadow:0px 0px 10px #fff;}
+        .menu li a:hover{color:#fff;text-shadow:0px 0px 1px #fff;padding-left:30px;}
+        
+
+    </style>
+
+    </head>
+
+<body>
+
+    <div class="container">
+        <h1>흐림효과 메뉴페이지</h1>       
+        <div class="content">
+            <ul class="menu">
+                <li><a href="#">About</a></li>
+                <li><a href="#">Illustrations</a></li>
+                <li><a href="#">Photography</a></li>
+                <li><a href="#">Web&nbsp;Design</a></li>
+                <li><a href="#">Personal&nbsp;Projects</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="#">Help</a></li>
+                
+            </ul>
+        </div>
+
+    </div>
+
+</body>
+
+</html>

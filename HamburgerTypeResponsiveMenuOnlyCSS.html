@@ -1,0 +1,132 @@
+<!doctype html>
+<html>
+<head>
+
+    <title>네비게이션메뉴 Menu</title>
+
+    <script src="https://use.fontawesome.com/releases/v5.2.0/js/all.js"></script>
+    <script type="text/javascript" src="./js/jquery/jquery.js"></script>
+    <script type="text/javascript" src="./js/jquery/external/jquery.alphanumeric.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Bowlby+One+SC&display=swap" rel="stylesheet">
+    <script type="text/javascript">
+
+      
+
+    </script>
+
+    <style type="text/css">
+        *{
+            margin:0;
+            padding:0;
+        }
+
+        input[type=checkbox],.show-menu{
+            display:none;
+        }
+
+        body {
+            background: url('./img/BackGroundHighSolution2.jpg') no-repeat;
+            background-size:cover;
+            
+        }
+
+        .wrapper{
+            max-width:960px;
+            margin:0 auto;
+            color:#ecf0f1;
+            font-family:Arial,sans-serif;
+        }
+
+        .wrapper h1{
+            padding:20px;
+            text-align:center;
+        }
+
+        .wrapper ul li{
+            list-style:none;
+        }
+
+            .wrapper ul li a {
+                text-decoration:none;
+            }
+
+
+    .navigation{
+        display:flex;
+        list-style-type:none;
+    }
+
+    .navigation li{
+        background:#1a1a1a;
+        flex:1;
+        transition:all 0.5s ease;
+    }
+
+    .navigation li a{
+        display:block;
+        color:#fff;
+        padding:20px 0px;
+        text-align:center;
+    }
+    .navigation li:not(:first-child){
+        border-left:2px solid #ecf0f1;
+    }
+
+        .navigation li a:hover{
+            background:#333333;
+            flex:1.1;
+        }
+        /*giving style for mobile*/
+        @media screen and (max-width:600px){
+            /* styleing our show menu button*/
+            .show-menu{
+                background:#342a2a;
+                display:flex;
+                cursor:pointer;
+                padding:20px 0;
+                justify-content:center;
+            }
+            /* hiding our navigation */
+            .navigation {
+                display: none;
+            }
+
+            /* displaying our list items as block elements; if checkbox is */
+            input[type=checkbox]:checked ~ .navigation{
+                display:block;
+            }
+
+            /* removing border left from the pseudo class*/
+            .navigation li:not(:first-child){
+                border:0;
+            }
+            /* giving margin to list item, excluding last list item */
+
+            .navigation li:not(:last-child){
+                margin:2px 0;
+            }
+
+        }       
+        
+        
+
+    </style>
+
+    </head>
+<body>
+    <div class="wrapper">
+        <h1>Responsive Horizontal Navigation Bar</h1>
+        <label type="checkbox" for="show-menu" class="show-menu">ShowMenu</label> 
+        <input type="checkbox" id="show-menu" />
+        <ul class="navigation">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="#">Plans</a></li>
+            <li><a href="#">FAQ</a></li>
+        </ul>
+
+    </div>
+</body>
+
+</html>

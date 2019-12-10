@@ -1,0 +1,147 @@
+<!doctype html>
+<html>
+<head>
+	<title>TabMenu_올라오는메뉴	</title>
+
+	<script type="text/javascript" src="./js/jquery/jquery.js"></script>
+	<script type="text/javascript" src="./js/jquery/external/jquery.alphanumeric.js"></script>
+
+
+	<script type="text/javascript">
+
+    $(document).ready(function(){
+
+
+
+    });
+		
+   
+	</script>
+	<style type="text/css">
+
+
+	body {		
+		
+		font-family:"Open Sans","Noto Sans KR",sans-serif;
+		font-size:1.2em;
+	}
+
+	/*.container{
+		position:fixed;			
+		top:50%;
+		left:50%;			
+		transform:translate(-50%,-50%);
+		display:flex;
+		justify-content:center;
+		align-items:center;
+	}*/
+	.radioGroup{
+		position:fixed;		
+		display:inline-flex;
+		border:1px solid ;		
+		background-color:#F4BB00;
+		color:white;
+		overflow:hidden;
+		border-radius:9px;		
+	}
+	
+	input[type="radio"] {
+		display: none;
+	}
+
+        input[type="radio"] + label {
+            /*margin: 0 ;*/
+            /*padding: 0 0 20px 0;*/
+            position: relative;
+            /*display: inline-block;*/
+            overflow: hidden;
+            color: black;
+            padding: 10px 20px 10px;
+            font-size: 14px;
+            font-weight: bold;
+            vertical-align: bottom;
+            cursor: pointer;
+            z-index: 1;
+            border-bottom: 10px solid #F4BB00;
+            background: #ffffff;
+            /*background: linear-gradient(top, #ffffff 35%, #d8d8d8 60%);*/
+            background: linear-gradient(to bottom, #fff 25%,#d9d9d9 80%);
+            /*background: -moz-linear-gradient(top, #ffffff 35%, #d8d8d8 60%);
+                background: -webkit-gradient(linear, left top, left bottom, color-stop(30%,#ffffff), color-stop(100%,#d8d8d8));
+                background: -webkit-linear-gradient(top, #ffffff 35%,#d8d8d8 100%);
+                background: -o-linear-gradient(top, #ffffff 35%,#d8d8d8 100%);
+                background: -ms-linear-gradient(top, #ffffff 35%,#d8d8d8 100%);
+                background: linear-gradient(to bottom, #ffffff 35%,#d8d8d8 100%);
+                filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#d8d8d8',GradientType=0 );*/
+        }
+
+            input[type="radio"] + label:hover, input[type="radio"]:checked + label {
+                color: white;
+            }
+		
+		
+	input[type="radio"] + label:before {
+		content: '';
+		/*color: white;*/		
+		display: block;
+		width: 100%;
+		height: 100%;
+		background: #F4BB00;		
+		position: absolute;
+		left: 0;
+		top: 30px; /* 숨다 말았음*/
+		box-shadow: 2px 2px 10px rgba(0,0,0,1.1) inset;
+		/*border-radius: 15px 15px 0 0 / 12px 12px;*/
+		border-radius:15px 15px 0 0 ;
+		-webkit-transition: top .3s; 
+		-moz-transition: top .3s;
+		transition: top .3s;
+		
+	}
+
+	
+	input[type="radio"] + label:hover:before {
+		top:0;
+		z-index:-1;				
+	}
+
+	input[type="radio"]:checked + label::before{
+		top: 0px;
+		z-index:-1;
+	}
+	
+		
+	</style>
+
+</head>
+<body>
+
+	
+		<div class="radioGroup">
+			<input type="radio" name="options" id="option1" />
+			<label for="option1">카이저센터</label>
+
+			<input type="radio" name="options" id="option2" />
+			<label for="option2">메뉴테스트&nbsp;</label>
+
+			<input type="radio" name="options" id="option3" />
+			<label for="option3">Joynoly관리&nbsp;</label>
+
+			<input type="radio" name="options" id="option4" />
+			<label for="option4">중대작품들</label>
+
+			<input type="radio" name="options" id="option5" />
+			<label for="option5">ITS</label>
+
+			<input type="radio" name="options" id="option6" />
+			<label for="option6">ETC.&nbsp;</label>
+
+			<input type="radio" name="options" id="option7" />
+			<label for="option7">관리자</label>
+			<!--<span class="indicator"></span>-->
+		</div>	
+
+
+</body>
+
+</html>

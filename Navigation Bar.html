@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+
+    <title>네비게이션메뉴 테스트</title>
+    <script type="text/javascript" src="./js/jquery/jquery.js"></script>
+    <script type="text/javascript">
+      
+
+    </script>
+    <style type="text/css">
+        body{ margin:0; background:#222;  font-family:'Work Sans',sans-serif; font-weight:300;
+        }
+        .container{
+            width:80%;
+            margin:0 auto;
+        }
+
+        header{   background:#55d6aa;     }
+
+        header::after{
+            content:'';
+            display:table;
+            clear:both;
+        }
+        .logo{ float:left; }
+        nav{ float:right;    }
+        nav ul{margin:0;padding:0;list-style:none; }
+        
+        nav li{ display:inline-block;margin: 25px 35px 0px;position:relative;}
+
+            nav a::before {
+                content: '';
+                display: block;
+                height: 5px;
+                position: absolute;
+                top: -10px;
+                /*left: 0px;*/
+                width: 0%;
+                background-color: #444;
+                /*transition:all ease-in-out .25s;*/
+                transition: all  .25s;
+            }
+
+            nav a:hover::before{
+                width:100%;
+            }
+        nav a{color:#444;text-decoration:none;text-transform:uppercase;}
+        nav a:hover{color:#fff;}
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <img src="./img/eMobile_off.gif" alt="logo" class="logo" />
+
+            <nav>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Pricing</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Contact</a></li>                    
+                </ul>
+            </nav>
+
+        </div>
+
+    </header>
+
+
+</body>
+
+</html>

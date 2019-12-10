@@ -1,0 +1,89 @@
+<!doctype html>
+<html>
+<head>
+    <title>Hover Effict</title>
+
+    <script type="text/javascript" src="./js/jquery/jquery.js"></script>
+    <script type="text/javascript" src="./js/jquery/external/jquery.alphanumeric.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pretty-checkbox@3.0/dist/pretty-checkbox.min.css" />
+    <link rel="stylesheet" hhref="'https://fonts.googleapis.com/css?famly=Noto+Sans+KR:100,300,400,500,700,900)" />
+    <style type="text/css">
+        body{
+            font-size:24px;
+            /*font-family:sans-serif;*/
+            font-family:'Monotype Corsiva',sans-serif;
+            background:linear-gradient(to right,#DCE35B,#45B649);
+
+        }
+
+        ul.navi{
+            width:700px;
+            padding:0;
+            background-color:#fff;
+            border-radius:5px;
+            box-shadow:0 0 20px rgba(0,0,0,0.7);
+            margin:0;
+            padding-top:10px;
+            position:absolute;
+            top:30%;
+            left:50%;
+            transform:translate(-50%,-50%);
+        }
+
+        ul.navi li{
+            list-style:none;
+            /*display:inline-block;*/
+            float:left;
+            overflow:hidden;
+        }
+        ul.navi li a{
+            color:#45B649;
+            text-decoration:none;
+            margin:0 17px;
+            display:block;
+            position:relative;
+        }
+
+            ul.navi li a::before {
+                content: attr(data-link-alt);
+                position: absolute;
+                left: 0;
+                opacity: 0;
+                top: 100%; /* bottom : 0 와 동일*/
+                transition: 0.5s;
+            }
+
+        ul.navi li a span{
+            color:#000;
+            display:block; /* span 은 inline 요소이므로 */
+            transition:0.5s;
+        }
+
+        ul.navi li a:hover span{
+            transform:translateY(-120%); /* 밑에서 위로 (세로축으로 )*/
+        }
+        ul.navi li a:hover:before{
+            opacity:1;
+            top:-3px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <ul class="navi">
+
+            <li><a href="#" data-link-alt="메일"> <span>메일</span></a></li>
+            <li><a href="#" data-link-alt="카폐"> <span>카폐</span></a></li>
+            <li><a href="#" data-link-alt="블로그"> <span>블로그</span></a></li>
+            <li><a href="#" data-link-alt="지식iN"> <span>지식iN</span></a></li>
+            <li><a href="#" data-link-alt="쇼핑"> <span>쇼핑</span></a></li>
+            <li><a href="#" data-link-alt="Pay"> <span>Pay</span></a></li>
+            <li><a href="#" data-link-alt="사전"> <span>사전</span></a></li>
+            <li><a href="#" data-link-alt="뉴스"> <span>뉴스</span></a></li>
+        </ul>
+    </div>
+
+</body>
+</html>

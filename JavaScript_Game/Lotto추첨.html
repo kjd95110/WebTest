@@ -1,0 +1,127 @@
+<!doctype html>
+<html>
+<head>
+<title>Lotto</title>
+<script type="text/javascript" src="../js/jquery/jquery.js"></script>
+<script type="text/javascript">
+
+$(document).ready(function(){
+
+
+var candy=Array(45).fill().map(function(element,index){
+    return index+1;
+});
+
+console.log(candy);
+
+var supple=[];
+
+while(candy.length > 0){
+    var mynum=candy.splice(Math.floor(Math.random() * candy.length ),1)[0];
+    supple.push(mynum);
+
+}
+
+console.log(supple);
+
+
+var bonus=supple[supple.length-1];
+var choicenum=supple.slice(0,6);
+
+// .sort(function(p,c){return c-p) }) //오르차순으로 정렬
+console.log('choice num ' + choicenum , choicenum.sort(function(p,c){return p-c}) );
+console.log('bonus  ' + bonus );
+
+//var resultwindow=document.getElementById('resultwindow');
+var resultwindow=document.querySelector('#resultwindow');
+
+setTimeout(() => {        
+    Coloring(choicenum[0],resultwindow);
+      
+    }, 1000);
+
+    setTimeout(() => {        
+        Coloring(choicenum[1],resultwindow);   
+    }, 2000);
+
+    setTimeout(() => {        
+        Coloring(choicenum[2],resultwindow);
+    }, 3000);
+
+    setTimeout(() => {        
+        Coloring(choicenum[3],resultwindow);
+    }, 4000);
+
+    setTimeout(() => {        
+        Coloring(choicenum[4],resultwindow);
+    }, 5000);
+
+
+    setTimeout(() => {        
+        Coloring(choicenum[5],resultwindow);
+    }, 6000);
+
+    setTimeout(() => {        
+        //var bonuscell=document.getElementsByClassName('bonus')[0];
+        var bonuscell=document.querySelector('.bonus');
+        Coloring(bonus,bonuscell);
+       
+    }, 7000);
+
+    function Coloring(num,result){
+        var ball=document.createElement('div');
+        ball.textContent=num;
+        ball.style.display='inline-block';
+        ball.style.border='1px solid black';
+        ball.style.borderRadius='50px';
+        ball.style.width='40px';
+        ball.style.height='40px';
+        ball.style.textAlign='center';
+        ball.style.marginRight='10px';
+        ball.style.fontSize='30px';
+        var background;
+        if(num<=10){
+            background='red';
+        }else if(num<=20){
+            background='orange';        
+        }else if(num<=30){
+            background='yellow';
+        }else if(num<=40){
+            background='blue';
+        }else if(num<=50){
+            background='green';
+        }
+        ball.style.background=background;
+        result.append(ball); 
+    }
+
+
+// var bonusball=document.createElement('div');
+// bonusball.textContent=bonus;
+// resultwindow.append(bonusball);
+
+    
+});
+
+</script>
+
+<style type="text/css">
+    body{
+        background-color: peru;
+    }
+    
+    h1{
+        color:#fff;
+    }
+    </style>
+
+</head>
+
+<body>
+<span>당첨숫자</span>
+    <div id="resultwindow"></div>
+    <span>보너스</span>
+    <div class="bonus"></div>
+</body>
+
+</html>

@@ -1,0 +1,69 @@
+<!doctype html>
+<html>
+<head>
+	<title>VerticalAlign연습</title>
+	<script type="text/javascript" src="./js/jquery/jquery.js"></script>
+	<script type="text/javascript">
+
+
+
+	</script>
+	<style type="text/css">
+		body{
+			background-color:#ddd;
+		}
+		.wrapper{
+			background-color:blanchedalmond;
+			width:960px;
+			height:400px;
+			margin:0 auto;
+			line-height:400px;
+			text-align:center;
+		}
+		.box{
+			display:inline-block;
+			width:100px;
+			height:100px;
+			background-color:green; 			
+			vertical-align:bottom;
+		}
+
+		.box2{
+			display:inline-block;
+			width:110px;
+			height:110px;
+			background-color:yellow;
+			vertical-align:bottom;
+		}
+
+		.kk2{
+			
+			/*vertical-align:text-top;*/
+			/*vertical-align:top;*/
+			display:block;
+			width:200px;
+			height:50px;			
+			background:red;
+			border:solid 1px #b6ff00;
+		}
+	</style>
+	<!-- Inline 속성에 vertical-align 속성이 먹는다  -->
+	<!-- 기본값 baseline -->
+</head>
+
+<body>
+	<div class="wrapper">
+		<div class="box"></div>
+		<span class="k1">11111111</span>
+		<div class="box"></div>
+
+	</div>
+
+
+	<div class="box2"></div>
+	<span class="kk2">22222222</span>
+	<div class="box2"></div>
+
+
+</body>
+</html>

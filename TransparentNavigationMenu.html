@@ -1,0 +1,123 @@
+<!doctype html>
+<html>
+<head>
+    
+    <title>TransparentNavigation Menu with CSS</title>
+
+    <script type="text/javascript" src="./js/jquery/jquery.js"></script>
+    <script type="text/javascript" src="./js/jquery/external/jquery.alphanumeric.js"></script>
+    <script type="text/javascript">
+    </script>
+
+    <style type="text/css">
+        body,html {
+            margin:0;
+            padding:0;
+            font-family:Arial;
+        }
+        body {           
+            color: #fff;
+            width: 100%;
+            height: 100vh;
+            background-color: #ddd;
+            border: 0;
+            padding: 0;
+            background-image: url('./img/BackGroundHighSolution10.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            min-height: 100%;
+        }
+
+      
+
+        .menu > ul {
+            margin: 0;
+            display: flex;
+            list-style: none;
+            position: absolute;
+            top: 20%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+        }
+
+        .menu ul ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+       
+        .menu ul li a {
+            text-decoration: none;
+            color: #fff;
+            display: block;
+            width: 120px;
+            height: 40px;
+            background-color: #000;
+            opacity: .7;
+            line-height: 40px;
+            text-align: center;
+            margin-left: 2px;
+            
+        }
+
+
+        .menu ul > li:hover > a {          
+            background: green;
+            color: wheat;
+        }
+       
+        .menu > ul ul {
+            display: none;   
+            position:absolute;
+            
+        }
+     
+        .menu > ul > li:hover > ul {
+            display: block;
+        }
+       
+
+    </style>
+</head>
+<body>
+    <nav class="menu">
+
+        <ul>
+            <li>
+                <a href="#">Home</a>
+
+            </li>
+            <li>
+                <a href="#">About</a>
+                <ul>
+                    <li><a href="#">Our Team</a></li>
+                    <li><a href="#">Camp Sites</a></li>
+                    <li><a href="#">Mission&nbsp;Vision</a></li>
+                    <li><a href="#">Resources</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">Things to do</a>
+                <ul>
+                    <li><a href="#">Activities</a></li>
+                    <li><a href="#">Parks</a></li>
+                    <li><a href="#">Shops</a></li>
+                    <li><a href="#">Events</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">Contact</a>
+                <ul>
+                    <li><a href="#">Map</a></li>
+                    <li><a href="#">Deirections</a></li>
+                </ul>
+            </li>
+            <li><a href="#">News</a></li>
+        </ul>
+
+    </nav>
+
+</body>
+
+</html>

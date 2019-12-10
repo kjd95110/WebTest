@@ -1,0 +1,66 @@
+<!doctype html>
+<html>
+<head>
+    
+    <title>Weather Test</title>
+    <script src="https://use.fontawesome.com/releases/v5.2.0/js/all.js"></script>
+    <script type="text/javascript" src="./js/jquery/jquery.js"></script>
+    <script type="text/javascript" src="./js/jquery/external/jquery.alphanumeric.js"></script>
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+            
+            FindWeather(); 
+
+        });
+
+
+        function FindWeather() {
+
+            var API_KEY = 'c5d8ff199d3834147e93c125a3feb5be';
+            var city = "Busan";
+
+            var apiURI = "http://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=" + API_KEY;
+
+            $.ajax({
+                url: apiURI,
+                dataType: "json",
+                type: "GET",
+                async: "false",
+                success: function (resp) {
+                    console.log(resp);
+                    console.log("현재온도 : " + (resp.main.temp - 273.15));
+                    console.log("현재습도 : " + resp.main.humidity);
+                    console.log("날씨 : " + resp.weather[0].main);
+                    console.log("상세날씨설명 : " + resp.weather[0].description);
+                    console.log("날씨 이미지 : " + resp.weather[0].icon);
+                    console.log("바람   : " + resp.wind.speed);
+                    console.log("나라   : " + resp.sys.country);
+                    console.log("도시이름  : " + resp.name);
+                    console.log("구름  : " + (resp.clouds.all) + "%");
+                    return false;
+                },            
+
+                error: function (xhr, status, error) {
+
+                    var responseText = $.parseJSON(xhr.responseText);
+                    alert('처리도중 오류가 발생했습니다!  ');
+                    return false;
+                }
+            });
+
+            return false;
+        }
+
+
+        
+
+    </script>
+
+    </head>
+
+<body>
+
+</body>
+
+</html>

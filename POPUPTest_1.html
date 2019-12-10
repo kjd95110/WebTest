@@ -1,0 +1,90 @@
+﻿<!doctype html>
+
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>PopupTest</title>
+	<script type="text/javascript" src="./js/jquery/jquery.js"></script>
+	<script type="text/javascript">
+
+
+
+	</script>
+	<style type="text/css">
+
+		body{
+			padding:40px;
+			background-color:#f5f7fb;
+		}
+
+		.btn{
+			display:block;
+			width:200px;
+			background:#4ac4f3;
+			text-decoration:none;
+			text-align:center;
+			line-height:50px;
+			color:#fff;
+			border-radius:50px;
+		}
+		.popup{
+			opacity:0;
+			position:absolute;
+			top:50%;
+			left:50%;
+			transform:translate(-50%,-50%);
+			width:500px;
+			height:500px;
+			
+			box-shadow:0px 0px 10px rgba(0,0,0,0.5);
+			background-color:#fff;
+			border-radius:5px;
+			text-decoration:none;
+			text-align:right;
+			padding:20px;
+			transition:all 0.5s;
+			z-index:3;
+			
+		}
+		.popup a{
+			text-decoration:none;
+			color:gray;
+		}
+
+		.popup:target{
+			opacity:1;
+		}
+/*.dim 은 팝업창이 열릴때 배경이 어둡게선택하여 다른항목들이 선택못하게 막아주는 역할 */
+		.popup:target + .dim { /* 팝업의 타겟을 선택했을때 형제인 .dim 을 지정함 */
+			opacity:1;
+			z-index:2;
+			
+		}
+
+		.dim{
+			position:absolute;
+			left:0;
+			top:0;
+			width:100%;
+			height:100%;
+			background:rgba(0,0,0,0.6);
+			opacity:0;
+			z-index:-1;
+		}
+
+		/* 치명적인 단점은 앵커a로 하는거라서 그런지는 모르겠지만 주소에서 #pop1 으로 주소가
+			바뀐다는 것이다.
+			이 팝업창은 특정기능을 하는 팝업창이라기 보다는
+			그냥 알림기능의 단순기능만있는 팝업창으로 활용해야겠다.
+		*/
+	</style>
+</head>
+<body>
+	<a href="#pop1" class="btn" >팝업열기</a>
+	<div class="popup" id="pop1">
+		<a href="#">닫기</a>
+	</div>
+	<div class="dim"></div>
+</body>
+</html>
+

@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+<head>
+	<title>Transition-애니메이션	</title>
+
+	<style type="text/css">
+
+		body{
+			margin:0;
+			padding:50px;
+		}
+		div{
+			width:100px;
+			height:100px;
+			border:1px solid red;
+			transition-property:background,border-radius;
+			transition-duration:.3s;
+			transition-delay:.3s;
+		}
+
+
+		div:hover{
+			border-radius:100px;
+			background:red;
+		}
+
+		/* 
+			transition:all 1s
+
+			all-> 높이와 너비 변화모두 에니메이션효과를 준다.1초동안
+
+		*/
+
+	</style>
+</head>
+<body>
+
+	<div></div>
+
+</body>
+</html>

@@ -1,0 +1,126 @@
+<!doctype html>
+<html>
+<head>
+    <title>2차메뉴만들기</title>
+    <script type="text/javascript" src="./js/jquery/jquery.js"></script>
+    <script type="text/javascript">
+
+
+
+    </script>
+    <style type="text/css">
+        * {
+            padding: 0px;
+            margin: 0px;
+            list-style: none;
+        }
+
+        body {
+            line-height: 1;
+            font-family: "Open Sans","Noto Sans KR",sans-serif;
+            font-size: 1em;
+        }
+
+        .menu-box-1  ul {
+            background:#dfdfdf;
+            display:inline-block;
+            border-radius:10px;
+            padding:0px 10px;
+            background-color:#dfdfdf;
+            margin-top:20px;
+        }
+
+            .menu-box-1 ul ul {
+                padding: 0px;
+                margin: 0px;
+            }
+
+        .menu-box-1 {
+            text-align:center;
+        }
+            .menu-box-1 > ul > li {
+               display:inline-block;
+               
+            }
+                .menu-box-1  ul > li > a {
+                    padding: 10px 20px;
+                    display: block;
+                    text-decoration: none;
+                    color: black;
+                    border-radius: 10px;
+                }
+
+            .menu-box-1  ul > li:hover > a{
+                background-color:black;
+                color:wheat;
+            }
+
+            .menu-box-1 > ul ul{
+                display:none;
+                position:absolute;
+                
+            }
+            .menu-box-1 > ul > li:hover > ul{
+                display:block;
+            }
+    </style>
+    </head>
+<body>
+
+    <nav class="menu-box-1">
+        <ul>
+            <li><a href="#">1차 메뉴 아이템1</a>
+                <ul>
+                    <li><a href="#">2차 메뉴 아이템 1</a></li>
+                    <li><a href="#">2차 메뉴 아이템 2</a></li>
+                    <li><a href="#">2차 메뉴 아이템 3</a></li>
+                    <li><a href="#">2차 메뉴 아이템 4</a></li>
+                    <li><a href="#">2차 메뉴 아이템 5</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">1차 메뉴 아이템2</a>
+                <ul>
+                    <li><a href="#">2차 메뉴 아이템 1</a></li>
+                    <li><a href="#">2차 메뉴 아이템 2</a></li>
+                    <li><a href="#">2차 메뉴 아이템 3</a></li>
+                    <li><a href="#">2차 메뉴 아이템 4</a></li>
+                    <li><a href="#">2차 메뉴 아이템 5</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">1차 메뉴 아이템3</a>
+                <ul>
+                    <li><a href="#">2차 메뉴 아이템 1</a></li>
+                    <li><a href="#">2차 메뉴 아이템 2</a></li>
+                    <li><a href="#">2차 메뉴 아이템 3</a></li>
+                    <li><a href="#">2차 메뉴 아이템 4</a></li>
+                    <li><a href="#">2차 메뉴 아이템 5</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">1차 메뉴 아이템4</a>
+                <ul>
+                    <li><a href="#">2차 메뉴 아이템 1</a></li>
+                    <li><a href="#">2차 메뉴 아이템 2</a></li>
+                    <li><a href="#">2차 메뉴 아이템 3</a></li>
+                    <li><a href="#">2차 메뉴 아이템 4</a></li>
+                    <li><a href="#">2차 메뉴 아이템 5</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">1차 메뉴 아이템5</a>
+                <ul>
+                    <li><a href="#">2차 메뉴 아이템 1</a></li>
+                    <li><a href="#">2차 메뉴 아이템 2</a></li>
+                    <li><a href="#">2차 메뉴 아이템 3</a></li>
+                    <li><a href="#">2차 메뉴 아이템 4</a></li>
+                    <li><a href="#">2차 메뉴 아이템 5</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+
+</body>
+</html>
+

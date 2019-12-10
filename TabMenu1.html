@@ -1,0 +1,101 @@
+<!doctype html>
+<html>
+<head>
+	<title>TabMenu_Test	</title>
+
+	<script type="text/javascript" src="./js/jquery/jquery.js"></script>
+	<script type="text/javascript" src="./js/jquery/external/jquery.alphanumeric.js"></script>
+
+
+	<script type="text/javascript">
+
+    $(document).ready(function(){
+
+    	$('#tab02').prop('checked', true);
+
+    });
+
+	</script>
+	<style type="text/css">
+
+		.tab_content{
+			background-color:#ddd;
+			width:100%;			
+			text-align:center;/* ÀÚ½ÄÀÌ inline-blockÀÏ¶§ ºÎ¸ğ¿¡ text-align:centerÁÖ¸é Áß°£Á¤·ÄµÊ */
+			/*margin-left*/
+		}
+		input[type="radio"] {
+			display:none;
+			
+		}
+		.tabs{
+            position:absolute;
+            top:50%;
+            left:50%;
+            transform:translate(-50%,-50%);			
+            width:800px;            
+		}
+
+	   input[type="radio"] + label {
+			
+			display:inline-block;
+			margin:0 auto 0 auto;
+			margin-top:30px;
+			padding:20px;
+			background:#ccc;
+			font-size:14px;
+			cursor:pointer;				
+
+		}
+
+		input[type="radio"]:checked + label {
+			
+			background:#aaa;
+			color:#000;
+		}
+		.conbox{
+			
+			width:500px;			
+			background:#eee;
+            height:500px;
+			
+			display:none;
+				
+		}
+
+		.left{ margin-left:30px;}
+		 .tabs input[id="tab01"]:checked ~ #ddd1{display:block;margin:0 auto;}
+		 .tabs input[id="tab02"]:checked ~ #ddd2{display:block;margin:0 auto;}
+		 .tabs input[id="tab03"]:checked ~ #ddd3{display:block;margin:0 auto;}
+
+		 
+
+		
+	</style>
+</head>
+
+<body>
+
+	<div class="tab_content">
+		<div class="tabs">
+
+			<input type="radio" name="tabmenu" id="tab01" />
+			<label for="tab01" class="left">ÄÁÅÙÃ÷ÅÇ¹öÆ°01</label>
+
+			<input type="radio" name="tabmenu" id="tab02" />
+			<label for="tab02" class="left">ÄÁÅÙÃ÷ÅÇ¹öÆ°02</label>
+
+			<input type="radio" name="tabmenu" id="tab03" />
+			<label for="tab03" class="left">ÄÁÅÙÃ÷ÅÇ¹öÆ°03</label>
+
+			<div id="ddd1" class="conbox con1">ÄÁÅÙÃ÷ÅÇ ³»¿ë1</div>
+			<div id="ddd2" class="conbox con2">ÄÁÅÙÃ÷ÅÇ ³»¿ë2</div>
+			<div id="ddd3" class="conbox con3">ÄÁÅÙÃ÷ÅÇ ³»¿ë3</div>
+		</div>
+		
+	</div>
+	
+	
+</body>
+
+</html> 

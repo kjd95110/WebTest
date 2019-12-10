@@ -1,0 +1,180 @@
+﻿<!doctype html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>숫자야구순서도.</title>
+
+<script type="text/javascript" src="../js/jquery/jquery.js"></script>
+
+<script type="text/javascript">
+
+/* 
+
+    document는 window내에 브라우저가 지원하는 객체이고
+    html 태그를 가르키고 있고,html tag를 자바스크립트 번역해주는
+    통역사같은 역할 -> DOM객체
+    그안에 브라우저가 Document를 지원해주시면서 body를 선택할수있게 해주고
+    CreateElement로 tag를 ㅅㅐ로 만들수 있게해주고 Apeend로 새로추가해주는 역할.
+
+
+*/
+
+
+   /*
+    크롬에서 F12  개발자모드에서
+    Console창에서
+    document.body
+ ** 중요함 **
+    console.dir(document.body) **
+
+    body
+
+    children확인할것.
+
+    참고로 console.log(document.body) ->이건 안됨.
+
+    */
+    /*
+        //콜백함수-나중에 실행하는 함수?
+
+        다른함수의 인자로 넘길수있다.리턴값으로,변수에 함수를 대입할수도있다.
+        이를 1급객체라 한다.
+        다른 함수를 호출할때 인자로 넘긴수있다.
+
+        setTimeout(function(){
+            console.log('heelo');
+        },0);
+
+
+        Exam_sample
+
+        function fakesetTimeout(callback,delay){
+            callback();
+        }
+
+        fakeSetTimeout(function(){
+            console.log();
+        },0);
+
+    샘플예제의 fakesetTimeout은 동기적으로 (순차적으로)콜백을실행되고
+    진짜 setTimeout은 비동기적으로  콜백을 실행한다.
+
+    콜백은 나중에 실행하라고 인자로서 다른 함수에게넘겨주는데
+    콜백을 받은 함수가 받은콜백을 실행한다.
+    외부에 Titmer를 이용하는 setTimeout을 이용한다거나,
+    서버에서 데이타를 가지고 온다거나 외부API에 콜백함수를 인자로 넘긴다면
+    콜스택에서 실행하는것이  아니라 큐에서 실행될수도있다.
+
+    대표적인예로 button에 onclick 이벤트를 넣을때.
+     돔에다가 넣는것이다. 이것은 자바스크립트 외부에 있는 다른세상인것.
+     돔에있는거에도 특정버튼에다가 콜백을 연결시켜준거고 큐에 들어간다.
+
+    */ 
+
+
+    $(document).ready(function(){
+
+        var body = document.body;
+        var numcandy = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+        var numarray = [];
+        
+        
+        numarray = numberChoice(numcandy);
+        console.log(numarray);
+
+        var wrongcnt=0;
+
+        var title=document.createElement('h1');
+        title.textContent="숫자야구!!";
+        body.append(title);
+
+        var form = document.createElement('form');
+        document.body.append(form);
+
+        var input=document.createElement('input');
+        input.maxLength=4;
+        form.append(input);
+        var button=document.createElement('button');
+        button.textContent='실행';
+        form.append(button);
+      
+
+        form.addEventListener('submit',function callback(event){
+            event.preventDefault(); // 기본적인 submit동작 Refresh작동을 막아준다.
+
+            var answer=input.value;
+            console.log(answer);
+            if(answer==numarray.join('')){
+                //console.log('홈런');
+                title.textContent='홈런';
+                input.value='';
+                input.focus();
+                 numcandy=[1,2,3,4,5,6,7,8,9]
+                numarray = numberChoice(numcandy);
+                console.log(numarray);
+            }else{
+                wrongcnt+=1;
+                if(wrongcnt >10){
+                    title.textContent='10번 넘게틀려서 실패:' + numarray.join('.') ;
+                }
+                var ansArray=answer.split('');
+                var strike=0;
+                var ball=0;
+                for (var i = 0; i <= 3; i += 1) {
+                    if (Number(ansArray[i]) == numarray[i]) {
+                        strike++;
+                    } else {
+                        var tempstr = numarray.join('');
+                        if (tempstr.indexOf(Number(ansArray[i])) > -1) {
+                            ball += 1;
+                        }
+                    }
+                }
+
+                title.textContent= strike + 'strike' + ball + 'ball ' + " 입니다.";
+
+            }
+
+        });
+                //numarray.join('') 배열안에요소를 합쳐준다.
+                // k="1234" k.split('') -> k[0]='1' ,k[1]='2',k[2]='3',k[3]='4'
+    });
+
+
+    function numberChoice(numcandy) {
+
+        var numarray = [];
+        for (let i = 0; i < 4; i += 1) {
+            //var candy1=  numcandy.pop(); //마지막꺼부터 뽑아나감.
+            //var candy1=  numcandy.shift();  //앞에서 부터 뽑아나감. 1,2,3,4
+            //var candy1= numcandy.splice(3,1) ; // splice(위치,갯수) 3,1 뽑힌것은 지워짐.
+            var candy1 = numcandy.splice(Math.floor(Math.random() * (9 - i)), 1)[0];
+            //numarray.push(candy1); //앞에서부터 하나씩 푸쉬.
+            //numarray.unshift(candy1);//앞에서부터 4,3,2,1 (맨앞에 1 두번째 2 세번째 3 네번째4)  
+
+            numarray.push(candy1);
+        }
+        return numarray;
+
+    }
+
+
+</script>
+<style type="text/css">
+body{
+    background-color: peru;
+}
+
+h1{
+    color:#fff;
+}
+</style>
+
+</head> 
+
+<body>
+    
+
+</body>
+
+</html> 

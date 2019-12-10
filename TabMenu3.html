@@ -1,0 +1,84 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>TabMenu3_Test	</title>
+
+    <script type="text/javascript" src="./js/jquery/jquery.js"></script>
+    <script type="text/javascript" src="./js/jquery/external/jquery.alphanumeric.js"></script>
+
+
+    <script type="text/javascript">
+
+        $(function () {
+
+            $(".tab h3 a").click(function () {
+                $(".category1").removeClass("on");
+                $(".category2").removeClass("on");
+                $(".category3").removeClass("on");
+
+                $(this).parent().parent().addClass("on");
+            })
+
+            $(".tab h3 a").focusin(function () {
+                $(".category1").removeClass("on");
+                $(".category2").removeClass("on");
+                $(".category3").removeClass("on");
+
+                $(this).parent().parent().addClass("on");
+            })
+
+        });
+   
+    </script>
+    <style type="text/css">
+    
+        .tab .description{
+            display:none;
+        }
+
+        .tab .description.on{
+            display:block;
+        }
+
+    </style>
+    </head>
+<body>
+
+    <!--<div class="cate tab1">
+        <h3></h3>
+        <div class="desc"></div>
+    </div>
+
+    <div class="cate tab2">
+        <h3></h3>
+        <div class="desc"></div>
+    </div>
+
+    <div class="cate tab3">
+        <h3></h3>
+        <div class="desc"></div>
+    </div>
+
+    <div class="title_area">
+
+        <ul>
+            <li><a href="#"></a></li>
+            <li><a href="#"></a></li>
+            <li><a href="#"></a></li>
+            <li><a href="#"></a></li>
+            <li><a href="#"></a></li>
+        </ul>
+
+    </div>
+
+    <div class="desc desc1"></div>
+    <div class="desc desc2"></div>
+    <div class="desc desc3"></div>
+    <div class="desc desc4"></div>
+    <div class="desc desc5"></div>-->
+
+
+</body>
+
+</html>

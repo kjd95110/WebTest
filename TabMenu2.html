@@ -1,0 +1,131 @@
+<!doctype html>
+<html>
+<head>
+	<title>TabMenu_Test	</title>
+
+	<script type="text/javascript" src="./js/jquery/jquery.js"></script>
+	<script type="text/javascript" src="./js/jquery/external/jquery.alphanumeric.js"></script>
+
+
+	<script type="text/javascript">
+
+    $(document).ready(function(){
+    	$('.tab_menu ul li').click(function (e) {
+    		$('.tab_menu ul li').removeClass("active");
+    		$(this).addClass("active");
+    	});
+
+    });
+
+	</script>
+	<style type="text/css">
+		/* 콘텐츠 요서를 보이지않게 하는 방법*/
+		/* 
+			1.display:none display:block
+			2.visibility:hidden visibility:visible
+			3.opacity:0 opacity:1;
+			4.width:0;height:0;overflow:hidden;
+
+		*/
+
+		/* tab_menu*/
+		.tab_menu{
+			position:relative;
+			border:1px solid #ccc;
+			padding:8px;
+			height:105px;
+		}
+		.tab_menu ul{
+			overflow:hidden;
+			border-bottom:solid 1px #ccc;
+		}
+		.tab_menu ul li {
+			float:left;
+			border:1px solid #ccc;
+			list-style:none;
+			margin-left:-1px;
+			margin-bottom:-1px;
+
+		}
+		.tab_menu ul li a{
+			padding:5px 15px;
+			display:block;
+			text-decoration:none;
+
+		}
+		.tab_menu ul li ul{
+			position:absolute;
+			left:0;
+			top:148px;
+			width:320px;
+			border:0;
+
+		}
+		.tab_menu ul li ul li {
+			float:none;
+			border:0px;
+		}
+		.tab_menu ul li ul li a {
+			overflow:hidden;
+			text-overflow:ellipsis;
+			white-space:nowrap;
+			width:100%;
+			padding:0 0 3px 0;
+		}
+
+		.tab_menu ul li.active a {
+			background:#2c94c4;
+			color:#fff;
+            
+		}			
+
+		.tab_menu ul li.active ul li a {
+			color:#333;
+			background:#fff;
+		}
+
+            .tab_menu ul li.active > ul {
+                display: block;
+                color:red;
+            }
+	</style>
+</head>
+
+<body>
+
+	<div class="tab_menu">
+		<h4 class="ir_su">탭 메뉴</h4>
+		<ul>
+			<li ><a href="#">공지사항1</a>
+				<ul style="display:block;">
+					<li><a href="#">첫 번째 공지사항 탭메뉴테스트1 목록입니다.</a></li>
+					<li><a href="#">첫 번째 공지사항 탭메뉴테스트1 목록입니다.</a></li>
+					<li><a href="#">첫 번째 공지사항 탭메뉴테스트1 목록입니다.</a></li>
+				</ul>
+			
+			</li>
+			<li >
+				<a href="#">공지사항2</a>
+				<ul style="display:none;">
+					<li><a href="#">두 번째 공지사항 탭메뉴테스트2 목록입니다.</a></li>
+					<li><a href="#">두 번째 공지사항 탭메뉴테스트2 목록입니다.</a></li>
+					<li><a href="#">두 번째 공지사항 탭메뉴테스트2 목록입니다.</a></li>
+				</ul>
+
+			</li>
+			<li class="active">
+				<a href="#">공지사항3</a>
+				<ul style="display:none;">
+					<li><a href="#">세 번째 공지사항 탭메뉴테스트3 목록입니다.</a></li>
+					<li><a href="#">세 번째 공지사항 탭메뉴테스트3 목록입니다.</a></li>
+					<li><a href="#">세 번째 공지사항 탭메뉴테스트3 목록입니다.</a></li>
+				</ul>
+
+			</li>
+		</ul>
+
+	</div>
+
+</body>
+
+</html> 

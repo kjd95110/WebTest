@@ -1,0 +1,110 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>FlexGrid</title>
+	<!--<link href="./css/FlexGrid.css" rel="stylesheet" />-->
+	<script type="text/javascript" src="./js/jquery/jquery.js"></script>
+	<script type="text/javascript" src="./js/jquery/external/jquery.alphanumeric.js"></script>
+
+
+	<script type="text/javascript">
+
+    $(document).ready(function(){
+
+
+
+    });
+
+	</script>
+
+
+	<style type="text/css">
+		div, span, article, section, header, footer, p, ul, li, label {
+			box-sizing: border-box;
+		}
+
+		body {
+			font-size: 1.5rem;
+		}
+
+		.container {
+			display: grid;
+			/*grid-template-columns:40% 30% 30%;*/
+			/*grid-template-row:100px 200px 100px 400px 300px;*/
+			/* */
+
+			/*grid-template-columns:40% 60%;
+
+			%의 지정은 스크롤바생김(안보이는 뭔가가있다는것임
+
+			*/
+			/*grid-template-columns:4fr 6fr;*/
+
+			grid-template-columns:200px 1fr;
+			/*grid-templete-columns: 200px 1fr;*/
+			
+			/* grid-template-columns:repeat(4,1fr);
+				grid-templete-columns:1fr 1fr 1fr 1fr; 같음*/
+
+			/* 
+				grid-template-columns:4fr 6fr;
+				f4을 많이씁니다.
+			*/
+			grid-gap:1rem;
+
+			/* */
+			/*grid-column-start:1;
+			grid-column-end:3;*/
+			background-color:#ddd;
+
+		}
+		.item{
+			background-color:rgba(255,0,0,0.5);
+		}
+
+		.item:nth-child(odd) {
+			background-color:rgba(255,255,0,0.5);
+		}
+				
+	</style>
+
+</head>
+<body>
+
+	<div class="container">
+		
+		<div class="item">
+			<img src="./img/num1.gif" alt="num1" />
+		</div>
+		<div class="item">
+			<img src="./img/num2.gif" alt="num2" />
+		</div>
+		<div class="item">
+			<img src="./img/num3.gif" alt="num3" />
+		</div>
+		<div class="item">
+			<img src="./img/num4.gif" alt="num4" />
+		</div>
+		<div class="item">
+			<img src="./img/num5.gif" alt="num5" />
+		</div>
+		<div class="item">
+			<img src="./img/num6.gif" alt="num6" />
+		</div>
+		<div class="item">
+			<img src="./img/num7.gif" alt="num7" />
+		</div>
+		<div class="item">
+			<img src="./img/num8.gif" alt="num8" />
+		</div>
+		<div class="item">
+			<img src="./img/num9.gif" alt="num9" />
+		</div>
+
+
+	</div>
+
+
+</body>
+</html>

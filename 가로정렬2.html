@@ -1,0 +1,83 @@
+﻿<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title> 가로정렬</title>
+	<style type="text/css">
+		body {
+			background-color: #ddd;
+		}
+		.grid{
+			width:700px;
+			margin:0px auto;
+			padding:50px 50px;
+			background-color:white;
+			text-align:center;
+			display:grid;
+			grid-template-columns:100px 100px 100px 100px;
+			grid-template-rows:50px 50px 50px 50px;
+			justify-content:center;
+		}
+
+		.grid-item{
+			/*width:100px;*/
+			/*padding:0 30px;*/
+			height:100px;
+			display:inline-block;			
+			vertical-align:top;
+			/*flex:1;*/
+			/* 
+				inline-block성질
+				블럭사이에 작은공간이 생기는것을 알수있다.
+				Text성질이 있다.
+				없애는 방법
+				1.부보에 font-size:0 -> 브라우저에 따라 안될수 있음
+				2.Div 타이핑시 엔터를 안치는 방법
+				3.중간에 있는녀석에게 좌우마진을 -(마이너스)준다.
+				4.vertical-align:top;
+			*/
+
+			/* float:left 성질
+
+				떠있다는 사전낱말
+
+			*/
+		}
+
+		.grid-item.a{
+			margin-top:50px;
+			background-color:orange;
+		}
+		.grid-item.b{
+			margin-top:50px;
+			background-color:orangered;
+			/*margin:0 -4px;*/
+		}
+		.grid-item.c{
+			margin-top:50px;
+			background-color:crimson;
+		}
+
+		.grid-item.d{
+			margin-top:50px;
+			background-color:red;
+		}
+		
+	</style>
+</head>
+
+<body>
+	<div style="border:1px solid #000;width:200px;height:300px;">
+		AppleBananaCherry
+	</div>
+
+	<div class="grid">
+		<div class="grid-item a"></div>
+		<div class="grid-item b"></div>
+		<div class="grid-item c"></div>
+		<div class="grid-item d"></div>
+	</div>
+
+</body>
+
+</html> 

@@ -1,0 +1,132 @@
+<!doctype html>
+<html>
+<head>
+    <title>Vertical 메뉴만들기</title>
+    <script type="text/javascript" src="./js/jquery/jquery.js"></script>
+    <script type="text/javascript">       
+
+        $(document).ready(function () {
+
+            $('.dropdown_btn').click(function () {
+                $(".dropdown_btn").addClass("active");
+                if ($('.dropdown_container').css('display') == "block") {                    
+                    $('.dropdown_container').hide();
+                } else {                    
+                    $('.dropdown_container').show();
+                }
+            });
+
+            $('.dropdown_Aboutbtn').click(function () {
+                $(".dropdown_Aboutbtn").addClass("active");
+                if ($('.dropdown_Aboutcontainer').css('display') == "block") {                    
+                    $('.dropdown_Aboutcontainer').hide();
+                } else {                    
+                    $('.dropdown_Aboutcontainer').show();
+                }
+            });
+        });
+    </script>
+    <style type="text/css">
+        * {
+            padding: 0px;
+            margin: 0px;
+            list-style: none;
+        }
+        body{
+            padding:50px;
+        }
+
+        .subnav {
+            width: 200px;
+            height: 100%;
+            position: fixed;
+            top: 0;
+            left: 40px;
+            z-index: 1;
+            overflow-x: hidden;
+            padding-top: 20px;
+        }
+
+            .subnav > h1 {
+                color: #000;
+                border-bottom: 2px red solid;
+                padding-bottom: 10px;
+            }
+
+            /* 링크와 드롭다운버튼 */
+            .subnav a, .dropdown_btn, .dropdown_Aboutbtn {
+                padding: 6px 8px 6px 16px;
+                text-decoration: none;
+                font-size: 20px;
+                color: #333;
+                display: block;
+                /*border:none;*/
+                border-bottom: 1px #ccc dotted;
+                font-weight: 900;
+                background: none;
+                width: 100%;
+                text-align: left;
+                cursor: pointer;
+                outline: none;
+            }
+
+                /* 오버시 링크와 드롭다운버튼 */
+                .subnav a:hover, .dropdown_btn:hover ,.dropdown_Aboutbtn:hover{
+                    color: red; border-bottom:2px #ccc solid;border-right:0;border-left:0;
+                }                          
+
+        button {
+            border-right: none;
+            border-top: none;
+        }
+
+        .dropdown_container,.dropdown_Aboutcontainer {
+            display: none;
+            padding-left: 30px;
+            font-size: 16px;
+        }
+
+        .active {
+            color: blue;
+            display: block;
+        }
+
+        .dropdown_btn,.dropdown_Aboutbtn {
+            border-left: none;
+            border-bottom: 1px #ccc dotted;
+        }
+    </style>
+</head>
+<body>
+    <div class="subnav">
+        <h1>Company</h1>
+        <button class="dropdown_Aboutbtn">
+            About▼
+        </button>
+        <div class="dropdown_Aboutcontainer">
+            <a href="#">About1</a>
+            <a href="#">About2</a>
+            <a href="#">About3</a>
+
+        </div>
+        <a href="#">Services</a>
+        <a href="#">Client</a>
+        <a href="#">Contact</a>
+        <button class="dropdown_btn">
+            Dropdown▼
+        </button>
+        <div class="dropdown_container">
+            <a href="#">Dropdown1</a>
+            <a href="#">Dropdown2</a>
+            <a href="#">Dropdown3</a>
+
+        </div>
+        <a href="#">Location</a>
+    </div>
+
+
+   
+
+</body>
+</html>
+

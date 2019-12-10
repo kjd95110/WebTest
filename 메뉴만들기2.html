@@ -1,0 +1,74 @@
+<!doctype html>
+<html>
+<head>
+	<title>네비게이션 메뉴</title>
+	<script type="text/javascript" src="./js/jquery/jquery.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			
+		});
+
+
+	</script>
+	<style type="text/css">		
+
+div.bottombar{ /* bar that runs across the bottom of the menu */
+height: 10px;
+background: #1a1109;
+}
+
+ul.menu{ /* main menu UL */
+font: bold 14px Georgia ;
+width: 100%;
+/*background: #b1e958;*/
+background:#ddd;
+padding: 11px 0 8px 0; /* padding of the 4 sides of the menu */
+margin: 0;
+text-align: left; /* set value to "left", "center", or "right" to align menu accordingly */
+}
+
+ul.menu{
+	display:flex;
+}
+ul.menu li{
+/*display: inline;*/
+flex:1;
+list-style:none;
+
+}
+
+ul.menu li a{
+color:black;
+padding: 6px 8px 6px 8px; /* padding of the 4 sides of each menu link */
+margin-right: 15px; /* spacing between each menu link */
+text-decoration: none;
+}
+
+ul.menu li a:hover, ul.menu li a.selected{
+	color:crimson;
+-moz-box-shadow: 0 0 5px #595959; 
+-webkit-box-shadow: 0 0 5px #595959;
+box-shadow: 0 0 5px #595959;
+padding-top: 12px; /* large padding to get menu item to protrude upwards */
+padding-bottom: 20px; /* large padding to get menu item to protrude downwards */
+}
+	</style>
+</head>
+<body>
+	<div class="main">
+		
+	</div>
+	<ul class="menu">
+		<li>&nbsp;&nbsp;</li>
+		<li><a href="#">Home</a></li>
+		<li><a href="#" class="selected">CSS&nbsp;Codes</a></li>
+		<li><a href="#">Forums</a></li>
+		<li><a href="#">Webmaster&nbsp;Tools</a></li>
+		<li><a href="#">JavaScript</a></li>
+		<li><a href="#">Gallery</a></li>
+		<li>&nbsp;&nbsp;</li>
+	</ul>
+	<div class="bottombar"></div>
+
+</body>
+</html>

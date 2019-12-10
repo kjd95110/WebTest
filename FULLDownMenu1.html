@@ -1,0 +1,83 @@
+﻿<!doctype html>
+<html>
+<head>
+
+	<meta charset="utf-8">
+	<title></title>
+    <style>
+*{
+    padding:0;
+    margin:0;
+    list-style:none;
+}
+
+ nav{
+     text-align:center;
+ }
+nav > ul{
+    /*display: inline-block;*/
+}
+nav > ul > li{
+    display: inline-block;
+}
+nav li > a{
+    display: block;
+    padding:20px 10px;
+    color:black;
+    text-decoration:none;
+}
+/* li 에 백그라운드 변경 */
+nav li:hover{
+    background-color:black;
+}
+/* li 에  a  글자색 변경 */
+nav li:hover > a{
+    color:white;
+}
+/* li 에  Mouse 올리면 ul(서브메뉴) 보이게 하기 */
+nav li:hover > ul{
+    display:block;
+}
+/* Li 하위에 Ul이 position:aboulute 이기 때문에 이걸 걸어둔다. */
+nav li{
+    position: relative;
+}
+/*  서브메뉴를 공중으로 띄운다 */
+nav li > ul {
+    position: absolute;
+    top:100%;
+	left:0;
+}
+/*  서브메뉴를 숨긴다.*/
+
+nav ul ul {
+    display:none;
+}        
+    </style>
+</head>
+<body>
+<h1> 현재단계: CSS 스타일링</h1>
+<nav>
+    <ul>
+        <li><a href="#">[1단계]메뉴 아이템</a></li>
+        <li><a href="#">[2단계]메뉴 아이템</a>
+            <ul>
+                <li><a href="#">[2-1단계]메뉴 아이템</a></li>
+                <li><a href="#">[2-2단계]메뉴 아이템</a></li>
+                <li><a href="#">[2-3단계]메뉴 아이템</a></li>
+            </ul>
+        </li>
+
+        <li><a href="#">[3단계]메뉴 아이템</a></li>
+        <li><a href="#">[4단계]메뉴 아이템</a>
+            <ul>
+                    <li><a href="#">[4-1단계]메뉴 아이템</a></li>
+                    <li><a href="#">[4-2단계]메뉴 아이템</a></li>
+                    <li><a href="#">[4-3단계]메뉴 아이템</a></li>
+                </ul>
+        </li>
+    </ul>
+</nav>
+
+</body>
+</html>

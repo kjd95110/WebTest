@@ -1,0 +1,117 @@
+<!doctype html>
+<html>
+<head>
+    <title>Full Screen Gallery Popup with Jquery</title>
+
+    <script type="text/javascript" src="./js/jquery/jquery.js"></script>
+    <script type="text/javascript" src="./js/jquery/external/jquery.alphanumeric.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pretty-checkbox@3.0/dist/pretty-checkbox.min.css" />
+    <link rel="stylesheet" hhref="'https://fonts.googleapis.com/css?famly=Noto+Sans+KR:100,300,400,500,700,900)" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/intense-images/1.0.7/intense.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+
+        });
+    </script>
+    <style type="text/css">
+        body {
+            font-size: 24px;
+            /*font-family:sans-serif;*/
+            font-family: 'Monotype Corsiva',sans-serif;
+            /*background: linear-gradient(to right,#DCE35B,#45B649);*/
+            background-color: #262626;
+            height:100vh;
+            position:relative /* body의 기본값이므로  써주지않아도 된다.*/
+        }
+        /* 일반적일때는 그냥 body 안에(opacity를 줄수없다 가아니라 body안의 모든요소가 opacity의 영향을 받기때문에 )...  
+            opacity 또는 overlay  를 주기위해서는 가상클래스(after,before 상관없음) 그차이를 한번 느껴볼것.
+            이때 가상클래스를 쓸때는 앞으로 나오기때문에 
+             z-index -1 ,-2 등을 줌으로서 내려준다.
+
+        */
+            body:after {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-image: url('./img/BackGroundHighSolution10.jpg');
+                background-size: cover;
+                opacity: 0.9;
+                z-index: -1;
+            }
+
+
+        .container{
+            width:100vw; /* width를 강제로 100% 채워준다.*/
+            text-align:center;
+            position:absolute;
+            top:50%;
+            left:50%;
+            transform:translate(-50%,-50%);
+        }
+
+        .box{
+            border:5px solid #fff;
+            box-sizing:border-box;
+            width:300px;
+            height:300px;
+            display:inline-block; /* Text-align:center로 중앙정렬가능 */
+            transform:rotate(45deg);
+            overflow:hidden; /*  깨끗한 다이아몬드 형태를 나타내기위해*/
+        }
+
+        .photo {
+            width: inherit;
+            height: inherit;
+            background-size:contain;
+            background-image: url('./img/pricess2.png');
+            background-position: center center;
+            cursor: pointer;
+            
+            transform:rotate(-45deg) scale(1.6) ;
+        }
+
+       .photo:hover{
+            transform:rotate(-45deg) scale(2.2);
+        }
+        
+        .box:nth-child(1) .photo{
+            background-image:url('./img/pricess3.png');
+        }
+        .box:nth-child(2) .photo {
+            background-image: url('./img/pricess4.png');
+        }
+        .box:nth-child(3) .photo {
+            background-image: url('./img/pricess5.png');
+        }
+
+        
+
+
+    </style>
+
+    </head>
+<body>
+    <div class="container">
+        <div class="box">
+            <div class="photo" data-image="./img/pricess3.png" data-title="Photo Gallery #01" data-caption="Don't waste feelings on those who blame your dreams."></div>
+        </div>
+        <div class="box">
+            <div class="photo" data-image="./img/pricess4.png" data-title="Photo Gallery #02" data-caption="Don't waste feelings on those who blame your dreams."></div>
+        </div>
+        <div class="box">
+            <div class="photo" data-image="./img/pricess5.png" data-title="Photo Gallery #03" data-caption="Don't waste feelings on those who blame your dreams."></div>
+        </div>
+    </div>
+
+    <script >
+        var element = document.querySelectorAll('.photo');
+        Intense(element);
+    </script>
+
+</body>
+
+</html>

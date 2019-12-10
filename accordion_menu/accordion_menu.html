@@ -1,0 +1,265 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<title>Accordion Menu with jQuery</title>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic">
+<link rel="stylesheet" href="css/reset.css">
+<link rel="stylesheet" href="css/style.css">
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="js/main.js"></script>
+    <script type="text/javascript">
+
+        /*
+        // step1
+        $(function () {
+            $(".sub").hide();
+
+            $(".main").click(function (e) {
+                e.preventDefault();
+                $(".main").removeClass("on");
+                $(this).addClass("on");
+                $(".sub").hide();
+                $(this).next().show();
+            });
+        });
+* /
+
+
+        /*
+        // step2
+        $(function(){
+            $(".sub").hide();
+        
+            $(".main").click(function(e){
+                e.preventDefault();
+                $(".main").removeClass("on");
+                $(this).addClass("on");
+                $(".sub").slideUp(300);
+                $(this).next().slideDown(300);
+            });
+        });
+        */
+
+
+        // step3
+        $(function () {
+            $(".sub").hide();
+
+            $(".main").click(function (e) {
+                e.preventDefault();
+                if ($(this).hasClass("on") == false) {
+                    $(".main").removeClass("on");
+                    $(this).addClass("on");
+                    $(".sub").slideUp(300);
+                    $(this).next().slideDown(300);
+                } else {
+                    $(this).removeClass("on");
+                    $(this).next().slideUp(300);
+                }
+            });
+        });
+    </script>
+<!--[if lt IE 9]>
+<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+
+    
+    <style type="text/css">
+
+        /* reset */
+        html, body, div, span, applet, object, iframe,
+        h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+        a, abbr, acronym, address, big, cite, code,
+        del, dfn, em, img, ins, kbd, q, s, samp,
+        small, strike, strong, sub, sup, tt, var,
+        b, u, i, center,
+        dl, dt, dd, ol, ul, li,
+        fieldset, form, label, legend,
+        table, caption, tbody, tfoot, thead, tr, th, td,
+        article, aside, canvas, details, embed,
+        figure, figcaption, footer, header, hgroup,
+        menu, nav, output, ruby, section, summary,
+        time, mark, audio, video {
+            margin: 0;
+            padding: 0;
+            vertical-align: baseline;
+            font: inherit;
+            font-size: 100%;
+            border: 0;
+        }
+
+        article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+            display: block;
+        }
+
+        body {
+            line-height: 1;
+        }
+
+        img {
+            max-width: 100%;
+        }
+
+        ol, ul {
+            list-style: none;
+        }
+
+        table {
+            border-collapse: collapse;
+            border-spacing: 0;
+        }
+
+        hr {
+            display: block;
+            margin: 16px 0;
+            padding: 0;
+            height: 1px;
+            border: 0;
+            border-top: 1px solid #ccc;
+        }
+
+        input, select {
+            vertical-align: middle;
+        }
+
+
+
+
+
+        /* style */
+
+        body {
+            margin: 20px;
+            padding: 20px;
+            font-family: "Open Sans", sans-serif;
+            font-size: 1em;
+            background: #f1f1f1;
+        }
+
+        .title {
+            font-size: 1.5em;
+            font-weight: 300;
+            color: #555;
+        }
+
+        .container {
+            margin-top: 35px;
+        }
+
+        nav {
+            font-size: 0.875em;
+        }
+
+            nav ul {
+                width: 200px;
+                text-indent: 10px;
+            }
+
+                nav ul, nav ul ul {
+                    margin: 0;
+                    padding: 0;
+                    list-style: none;
+                }
+
+        .menu {
+            margin-bottom: 3px;
+        }
+
+        .main {
+            display: block;
+            height: 35px;
+            line-height: 35px;
+            text-indent: 20px;
+            text-decoration: none;
+            background: #8ac007;
+            color: #fff;
+            cursor: pointer;
+        }
+
+            .main.on {
+                background: #6c8532;
+            }
+
+        .sub li {
+            height: 35px;
+            line-height: 35px;
+            background: #fff;
+            border-top: 1px solid #eaeaea;
+            cursor: pointer;
+        }
+
+            .sub li:first-child {
+                border-top: none;
+            }
+
+            .sub li a {
+                display: block;
+                width: 100%;
+                height: 100%;
+                text-decoration: none;
+                text-indent: 20px;
+                color: #555;
+            }
+
+                .sub li a:hover,
+                .sub li a:focus {
+                    background: #eaeaea;
+                    color: #333;
+                }
+    </style>
+</head>
+
+<body>
+<h1 class="title">Accordion Menu</h1>
+<div class="container">
+	<nav>
+		<ul>
+			<li class="menu">
+				<a href="" class="main">HTML</a>
+				<ul class="sub">
+					<li><a href="#">HTML Tutorial</a></li>
+					<li><a href="#">HTML Forms</a></li>
+					<li><a href="#">HTML5</a></li>
+					<li><a href="#">HTML Graphics</a></li>
+					<li><a href="#">HTML Media</a></li>
+					<li><a href="#">HTML APIs</a></li>
+				</ul>
+			</li>
+			<li class="menu">
+				<a href="" class="main">CSS</a>
+				<ul class="sub">
+					<li><a href="#">CSS Tutorial</a></li>
+					<li><a href="#">CSS3</a></li>
+					<li><a href="#">CSS Responsive</a></li>
+				</ul>
+			</li>
+			<li class="menu">
+				<a href="" class="main">JavaScript</a>
+				<ul class="sub">
+					<li><a href="#">JS Tutorial</a></li>
+					<li><a href="#">JS Forms</a></li>
+					<li><a href="#">JS Objects</a></li>
+					<li><a href="#">JS Functions</a></li>
+					<li><a href="#">JS HTML DOM</a></li>
+					<li><a href="#">JS Brower BOM</a></li>
+					<li><a href="#">JS Libraries</a></li>
+				</ul>
+			</li>
+			<li class="menu">
+				<a href="" class="main">jQuery</a>
+				<ul class="sub">
+					<li><a href="#">jQuery Tutorial</a></li>
+					<li><a href="#">jQuery Effects</a></li>
+					<li><a href="#">jQuery HTML</a></li>
+					<li><a href="#">jQuery Traversing</a></li>
+					<li><a href="#">jQuery AJAX</a></li>
+				</ul>
+			</li>
+		</ul>
+	</nav>
+</div>
+</body>
+</html>

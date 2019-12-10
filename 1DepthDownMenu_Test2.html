@@ -1,0 +1,113 @@
+<!doctype html>
+<html>
+<head>
+	<title>FullDownMenu</title>
+	<script type="text/javascript" src="./js/jquery/jquery.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+
+
+
+		});
+
+
+	</script>
+	<style type="text/css">
+		* {
+			padding: 0px;
+			margin: 0px;
+			list-style: none;
+		}
+
+
+		body {
+			line-height: 1;
+			font-family: "Open Sans","Noto Sans KR",sans-serif;
+			font-size: 1em;
+		}
+
+		#GNB{
+			margin:0 auto;
+			margin-top:100px;
+			width:1000px;
+			height:200px;
+			border:1px solid #000;
+			text-align:center;
+		}
+
+		#GNB ul{ /* 전체 위치 이동*/
+
+		}
+
+		#GNB li{ /* 가로세로 메뉴인지*/
+			display:inline-block;
+			position:relative;
+		}
+		#GNB li:before{
+			content:'';
+			display:block;
+			width:1px;
+			height:20px;
+			background-color:#ccc;
+			position:absolute;
+			left:0;
+			top:0px;
+		}
+
+		#GNB li a{ /* 덩어리를 잡아준다.*/
+			display:block;
+			padding:0px 30px;
+			height:60px;
+			line-height:60px;
+			list-style:none;
+			text-decoration:none;
+			font-weight:700;
+			transition:background-color 0.9s;
+			background-color:#ddd;
+			border-right:0px solid #000;
+			/*border:1px solid #ddd;*/
+
+		}
+
+		#GNB li:last-child a{
+			border-right:0px;
+		}
+
+		#GNB li a:hover{
+			background-color:crimson;
+		}
+
+
+
+		
+	</style>
+	<!-- Inline 속성에 vertical-align 속성이 먹는다  -->
+</head>
+
+<body>
+	<div class="wrapper">
+		<nav id="GNB">
+			<ul>
+				<li>
+					<a href="#">1DEPTH_1</a>					
+				</li>
+				<li>
+					<a href="#">1DEPTH_2</a>					
+				</li>
+				<li>
+					<a href="#">1DEPTH_3</a>					
+				</li>
+				<li>
+					<a href="#">1DEPTH_4</a>					
+				</li>
+				<li>
+					<a href="#">1DEPTH_5</a>					
+				</li>
+				<li>
+					<a href="#">1DEPTH_6</a>					
+				</li>
+			</ul>
+		</nav>
+	</div>
+</body>
+</html>

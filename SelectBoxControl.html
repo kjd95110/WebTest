@@ -1,0 +1,136 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>SelectBox</title>
+
+    <style type="text/css">
+        /*select {
+            width: 196px;
+            height: 41px;
+            font-size: 15px;
+            color: #999;
+            border: 2px solid #ddd;
+            appearance: none;
+            -webkit-appearnce: none;
+            background: url(bg_select.png) no-repeat right 13px center;
+        }
+
+            select::-ms-expand {
+                opacity: 0;
+            }*/
+
+
+        /* Custom Select*/
+
+        *{
+            padding:0;
+            margin:0;
+        }
+
+        .container{
+            max-width:640px;
+            margin:50px auto;
+            padding:35px;
+            box-shadow:0 0 20px 0px rgba(0,0,0,0.1);
+            background:#fff;
+            border-radius:10px;
+        }
+
+        .holder{
+            border-bottom:1px dashed #ccc;
+            padding:0 0 30px;
+            margin: 0 0 30px;
+        }
+
+        .row{
+            margin:0 0 15px;
+        }
+
+        .customSelect select{
+            width:100%;
+            height:100%;
+            background:none;
+            border:none;
+            -webkit-appearance:none;
+            padding:0 50px 0 20px;
+            cursor:pointer;
+            font:300 18px/1.5 'Roboto',sans-serif;
+            text-indent:5px;
+        }
+
+        .customSelect .select{
+            position:relative;
+            background:#fff;
+            border:1px solid #1cbe9d;
+            height:50px;
+            cursor:pointer;
+        }
+
+            .customSelect .select:focus{
+                outline:none;
+            }
+
+            .customSelect option {
+                font: 300 18px/1.5 'Roboto',sans-serif;
+            }
+
+            .customSelect .select:before {
+                content: '';
+                background: #1cbe9d;
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                right: 0;
+                width: 40px;
+                pointer-events: none;
+            }
+
+        .customSelect .select:after{
+            content:'';
+            width:0;
+            height:0;
+            border-style:solid;
+            border-width:10px 7px 0;
+            border-color:#fff transparent transparent transparent;
+            position:absolute;
+            top:50%;
+            right:11px;
+            transform:translate(-50%);
+        }
+    </style>
+
+</head>
+<body>
+
+   <div class="container">
+       <div class="holder">
+           <div class="holder">
+               <div class="holder">
+                   <h2> Custom Select</h2>
+                   <form action="#" class="customSelect">
+                       <div class="row">
+                           <p>Please select the payment method</p>
+                       </div>
+                       <div class="row">
+                           <div class="select">
+                               <select>
+                                   <option>Debit / Master Card</option>
+                                   <option>Credit Card</option>
+                                   <option>Bank Tranfer</option>
+                                   <option>Paypal</option>
+                                   <option>Skrill</option>
+                               </select>
+                           </div>
+                       </div>
+                   </form>
+               </div>
+           </div>
+       </div>
+   </div>
+
+    
+
+</body>
+
+</html>

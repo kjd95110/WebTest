@@ -1,0 +1,74 @@
+<!doctype html>
+<html>
+<head>
+	<title>BeforeAfterClass</title>
+	<script type="text/javascript" src="./js/jquery/jquery.js"></script>
+	<script type="text/javascript" src="./js/jquery/external/jquery.alphanumeric.js"></script>
+	<!--<script type="text/javascript">
+		$(document).ready(function () {
+		});
+	</script>-->
+
+<style type="text/css">
+	*{
+		margin:0;
+		padding:0;
+		
+	}
+	ul{
+		font-size:400px;
+	}
+	ul li{
+		list-style:none;
+	}
+
+	ul li::after{
+		content:url('./img/flower.jpg');
+	}
+
+	div{
+		font-size:100px;
+	}
+
+    .item{
+        position:relative;
+        top:50px;
+        left:50%;
+        background-color:pink;
+
+    }
+	div::before{
+        position:absolute;
+        top:27.8%;
+        left:0;
+		content:'';        
+        height:62px;
+        border:5px solid crimson;        
+        font-weight:900;
+        font-size:50px;
+	}
+
+	div::after{
+		content:'>';
+	}
+</style>
+</head>
+<body>
+
+	<div class="item">DIV</div>
+
+	<ul>
+		<li>1</li>
+		<li>2</li>
+		<li>3</li>
+		<li>4</li>
+		<li>5</li>
+		<li>6</li>
+		<li>7</li>
+		<li>8</li>
+		<li>9</li>
+		<li>10</li>
+	</ul>
+
+</body>
+</html>

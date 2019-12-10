@@ -1,0 +1,100 @@
+﻿<!doctype html>
+<html>
+<head>
+
+	<title>DropDownMenu Design Easy~</title>
+
+	<script type="text/javascript" src="./js/jquery/jquery.js"></script>
+	<script type="text/javascript" src="./js/jquery/external/jquery.alphanumeric.js"></script>
+	<script type="text/javascript">
+	//$(document).ready(function () {
+
+	//	$('a').click(function () {
+	//		//alert('1');
+	//		$('#spanCnt')[0].innerText = parseInt($('#spanCnt')[0].innerText, 10) + 1;
+	//	});
+
+	//});
+
+
+	</script>
+
+	<script src="https://use.fontawesome.com/releases/v5.2.0/js/all.js"></script>
+
+	<style type="text/css">
+		*{padding:0;margin:0;list-style:none}
+		body{padding:30px;}
+        ol, ul {
+            border: 1px solid red;
+            padding: 20px;
+        }
+        li{border:1px solid blue;}
+		
+			/* 고전방식
+                메뉴?갯수에 따라서 계산을 계속 해줘야한다.
+			*/
+		.old {border:1px solid red;padding:20px;}
+		.old:after{
+			content:'';display:block;clear:both;
+		}
+		.old li{
+			width:20%;		
+			box-sizing:border-box;
+			float:left;
+		}               
+
+        .flex li {
+            flex: 1;            
+        }
+
+		.flex{	display:flex;   }
+		.flex li{	flex:1;		}
+		.flex li:nth-child(1){	flex:2;	}
+		.flex li:nth-child(2){	flex:none;width:200px;	}
+
+        /* width:200px 기준잡고 나머지 flex기준대로 영역을 차지함 
+            가변영역고정영역을 잡을때 편리
+        */
+		
+		.table{
+			display:table;
+			width:100%;
+			border-collapse:collapse;
+			border-spacing:0;
+		}
+        .table li {
+            display: table-cell;
+            width:20%;
+           
+        }
+	</style>
+</head>
+<body>
+    Old General
+	<ul class="old">
+		<li>1</li>
+		<li>2</li>
+		<li>3</li>
+		<li>4</li>
+		<li>5</li>
+	</ul>
+	Flex layout
+
+	<ul class="flex">
+		<li>13324234</li>
+		<li>2</li>
+		<li>3</li>
+		<li>4</li>
+		<li>5</li>
+	</ul>
+
+	Table Layout
+	<ol class="table">
+		<li>13423423</li>
+		<li>2</li>
+		<li>3</li>
+		<li>4</li>
+		<li>5</li>
+	</ol>
+</body>
+</html>

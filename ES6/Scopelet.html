@@ -1,0 +1,64 @@
+<!doctype html>
+<html>
+<head>
+<title>Scope 실습</title>
+
+<script type="text/javascript" src="../js/index.js"></script>
+<script type="text/javascript" src="../js/jquery/jquery.js"></script>
+<script type="text/javascript" src="../js/jquery/index2.js"></script>
+
+<script type="text/javascript">
+
+var name="global var";
+$(document).ready(function(){
+    Home();    
+});
+
+
+/*
+let 블럭Scope로서 블럭내에서만 사용가능
+var 함수 Scope로서 함수내에서만 사용가능
+
+*/
+
+function Home(){
+    var homevar="homevar";
+    for(var i=0;i<100;i++){
+        
+    }
+
+    console.log(i);
+}
+
+/* 
+filter, includes, from 을 사용해서 문자열 'e'가 포함된 
+노드로 구성된 배열을 만들어서 반환하기
+
+*/
+
+
+</script>
+<style type="text/css">
+body{
+    background-color: peru;
+}
+
+h1{
+    color:#fff;
+}
+</style>
+
+</head> 
+
+<body>
+
+    <ul>
+        <li>Javascript</li>
+        <li>Java</li>
+        <li>python</li>
+        <li>django</li>
+    </ul>
+
+</body>
+
+</html> 

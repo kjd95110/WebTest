@@ -1,0 +1,105 @@
+<!doctype html>
+<html>
+<head>
+	<title>FullDownMenu</title>
+	<script type="text/javascript" src="./js/jquery/jquery.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+
+
+
+		});
+
+
+	</script>
+	<style type="text/css">
+
+
+		*{
+			list-style:none;
+			margin:0px;
+			padding:0px;
+		}
+		body {
+			
+			/*line-height:1;
+			
+			*/
+			line-height:1;
+			font-family:"Open Sans","Noto Sans KR",sans-serif;
+			font-size:1em;
+		}
+
+		#GNB{
+			
+			margin:0 auto;
+			margin-top:100px;
+			width:1000px;
+			/*border:1px solid #000;*/
+		}
+
+		#GNB li{
+			display:inline-block;
+			/*width:150px; --> Not Good --> padding 으로 해결
+			border:1px solid #000;*/			
+			
+		}
+
+		#GNB li:first-child a{ /* 의미 이해하기 */
+							   /* GNB li a:first-child 이렇게 안쓰도록 조심해서 사용할것.*/
+			padding-left:0;
+		}
+
+		#GNB li:last-child a{ /* 의미 이해하기 */
+							   /* GNB li a:first-child 이렇게 안쓰도록 조심해서 사용할것.*/
+			padding-right:0;
+		}
+
+		ul,li{
+			list-style-type:none;
+		}
+
+		#GNB li a{ /* a 덩어리에 항상 padding으로 폭을 주어 항목을 구성해야한다. */
+			display:block; /* a 에서는 항상 block을 사용한다. 꼭기억*/
+			height:80px; /* display:block 이있어야 height조정 가능*/
+			
+			margin-left:10px;
+			padding:5px 62px;
+			/*border:1px solid #000;*/
+			line-height:80px;
+			text-decoration:none;
+			color:#000;
+			font-weight:700;
+		}
+
+		div{
+			box-sizing:border-box;
+		}
+
+		table{
+			width:100%;
+			border-collapse:collapse;
+			border-spacing:0;
+
+		}
+
+		
+	</style>
+	<!-- Inline 속성에 vertical-align 속성이 먹는다  -->
+</head>
+
+<body>
+	
+		<nav id="GNB">
+			<ul>
+				<li><a href="#">NEW</a></li>
+				<li><a href="#">WOMAN</a></li>
+				<li><a href="#">MEN</a></li>
+				<li><a href="#">LIFE</a></li>
+				<li><a href="#">SALE</a></li>
+				<li><a href="#">BRAND</a></li>
+			</ul>
+		</nav>
+	
+</body>
+</html>

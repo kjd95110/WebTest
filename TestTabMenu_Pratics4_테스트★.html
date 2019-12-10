@@ -1,0 +1,139 @@
+<!doctype>
+<html>
+<head>
+
+	<title>Tab메뉴 테스트4</title>
+	<script type="text/javascript" src="./js/jquery/jquery.js"></script>
+	<script type="text/javascript" src="./js/jquery/external/jquery.alphanumeric.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function () {
+
+			
+			$('#tab1_Container').hide();
+			$('#tab2_Container').hide();
+			$('#tab3_Container').hide();
+			$('#tab4_Container').show();
+
+
+			$("ul li").click(function (e) {			
+								
+				$("ul li").removeClass("active");				
+				$(this).addClass("active");
+
+
+				switch (e.target.id) {
+					case 'myTab1': 
+						$('#tab1_Container').show();
+						$('#tab2_Container').hide();
+						$('#tab3_Container').hide();
+						$('#tab4_Container').hide();
+								   
+						break;
+					case 'myTab2':
+						$('#tab1_Container').hide();
+						$('#tab2_Container').show();
+						$('#tab3_Container').hide();
+						$('#tab4_Container').hide();
+						break;
+					case 'myTab3':
+						$('#tab1_Container').hide();
+						$('#tab2_Container').hide();
+						$('#tab3_Container').show();
+						$('#tab4_Container').hide();
+						break;
+					case 'myTab4':
+						$('#tab1_Container').hide();
+						$('#tab2_Container').hide();
+						$('#tab3_Container').hide();
+						$('#tab4_Container').show();
+						break;
+
+				}			
+			});		
+		});
+
+
+	</script>
+	<style type="text/css">
+		*{
+			margin:0px;
+			border:0px;
+			padding:0px;
+		}
+
+		#container_Total{
+            width:1000px;
+            height:100%;
+			margin:30px 0 0 30px;
+            background-color:red;
+			
+		}
+
+		ul li{
+			margin-top:1px;
+			cursor: pointer;
+			padding: 0px 4px;			
+			width:120px;
+			text-decoration:none;
+			height:30px;
+			border:solid 1px #ddd;
+			list-style-type:none;
+			float:left;
+			text-align:center;
+			line-height:30px;
+			position: relative;
+			color: #666;
+			border-bottom: 0px;
+		}
+
+		ul li.active{			
+			height:32px;
+			margin-top: -5px;
+			background: #FFFFFF;
+			border: solid 1px #3567af;
+			font-weight: bold;
+			border-top: solid 6px #3567af;
+			border-bottom: 0px solid white;
+			line-height: 30px;
+			color: #333;
+		}
+	
+
+		#container{
+			clear:both;			
+		}
+
+		.content{
+			border:solid 1px black;
+			width:800px;
+			height:400px;
+			float:left;
+			margin-top:-1px;
+		}
+		
+	</style>
+
+</head>
+<body>
+
+	<div id="container_Total">
+		<ul class="tabs">
+			<li id="myTab1" rel="tab1">테스트1</li>
+			<li id="myTab2" rel="tab2" style="margin-left:5px;">테스트2</li>
+			<li id="myTab3" rel="tab3" style="margin-left:5px;">테스트3</li>
+			<li id="myTab4" rel="tab4" class="active" style="margin-left:5px;">테스트4</li>
+		</ul>
+
+		<div id="container">
+
+			<div id="tab1_Container" class="content">1</div>
+			<div id="tab2_Container" class="content">2</div>
+			<div id="tab3_Container" class="content">3</div>
+			<div id="tab4_Container" class="content">4</div>
+			
+		</div>
+		
+	</div>
+
+</body>
+</html>

@@ -1,0 +1,74 @@
+﻿<!doctype html>
+<html>
+<head>
+
+	<meta charset="utf-8">
+	<title>가상요소1</title>
+	<script type="text/javascript" src="./js/jquery/jquery.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function () {
+
+			$('a').click(function () {
+				//alert('1');
+				$('#spanCnt')[0].innerText=parseInt($('#spanCnt')[0].innerText,10)+1;
+			});
+
+		});
+
+
+	</script>
+	<style type="text/css">
+		a{
+			/*background:url('./img/btn_sview.gif') no-repeat ;*/			
+		}
+
+		.couner{
+			color:dodgerblue;
+			cursor:pointer;
+		}
+
+		.couner:after{
+			content:'cm';
+		}
+		.couner:before{			
+			
+			content:'약';
+		}
+
+		.imgN{
+			
+			cursor:pointer;				
+		}
+
+		ul li:first-child:after {
+			content:'버튼입니다~~~~';
+			cursor:pointer;				
+		}
+
+		.button:after{
+			content:'버튼입니다11';
+			cursor:pointer;				
+		}	
+
+
+	</style>
+</head>
+<body>
+	<div class="box">
+		<span id="spanCnt" class="couner">0</span>
+		<a class="button" title="나의툴팁1">[+]</a>
+		<br /><br /><br /><br /><br /><br /><br />
+		
+		<img id="buttoni" class="imgN" src="./img/btn_sview.gif" title="툴팁여기요!" alt="test" />
+
+		<br /><br /><br /><br /><br /><br /><br />
+		<input type="button" id="button2" class="imgN2" src="./imgbtn_sview.gif" />
+	</div>
+	<ul>
+		<li>1111</li>
+		<li>2222</li>
+		<li>3333</li>
+		<li>4444</li>
+	</ul>
+</body>
+</html>

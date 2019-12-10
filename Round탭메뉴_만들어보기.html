@@ -1,0 +1,99 @@
+<!doctype html>
+<html>
+<head>
+    <title>RoundTabMenu_만들어보기	</title>
+
+    <style type="text/css">
+
+
+        body {
+            font-family: "Open Sans","Noto Sans KR",sans-serif;
+            font-size: 1.2em;
+        }
+
+        .radioGroup{
+            position:absolute;
+            top:15%;
+            left:50%;
+            transform:translate(-50%,-50%);
+            display:flex;
+
+        }
+
+        
+        input[type=radio]{
+            display:none;
+        }
+
+        input[type=radio] + label {
+            position: relative;
+            display: block;
+            width: 130px;
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+            /*margin-left: 2px;*/
+            border-bottom: 10px solid #000;
+            overflow: hidden;
+            cursor:pointer;
+            border-radius:15px 15px 0 0;
+            z-index:1;
+            background:linear-gradient(to top,#595959 30%,#ddd 80%);
+        }
+
+
+            input[type=radio] + label::before {
+                content: '';
+                position: absolute;                
+                top: 120px;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                border-radius: 15px 15px 0 0;
+                background: #F3BA00;
+                transition: all .35s;
+                z-index:-1;
+            }
+
+            input[type=radio] + label:hover,input[type=radio]:checked + label{
+                color:#fff;
+            }
+
+            input[type=radio]:checked + label::before, input[type=radio] + label:hover::before{
+                z-index:-1;
+                top:0;
+            }       
+    </style>
+
+</head>
+<body>
+
+
+    <div class="radioGroup">
+        <input type="radio" name="options" id="option1" />
+        <label for="option1">카이저센터</label>
+
+        <input type="radio" name="options" id="option2" />
+        <label for="option2">메뉴테스트&nbsp;</label>
+
+        <input type="radio" name="options" id="option3" />
+        <label for="option3">Joynoly관리&nbsp;</label>
+
+        <input type="radio" name="options" id="option4" />
+        <label for="option4">중대작품들</label>
+
+        <input type="radio" name="options" id="option5" />
+        <label for="option5">ITS</label>
+
+        <input type="radio" name="options" id="option6" />
+        <label for="option6">ETC.&nbsp;</label>
+
+        <input type="radio" name="options" id="option7" />
+        <label for="option7">관리자</label>
+        
+    </div>
+
+
+</body>
+
+</html>

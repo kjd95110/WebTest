@@ -1,0 +1,110 @@
+﻿<!doctype html>
+<html>
+<head>
+
+	<meta charset="utf-8">
+	<title>가상요소2-형광펜효과</title>
+	<script type="text/javascript" src="./js/jquery/jquery.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function () {
+
+		
+
+		});
+
+
+	</script>
+	<style type="text/css">
+
+		.highlight{
+			display:inline-table; 
+			/* 간격없이 영역을 잡을수 있는 테이블속성선언 인라인블럭안에 테이블만듬*/
+			position:relative;  /* 위치를 지정하는 요소의 기준(부모)*/
+			overflow:hidden; /* 안쪽 컨텐츠가 요소의 크기보다 크면 안보이게 처리 */
+		}
+		/* 포지션 속성을 갖고있는 요소의 우선순위*/
+		.highlight span{
+			position:relative;
+			z-index:2; 
+		}
+
+		/* 가상요소before가 Text위에 표시됨 */
+
+		.highlight::before{
+			content:''; /* 필수값*/
+			display:block;
+			width:100%;/* 부모요소에 꽉찬 값을 줌*/
+			height:100%; /* 부모요소에 꽉찬 값을 줌*/
+			background:rgba(76, 255, 0,.7); /* 색두께 50%, 100% 하면 안보이겠죠?*/
+			position:absolute; /* 레이어처럼 위로 띄워지는 속성*/
+			top:0;
+			left:-100%; /* 부모요소로부터 바깥으로 빠지게- 안보이게 함*/
+			transition:all .35s; /* 에니메이션 효과*/
+			z-index:1;
+
+		}
+
+		.content:hover  .highlight::before{
+			left:0;
+		}
+
+		
+		.highlight2{
+			display:inline-table; 
+			/* 간격없이 영역을 잡을수 있는 테이블속성선언 인라인블럭안에 테이블만듬*/
+			position:relative;  /* 위치를 지정하는 요소의 기준(부모)*/
+			overflow:hidden; /* 안쪽 컨텐츠가 요소의 크기보다 크면 안보이게 처리 */
+		}
+		/* 포지션 속성을 갖고있는 요소의 우선순위*/
+		.highlight2 span{
+			position:relative;
+			z-index:2; 
+		}
+
+		/* 가상요소before가 Text위에 표시됨 */
+
+		.highlight2::before{
+			content:''; /* 필수값*/
+			display:block;
+			width:100%;/* 부모요소에 꽉찬 값을 줌*/
+			height:100%; /* 부모요소에 꽉찬 값을 줌*/
+			background:rgba(76, 255, 0,.7); /* 색두께 50%, 100% 하면 안보이겠죠?*/
+			position:absolute; /* 레이어처럼 위로 띄워지는 속성*/
+			top:0;
+			left:-100%; /* 부모요소로부터 바깥으로 빠지게- 안보이게 함*/
+			transition:all .35s; /* 에니메이션 효과*/
+			z-index:1;
+
+		}
+
+		.content2:hover  .highlight2::before{
+			left:0;
+		}
+				
+
+		/* 
+			:: 이중콜론과 단일콜론 결과는 같습니다.
+			하지만
+			: 단일콜론은 가상클래스(PSEUDO CLASS)
+			(:checked,:focus,:hover,:target등등)
+			::이중콜론은 가상요소(PSEUDO Element)로
+			::first-letter,::first-line,::before,::after등등
+
+		*/
+
+	</style>
+
+</head>
+<body>
+
+	<div class="content">
+		안녕하세요  <span class="highlight">코딩남</span> 김중대입니다.
+	</div>
+
+	<div class="content2">
+		안녕하세요  <span class="highlight2"><span>코딩남 </span></span> 김중대입니다.
+	</div>
+
+</body>
+
+</html>

@@ -1,0 +1,77 @@
+<!doctype html>
+<html>
+<head>
+<title>ES6_실습1</title>
+
+<script type="text/javascript" src="../js/index.js"></script>
+<script type="text/javascript" src="../js/jquery/jquery.js"></script>
+<script type="text/javascript" src="../js/jquery/index2.js"></script>
+
+<script type="text/javascript">
+
+$(document).ready(function(){
+
+   var obj= getObj();
+   //console.log(obj.getName());
+   console.log(obj);
+
+
+   // another Example
+   const data={
+       name,getName(){
+           //data
+       },age }
+       
+});
+
+
+function getObj(){
+    const name="crong";
+    const getName=function(){
+        return name;
+    }
+
+    const setName=function(newname){        
+        return newname;
+    }
+
+    const printName=function(){
+        console.log(name);
+    }
+
+//     return{
+//         getName:getName,
+//         setName:setName
+//     }
+
+//이름이 같을경우 하나만 써도 된다.
+return{getName,setName,name}
+
+ }
+
+
+
+</script>
+<style type="text/css">
+body{
+    background-color: peru;
+}
+
+h1{
+    color:#fff;
+}
+</style>
+
+</head> 
+
+<body>
+<ul>
+    <li>apple</li>
+    <li>orang</li>
+    <li>banana</li>
+    <li>strawberry</li>
+</ul>
+
+</body>
+
+</html> 

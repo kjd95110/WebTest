@@ -1,0 +1,81 @@
+<!doctype html>
+<html>
+<head>
+<title>Const변수의 특성</title>
+
+<script type="text/javascript" src="../js/index.js"></script>
+<script type="text/javascript" src="../js/jquery/jquery.js"></script>
+<script type="text/javascript" src="../js/jquery/index2.js"></script>
+
+<script type="text/javascript">
+
+var name="global var";
+$(document).ready(function(){
+    Home();    
+});
+
+
+
+/*
+
+const를 기본으로 사용한다.
+그런데 변경이 될수 있는 변수는 let을 사용한다.
+var 는 될수있는한 사용하지 않는다.
+
+const를 사용하더라도 배열과 오브젝트의 값을 변경하는것은 가능하다.
+재할당만 안된다...
+
+*/
+
+function Home(){
+    const list=["apple","orange","watermelon"];
+    list.push("banana");    
+    console.log(list);  
+}
+
+const list=["apple","orange","watermelon"];
+    list2 = [].concat(list,'banana');
+    console.log(list,list2);
+    console.log(list==list2);
+
+function Home_Old(){
+    const homename='my house';
+    homename="your house";
+
+    console.log(homename);
+}
+
+
+
+
+</script>
+<style type="text/css">
+body{
+    background-color: peru;
+}
+
+ul li{
+    display: block;
+    border:1px solid #000;
+    height:35px;
+    width:200px;
+    padding:5px 0px 0px 0px;
+    text-align: center;
+}
+
+</style>
+
+</head> 
+
+<body>
+
+    <ul>
+        <li>Javascript</li>
+        <li>Java</li>
+        <li>python</li>
+        <li>django</li>
+    </ul>
+
+</body>
+
+</html> 

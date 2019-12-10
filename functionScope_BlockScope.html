@@ -1,0 +1,84 @@
+<!doctype html>
+<html>
+<head>
+<title>functionScope_BlockScope</title>
+
+<script type="text/javascript" src="./js/index.js"></script>
+<script type="text/javascript" src="./js/jquery/jquery.js"></script>
+<script type="text/javascript" src="./js/jquery/index2.js"></script>
+
+<script type="text/javascript">
+
+$(document).ready(function(){
+
+    Testfunc();
+    
+});
+
+
+function Testfunc(){
+
+    scopeTest3();
+}
+
+
+function scopeTest3(){
+    var es = []; 
+    for (let i = 0; i < 10; i++) { 
+        let c = i;
+        es[i] = function(){
+            //console.log(" ECMAScript is ES " + c);
+            return c;
+        }
+    }
+
+    console.log(" ECMAScript is ES6=" + es[6]);
+}
+
+function scopeTest() {
+var inFor
+var is = true;
+if (is) {
+    var is = false;
+}
+
+for(var i=0;i<=5;i++) {
+
+inFor = i;
+
+}
+console.log('infor is = ' + inFor); // 출력되는 값은?
+console.log('is is =' + is);
+}
+
+
+function scopeTest2() { 
+    var es = []; 
+    for (var i = 0; i < 10; i++) { 
+        es[i] = function () { 
+            console.log("ECMAScript is ES" + i); 
+        }; 
+    }
+
+        es[6](); // 출력되는 값은? 
+}
+
+</script>
+<style type="text/css">
+body{
+    background-color: peru;
+}
+
+h1{
+    color:#fff;
+}
+</style>
+
+</head> 
+
+<body>
+
+
+</body>
+
+</html> 

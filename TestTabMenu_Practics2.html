@@ -1,0 +1,103 @@
+<!doctype html>
+<html>
+<head>
+	<title>탭메뉴연습</title>
+	
+
+	<script type="text/javascript" src="./js/jquery/jquery.js"></script>
+	<script type="text/javascript" src="./js/jquery/external/jquery.alphanumeric.js"></script>
+	<script type="text/javascript">
+
+		$(document).ready(function () {
+
+			$(".tab ul li a").click(function (e) {
+				if (e.target.id == 'dummy2' || e.target.id == 'dummy1') {
+					return false;
+				}
+				$(".tab ul li a").removeClass("on");
+				$(this).addClass("on");
+			});
+		});
+
+	</script>
+
+	<style type="text/css">
+
+		*{
+			padding:0px 0px;
+			margin:0px;
+			list-style:none;
+		}
+		
+
+		.tab ul {
+			width:690px;
+			display:flex;
+			height:60px;
+			margin-left:100px;
+			margin-top:200px;
+			border-bottom: 2px solid #5da62b; /* 여기가 중요함 */
+		}
+		.tab ul li {
+		
+			width:130px;
+			border:1px solid #ddd;
+			border-left:0px;
+			height: 59px;
+			text-align:center;
+			line-height:59px;
+			border-bottom:0px;
+		}
+
+		.tab ul li a{
+		display:block;
+			text-decoration:none;
+			height: 59px;			
+		}
+
+		.tab ul li a.on{
+		display:block;
+			text-decoration:none;
+			height: 56px;
+			border-top:3px solid #00ff21;
+			border-right:1px solid #00ff21;
+			border-left:1px solid #00ff21;
+			border-bottom:2px solid #fff;
+			color:#ff0000;
+			
+		}
+		.tab ul li:first-child {
+			display: block;
+			border-top: 1px solid white;
+			border-left: 0px;
+			width: 20px;
+		}
+		.tab ul li:last-child {
+			display: block;
+			border-top: 1px solid white;
+			border-left: 0px;
+			width: 20px;
+			border-right:0px;
+		}
+
+
+	</style>
+
+
+</head>
+<body>
+
+	<nav class="tab">
+		<ul>
+			<li><a href="#" id="dummy1"></a></li>
+			<li><a href="#">브랜드별</a></li>
+			<li><a href="#" class="on">일반기능도료</a></li>
+			<li><a href="#">특수기능도료</a></li>
+			<li><a href="#">DIY(가정용)</a></li>
+			<li><a href="#">KS규격도료</a></li>
+			<li><a href="#" id="dummy2"></a></li>
+		</ul>
+	</nav>
+
+</body>
+</html>

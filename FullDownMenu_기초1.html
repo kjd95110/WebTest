@@ -1,0 +1,107 @@
+<!doctype html>
+<html>
+<head>
+	<title>FullDownMenu</title>
+	<script type="text/javascript" src="./js/jquery/jquery.js"></script>
+	<script type="text/javascript">
+
+
+
+	</script>
+	<style type="text/css">
+		body {
+			
+			line-height:1;
+			font-family:"Open Sans","Noto Sans KR",sans-serif;
+			font-size:1em;
+		}
+
+		#GNB {
+			margin-top:100px;
+			margin:0 auto;
+			width:900px;
+			border:1px solid #000;
+		}
+
+		#GNB li{
+			display:inline-block;
+			position:relative;
+			
+			/* 지양코드
+				width:120px;	
+				border:1px solid #000;
+			*/
+		}
+	
+
+		#GNB  li a{
+			display:block;/*중요함 기억해*/
+			/*background-color:#ddd;*/
+			margin-top:10px;
+			text-decoration:none;
+			border:0px solid #ddd;
+			padding:0px 52px;
+			height:40px;
+			line-height:40px;
+			font-size:16px;
+			font-weight:700;
+			transition:background-color 0.3s;
+			/*border-right:solid 1px #000;*/
+		}
+		/* 디자인요소는 ::before,::after 요소로 제작합니다. */
+		#GNB li::before {
+			content:"";
+			display:block;
+			position:absolute;
+			left:0;
+			top:20px;
+			width:1px;
+			height:20px;
+			background-color:#ccc;
+			
+
+		}
+
+		#GNB  li a:hover{
+			background-color:#f90;
+		}
+
+		#GNB li:first-child a{
+			padding-left:0;
+		}
+		#GNB li:last-child a{
+			padding-right:0;
+		}
+
+		div{
+			box-sizing:border-box;
+		}
+
+		img {
+			vertical-align:top;
+			border:none;
+		}
+
+		table {
+			width:100%;
+			border-collapse:collapse;border-spacing:0;
+		}
+
+		
+	</style>
+	<!-- Inline 속성에 vertical-align 속성이 먹는다  -->
+</head>
+
+<body>
+	<nav id="GNB">
+		<ul>
+			<li><a href="#">NEW</a></li>
+			<li><a href="#">WOMAN</a></li>
+			<li><a href="#">MEN</a></li>
+			<li><a href="#">LIFE</a></li>
+			<li><a href="#">SALE</a></li>
+			<li><a href="#">BRAND</a></li>
+		</ul>
+	</nav>
+</body>
+</html>

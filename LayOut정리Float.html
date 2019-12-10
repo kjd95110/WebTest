@@ -1,0 +1,119 @@
+<!doctype html>
+<html>
+<head>
+
+    <title>LayOut 정리</title>
+    <style type="text/css">
+        /* Css Reset 에릭마이어 유명함*/
+       * {
+            margin: 0;
+            padding: 0;                      
+            
+        }
+        
+        body {
+            line-height: 1;
+        }
+
+        ol, ul {
+            list-style: none;
+        }     
+        blockquote:before, blockquote:after,
+        q:before, q:after {
+            content: '';
+            content: none;
+        }
+
+
+
+        .container {
+            background-color: pink;
+            /* 자식들이 Float되어있으면 부모Container가(높이가 없다)  자식들을 인지못한다.(없는자식?)
+                그럼 어떻게 해결하나???? 컨테이너(부모)가 끝나기 직전 clear해준다.
+                그런데 이방법은 고전방법
+                요즘은 가상요소로 해결한다.
+
+                 .container:after{
+            content:'';
+            display:block;
+            clear:both;
+        }
+            */
+        }
+
+        .container:after{
+            content:'내가 클릭어 했수다!';
+            display:block;
+            clear:both;
+            
+            /*
+                perfect 방법;
+                height:0;
+            visibility:hidden;*/
+        }
+
+        .item {
+            float: left;
+            padding: 5%;
+            font-size: 1rem; /* root em -> html default 사용하겠다는 의미 (16px) */
+        }
+
+        .item-a {
+            width: 22%;
+            background-color: yellow;
+            vertical-align: top;
+           
+        }
+
+        .item-b {
+            width: 40%;          
+            background-color: yellowgreen;
+        }
+
+        footer{
+            /*clear:left;*/
+            clear:both;
+            background-color:#ddd;
+        }
+        /* 반응형 웹 
+            최소 700width 이상(넘어가게되면)일때 작동
+
+        */
+        @media screen and (min-width:700px){
+            .container {
+               font-size:0;
+            }
+
+            .item {
+                vertical-align:top;
+                display:inline-block;
+                font-size:1rem;
+            }
+
+            .item-a {
+              width:30%;
+            }
+
+            .item-b {
+                width: 50%;
+            }
+        }
+    </style>
+    </head>
+<body>
+    <div class="container">
+        <section class="item item-a">
+            <h1>Section a</h1>
+            One of the pioneers of the CSS Reset method, Eric Meyer, created a Reset stylesheet that is still in use on millions of websites today. Most people use it in its unedited form, despite Meyer’s recommendation against this:
+        </section>
+
+
+        <section class="item item-b">
+            <h1>Section b</h1>
+            The reset styles given here are intentionally very generic. There isn’t any default color or background set for the body element, for example. I don’t particularly recommend that you just use this in its unaltered state in your own projects. It should be tweaked, edited, extended, and otherwise tuned to match your specific reset baseline. Fill in your preferred colors for the page, links, and so on.
+        </section>
+        <!--<div style="clear:both;"></div>-->
+    </div>
+    <footer>footer</footer>
+</body>
+</html>

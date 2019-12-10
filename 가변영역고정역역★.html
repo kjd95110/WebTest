@@ -1,0 +1,74 @@
+<!doctype html>
+<html>
+<head>
+	<title>가변영역고정영역레이아웃3가지방법</title>
+	<script type="text/javascript" src="./js/jquery/jquery.js"></script>
+	<script type="text/javascript" src="./js/jquery/external/jquery.alphanumeric.js"></script>
+	<!--<script type="text/javascript">
+		$(document).ready(function () {
+		});
+	</script>-->
+
+	<style type="text/css">
+		/* Main가변역영 Side는 고정영역 */
+
+		/* 1.부모 display:flex  , 자식 flex:1  하는 방법 File-> flex.html 참고할것*/
+		/* 2. 부모 display:table-cell  자식의 각각 display:table-cell .side에도 dispaly:table-cell */
+		/* 3.width:calc 사용할때는 부모에 해줄게 없음*/
+		/* 4. 새로운 방식있음 
+			display:grid
+			grid-template-columns:1fr 300px;
+
+		*/
+		.wrapper{		
+			
+			/*display:flex; */       /*flex:1과 세트   */
+			/*display:table;*/
+			font-size:30px;
+			text-align:center;
+			width:100%;
+			background-color:yellow;
+		}
+		.main{
+
+			/*flex:1;*/
+			/*display:table-cell;*/
+			 width:calc(100% - 300px); 
+			/* Vendor Prefix*/
+			width:-webkit-calc(100% - 300px);
+			width:-moz-calc(100% - 300px);
+			width:-o-calc(100% - 300px);
+			width:-ms-calc(100% - 300px);
+			
+			background-color:dodgerblue;
+			color:#fff;
+			height:300px;
+			line-height:300px;
+			float:left;
+			
+			
+		}
+		.side{
+			/*display:table-cell;*/
+			background-color:crimson;
+			width:300px;
+			height:300px;
+			color:#fff;
+			line-height:300px;
+			float:left;
+			/*3.width:calc 사용할때는 */
+		}
+			
+		
+
+	</style>
+</head>
+<body>
+
+
+	<div class="wrapper">
+		<div class="main">Main</div>
+		<div class="side">Side</div>
+	</div>
+</body>
+</html>

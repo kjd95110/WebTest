@@ -1,0 +1,93 @@
+<!doctype html>
+<html>
+<head>
+    <title>CoolMenuHoverEffect</title>
+
+    <script type="text/javascript" src="./js/jquery/jquery.js"></script>
+    <script type="text/javascript" src="./js/jquery/external/jquery.alphanumeric.js"></script>
+
+
+    <style type="text/css">
+        body {
+            margin: 0;
+            padding: 0;
+            font-size:14px;
+            background-color:#f4f4f4;
+        }
+
+        .container{
+            /*border:1px solid red;*/
+            position:absolute;
+            top:20%;
+            left:50%;
+            transform:translate(-50%,-50%);
+        }
+
+        .underline-hover {
+            /*float:left;*/
+            /*display:inline-block;*/
+            display:flex; /* 부모에..*/
+            list-style:none;
+            width:600px;
+            background-color:#fff;
+            padding:50px;
+            margin:0;
+            border-radius:10px;
+            box-shadow:0 0 30px rgba(0,0,0,0.2);
+        }
+
+        .underline-hover li{
+            margin:0 30px;
+        }
+
+        .underline-hover li a{
+            color:#222;
+            text-decoration:none;
+            padding:5px 10px;
+            position:relative;
+            text-align:center;
+            /*background-color:#ddd;*/
+            /* border-bottom 으로는 애니메이션 효과주기 힘들다*/
+
+           
+        }
+
+        /* after 던 before 던 상관없음*/
+            .underline-hover li a:before {
+                content: '';
+                background-color: dodgerblue;
+                /*width: 100%;*/
+                width:0px;
+                height: 2px;
+                position: absolute;
+                /*left: 0; 왼쪽에서..*/
+                /*right:0;  오른쪽에서*/
+
+                left:50%; /* 중앙에서 시작*/
+                transform:translateX(-50%); /* 중앙에서 너비값만큼 50% 빼주는 상태에서 크진다.*/
+                bottom: -5px;
+                transition: 0.5s; /* 가상클랙스가 아닌곳에 들어가야 한다.*/
+            }
+            .underline-hover li a:hover:before {
+                /*width: 0px;*/
+                width: 100%;
+            }
+
+
+    </style>
+
+</head>
+<body>
+    <div class="container">
+        <ul class="underline-hover">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Service</a></li>
+            <li><a href="#">Portfolio</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </div>
+
+</body>
+
+</html>

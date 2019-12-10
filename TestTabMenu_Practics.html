@@ -1,0 +1,112 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title></title>
+	<script type="text/javascript" src="./js/jquery/jquery.js"></script>
+	<script type="text/javascript" src="./js/jquery/external/jquery.alphanumeric.js"></script>
+
+	<script type="text/javascript">
+		$(document).ready(function () {
+
+			$(".tab_type1 ul li a").click(function (e) {
+				if (e.target.id == 'dummy2' || e.target.id == 'dummy1') {
+					return false;
+				}
+				$(".tab_type1 ul li a").removeClass("on");
+				$(this).addClass("on");
+			});
+		});
+
+
+	</script>
+	<style type="text/css">	
+*{
+	padding:0px;
+	margin:0px;
+	list-style:none;
+}
+body{padding:30px;width:800px}
+
+.tab_type1 ul{
+	
+	display:flex;
+	border-bottom: 2px solid #5da62b; /* 여기가 중요함 */
+	height:60px;	
+
+}
+
+.tab_type1 ul li{	
+	
+	width:150px;
+	height: 59px;
+	text-align: center;	
+	border:1px solid #ddd;
+	border-left:none;	
+	border-bottom:none;/*  여기가 중요함 */
+
+}
+
+.tab_type1 ul li:first-child{ 
+	display: block;
+	border-top:1px solid white;
+	border-left:0px;
+	width:20px;
+/* border-bottom: 1px solid #5da62b;  */
+/* background-color: aquamarine; */
+}
+
+.tab_type1 ul li:last-child {
+    border-top:1px solid white;
+    border-right:0px;
+    width:20px;
+  }
+
+.tab_type1 ul li a{
+	
+	display:block;
+	height:56px;    
+	border:0px solid #ddd;
+	/*border-bottom: 2px solid #5da62b;*/ 
+    font-size:14px;
+    color:#505050;
+    text-align:center; 
+    line-height:60px;    
+    text-decoration:none; 
+}
+
+.tab_type1 ul li a.on{   
+    height:55px;
+    /*border:1px solid #ddd;*/
+    border-color:#5da62b;
+    border-top-width: 4px;
+	border-top-color:red;
+    line-height: 58px;    
+	border-bottom:2px solid #fff;
+    border-left: 2px solid #5da62b;
+    border-right: 2px solid #5da62b;
+    font-weight:bold;
+    font-size:18px;
+    color:red;
+}
+
+
+	</style>	
+
+</head>
+  
+<body>
+	<nav class="tab_type1">
+		<ul>
+			<li><a href="#a" id="dummy1"></a></li>
+			<li><a href="#a"> 브랜드별</a></li>
+			<li><a href="#a" class="on"> 일반기능도료</a></li>
+			<li><a href="#a"> 특수기능도료</a></li>
+			<li><a href="#a"> DIY(가정용)</a></li>
+			<li><a href="#a"> KS규격도료</a></li>
+			<li><a href="#a" id="dummy2"></a></li>
+		</ul>
+	</nav>
+</body>
+</html>

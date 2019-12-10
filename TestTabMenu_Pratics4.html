@@ -1,0 +1,163 @@
+﻿<!doctype>
+<html>
+<head>
+
+	<title>Tab메뉴 테스트4</title>
+	<script type="text/javascript" src="./js/jquery/jquery.js"></script>
+	<script type="text/javascript" src="./js/jquery/external/jquery.alphanumeric.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function () {
+
+			$('.tab_content1').hide();
+			$('.tab_content2').hide();
+			$('.tab_content3').hide();
+			$('.tab_content4').show();
+
+			$("ul li").click(function (e) {			
+								
+				$("ul li").removeClass("active");				
+				$(this).addClass("active");
+
+
+				switch (e.target.id) {
+					case 'myTab1': $('.tab_content1').show();
+						$('.tab_content2').hide();
+						$('.tab_content3').hide();
+						$('.tab_content4').hide();
+								   
+						break;
+					case 'myTab2':
+						$('.tab_content1').hide();
+						$('.tab_content2').show();
+						$('.tab_content3').hide();
+						$('.tab_content4').hide();
+						break;
+					case 'myTab3':
+						$('.tab_content1').hide();
+						$('.tab_content2').hide();
+						$('.tab_content3').show();
+						$('.tab_content4').hide();
+						break;
+					case 'myTab4':
+						$('.tab_content1').hide();
+						$('.tab_content2').hide();
+						$('.tab_content3').hide();
+						$('.tab_content4').show();
+						break;
+
+				}
+
+				//$('.tab_container .tab_content1').
+				
+
+			});
+		});
+
+
+	</script>
+	<style type="text/css">
+		ul.tabs {
+			list-style: none;
+			/*margin: 0;
+			padding: 0px 0px;
+			float: left;			
+			height: 38px;
+			border-bottom: 0px solid #3567af;
+			border-left: 1px solid #eee;
+			width: 100%;
+			font-family: Arial, Helvetica, sans-serif;*/
+		}
+
+		ul.tabs li {
+			float: left;
+			padding: 0px 4px;
+			text-align: center;
+			cursor: pointer;
+			width: 135px;
+			height: 37px;
+			line-height: 35px;
+			border: 1px solid #ccc;
+			font-weight: 700;
+			background: #EEEEEE;
+			/*overflow: hidden;*/
+			/*position: relative;*/
+			color: #666;
+		}
+
+		ul.tabs li.active {
+			margin-top: -3px;
+			background: #FFFFFF;
+			border: solid 1px #3567af;
+			font-weight: bold;
+			border-top: solid 4px #3567af;
+			border-bottom: 1px solid black;
+			line-height: 35px;
+			color: #333;
+		}
+
+		.tab_container {
+			margin-top: 0px;
+			border: solid 1px black;
+			clear: both;
+			float: left;
+			width: 100%;
+			background: #FFFFFF;
+		}
+
+		.tab_content {
+			/*padding: 0px;
+			padding-left: 5px;
+			font-size: 12px;
+			display: none;
+			border:solid 1px black;*/
+
+			/*visibility:hidden;*/
+		}
+
+		/*.tab_container .tab_content ul {
+			width: 100%;
+			margin: 0px;
+			padding: 0px;
+		}
+
+			.tab_container .tab_content ul li {
+				padding: 0px;
+				list-style: none;
+			}*/
+
+		#container {
+			width: 795px;
+			margin-left: 5px;
+			/*margin: 0 auto;*/
+		}
+	</style>
+
+</head>
+<body>
+
+	<div id="container">
+		<ul class="tabs">
+			<li id="myTab1" rel="tab1">테스트1</li>
+			<li id="myTab2" rel="tab2" style="margin-left:5px;">테스트2</li>
+			<li id="myTab3" rel="tab3" style="margin-left:5px;">테스트3</li>
+			<li id="myTab4" rel="tab4" class="active" style="margin-left:5px;">테스트4</li>
+		</ul>
+
+		<div class="tab_container">
+			<div id="tab1" class="tab_content1">
+				<div id="grid_wrap_kind1" style="width:100%;min-height:300px;">1</div>
+			</div>
+			<div id="tab2" class="tab_content2">
+				<div id="grid_wrap_item2" style="width:100%;min-height:300px;">2</div>
+			</div>
+			<div id="tab3" class="tab_content3">
+				<div id="grid_wrap_item3" style="width:100%;min-height:300px;">3</div>
+			</div>
+			<div id="tab4" class="tab_content4">
+				<div id="grid_wrap_item4" style="width:100%;min-height:300px;">4</div>
+			</div>
+		</div>
+	</div>
+	
+</body>
+</html>

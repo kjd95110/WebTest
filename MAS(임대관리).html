@@ -1,0 +1,125 @@
+<!doctype html>
+<html>
+<head>
+	<title>MAS</title>
+	<style type="text/css">
+body,p,h1,h2,h3,h4,h5,h6,ul,ol,li,dl,dt,dd,table,th,td,form,fieldset,legend,input,textarea,button,select{margin:0;padding:0}
+/*body,input,textarea,select,button,table{font-family:'맑은 고딕', 'Malgun Gothic', '돋움',Dotum, Helvetica,sans-serif;-webkit-text-size-adjust:none}*/
+img,fieldset{border:0}
+ul,ol{list-style:none}
+/* ---------- menu ----------*/
+.header {/*background-color:#FBFCFD;*/width:100%;height:70px;border-bottom:solid 1px #dcdcdc;}
+
+.gnbWrap{width:100%;}
+.gnb{width:980px;margin:0 auto;position:relative}
+
+.gnb ul:after{content:'';clear:both;display:block}
+.gnb li{float:left;font-size:1.125em;color:#1a1a1a;}
+.gnb li a{color:#6e6e6e;display:block;padding:23px 0px 20px;text-align:center;text-decoration:none;font-size:1.26em;width:245px;}
+.gnb li.on a, .gnb li a:hover{color:#445d94;border-bottom:3px solid #445E91;}
+
+.subWrap{display:none;
+		 position:absolute;
+		 top:75px;left:0;width:100%;padding:20px 0 15px 0; background:#fff url("./img/master/bg_subMenu1.png") repeat-x left bottom;
+		 z-index:9999;
+}
+.subMenu{width:980px;margin:0 auto;}
+.subMenu:after{content:'';clear:both;display:block}
+.subMenu li{float:left;margin:0;}
+.subMenu li a{display:block;padding:0 0 16px 0;font-size:1.1em;color:#6e6e6e;text-decoration:none;}
+.subMenu li a:hover,
+.subMenu li.on a{color:#445E91;font-weight:bold;}
+
+.subMenu li.sub01{margin-left:60px}
+.subMenu li.sub02{margin-left:154px}
+.subMenu li.sub03{margin-left:152px}
+.subMenu li.sub04{margin-left:112px}
+    
+	</style>
+
+	<script type="text/javascript" src="./js/jquery/jquery.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+
+			$(".gnb > ul > li, .subWrap").hover(function () { // top메뉴 마우스오버효과
+				$(".gnb > ul > li ").removeClass("on");
+				$(".subWrap").stop().slideDown("fast");				
+				$(this).addClass("on");
+				return false;
+			}) // mouseover
+
+			$(".gnb, .subWrap").mouseleave(function () {
+				$(".subWrap").stop().slideUp("fast");
+				$(".gnb > ul > li").removeClass("on");
+			})
+			// mouseleave
+
+		});
+        /* 
+         
+         ※ mouseenter, mouseover의 차이
+
+            ☞ 둘의 공통점 : 해당 영역에 마우스가 올라가는 것을 감지
+
+            ☞ mouseenter : 자식 영역에 들어가면 감지하지 않는다.
+
+            ☞ mouseover : 해당 영역의 자식영역까지 들어가도 감지된다.
+
+
+
+            ※ mouseout, mouseleave의 차이
+
+            ☞ 둘의 공통점 : 해당 영역에 마우스가 올라가 있는 상태에서 벗어난 것을 감지
+
+            ☞ mouseleave : 자식 영역에 들어가 요소를 빠져나가도 감지하지 않는다.
+
+            ☞ mouseout : 요소 안에 다른 요소를 빠져나가도 감지하게 된다.
+         
+         */
+
+	</script>
+</head>
+
+<body>
+	<div class="header">
+		<div class="gnbWrap">
+			<div class="gnb">
+				<ul>
+					<li><a href="#">입주 &middot; 예약관리</a></li>
+					<li><a href="#">현황조회</a></li>
+					<li><a href="#">기초설정</a></li>
+					<li><a href="#">CC플러스</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="subWrap">
+			<ul class="subMenu">
+				<li class="sub01">
+					<a href="#">이사예약 등록</a>
+					<a href="#">입주정보 등록</a>
+					<a href="#">키불출 &middot; 검침 등록</a>
+					<a href="#">SMS 전송</a>
+				</li>
+				<li class="sub02">
+					<a href="#">이사예약 현황</a>
+					<a href="#">입주 현황</a>
+					<a href="#">선수금 현황</a>
+					<a href="#">키불출 현황</a>
+				</li>
+				<li class="sub03">
+					<a href="#">동호정보 등록</a>
+					<a href="#">선수금 생성</a>
+					<a href="#">승강기 &middot; 사다리 등록</a>
+					<a href="#">이사예약시간 등록</a>
+					<a href="#">입주예약기간 등록</a>
+				</li>
+				<li class="sub04">
+					<a href="#" target="_blank">CC플러스</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+
+</body>
+
+</html> 

@@ -1,0 +1,154 @@
+﻿<!doctype html>
+<html>
+  <head>
+      <meta charset="utf-8">
+    <title>FlexGrid</title>    
+    <!--<link href="./css/FlexGrid.css" rel="stylesheet" />-->
+    <script type="text/javascript" src="./js/jquery/jquery.js"></script>
+    <script type="text/javascript" src="./js/jquery/external/jquery.alphanumeric.js"></script>
+
+
+    <script type="text/javascript">
+    
+    $(document).ready(function(){
+
+
+      
+    });
+    
+    </script>
+
+
+	  <style type="text/css">
+div,span,article,section,header,footer,p,ul,li,label{
+    box-sizing: border-box;
+}
+
+body{font-size:1.5rem;}
+
+.container{
+    display:flex;    
+     flex-direction: row; 
+     flex-wrap: wrap; 	 
+	 background:lightgray;
+	 justify-content: flex-start; 
+	 
+    /* justify-content: space-around; 
+		grid에서도 나옴
+		x?축방향으로 정렬
+		flex-start-> 축방향 시작에서 정렬
+		flex-end-> 축방향 끝에서 정렬
+		center-> 축방향 중간에서 정렬
+		space-between 1-2-3 이 있을때
+		1이 처음 3이 마지막 2가 중간이고 각 사이에 공간이 존재함
+		space-around 1-2-3 이 있을대
+		1 의 앞과 2 와 3 그리고 3의 뒤각 각에 공간이 있음
+    */
+    /* justify-content: center; */
+	 align-items:flex-start;
+	
+    /* align-items: center; 기본값 stratch
+		y축의 정렬.(1줄)
+
+    */
+	
+	 height:100vh;
+    /*align-content: space-around;
+		y축의 정렬방법을 설정(2줄이상)
+    */
+    /*height:100vh;*/
+}
+
+.item{
+
+	flex-basis:0; 
+	/* flex-basis:0 이면 여백을 0으로 만들어버리면서 
+		flex-grow의 값 의 비율처럼 width 간격을  1:2:1 로 맞춰줌
+		 이때 Width 맞음 이제 유용함..ㅋㅋ
+
+	*/
+
+}
+.item:nth-child(1){
+	flex-grow: 1;
+	/* 늘어나기전의 여백 공간을 비율 1:2:1 로 늘어나게함(이때 width아님 여백맞음) 
+		아주웃겨.. 별로 유용하게 안보임 */
+	
+	 flex-shrink:1;
+	 /* 줄어들기전의 여백공간 비율을 1:2:1 로 줄어들게함(이때 flex-basis:0이면 여백이 없으므로
+		 width폭 비율 1:2:1로 된다.
+
+		 이때 flex:1 ,flex:2,flex:1 도 같은 효과(flex-basis가 0으로 자동맞춰줌)
+		 를 내므로 flex-shrink는 별 의미 없는것으로 보임.
+		 결국 flex:xxx로 비율을 맞춰줌 ...일반적으로 쓰임...
+	 */
+	
+	 align-self:flex-start;
+	 /* 
+		 item각각의 정렬(내자신만...) 속성값에 지정된 위치로 분기?됨
+
+	 */
+	 order :1;
+	 /*
+		 순서z-index 와 비슷
+	 */
+/* flex-grow: 1; */
+/* flex-shrink:1; */
+/*
+	flex:1;
+*/
+
+}
+.item:nth-child(2){
+     flex-grow: 2; 
+     flex-shrink:2; 
+    /*flex:1;
+    order :2;*/
+	 align-self:center;
+}
+.item:nth-child(3){
+     flex-grow: 1;
+     flex-shrink:1; 
+    /*flex:1;
+    order :3;*/
+	align-self:flex-end;
+}
+
+.item{
+    /* flex-grow: 1; */
+    /* flex-basis: auto; */
+    background:rgba(255,0,0,0.5);
+}
+
+.item:nth-child(odd){
+    background: rgba(255,255,0,0.5);
+}
+
+
+	  </style>
+
+  </head>
+  <body>
+
+    <div class="container">
+        <div class="item">1
+            <img src="./img/general/btn_wst4_on.gif" >
+            <p>AAAAAAAAAAA</p>
+            <p>AAAAAAAAAAA</p>
+            <p>AAAAAAAAAAA</p>
+        </div>
+
+        <div class="item">2
+            <img src="./img/general/btn_wst5_on.gif" >
+            <p>BBBBBBBBBBB</p>            
+        </div>
+        <div class="item">3
+            <img src="./img/general/btn_wst6_on.gif" >
+            <p>CCC</p>
+        </div>
+
+    </div>
+
+
+  </body>
+</html>

@@ -1,0 +1,120 @@
+<html>
+<head>
+	<title>FullDownMenu</title>
+	<script type="text/javascript" src="./js/jquery/jquery.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+
+
+
+		});
+
+
+	</script>
+	<style type="text/css">
+		body{
+			/*line-height:1;
+			font-family:"Open Sans","Noto Sans KR",sans-serif;
+			font-size:1em;*/
+		}
+
+		#menu{
+			text-align:center;
+			font-size:14px;
+			/*background-color:#999;*/
+
+		}
+
+		#menu > ul > li{  /* 1Depth만 지정되도록 꺽쇠(자식) 사용*/
+			display:inline-block; /* 중요*/
+		}
+
+		#menu > ul > li >  a{  /* 1Depth */
+			display:block;    /* 중요*/
+			padding:10px 30px;
+			font-weight:600;
+			background-color:#999;
+			color:#fff;
+			text-decoration:none;
+		}
+
+		#menu ul ul li {
+			list-style:none;
+		}
+
+		#menu ul ul li a {
+			text-decoration: none;
+		}
+	</style>
+	<!-- Inline 속성에 vertical-align 속성이 먹는다  -->
+</head>
+
+<body>
+	<div class="wrapper">
+		<nav id="menu">
+			<ul>
+				<li>
+					<a href="#">ZICENDEPTH_1</a>
+					<ul>
+						<li><a href="#">2depth_1</a></li>
+						<li><a href="#">2depth_2</a></li>
+						<li><a href="#">2depth_3</a></li>
+						<li><a href="#">2depth_4</a></li>
+						<li><a href="#">2depth_5</a></li>
+						
+					</ul>
+				</li>
+				<li>
+					<a href="#">DEPTH_2</a>
+					<ul>
+						<li><a href="#">2depth_1</a></li>
+						<li><a href="#">2depth_2</a></li>
+						<li><a href="#">2depth_3</a></li>
+						<li><a href="#">2depth_4</a></li>
+						<li><a href="#">2depth_5</a></li>						
+					</ul>
+				</li>
+				<li>
+					<a href="#">1DEPTH_3</a>
+					<ul>
+						<li><a href="#">2depth_1</a></li>
+						<li><a href="#">2depth_2</a></li>
+						<li><a href="#">2depth_3</a></li>
+						<li><a href="#">2depth_4</a></li>
+						<li><a href="#">2depth_5</a></li>
+					</ul>
+				</li>
+				<li>
+					<a href="#">1DEPTH_4</a>
+					<ul>
+						<li><a href="#">2depth_1</a></li>
+						<li><a href="#">2depth_2</a></li>
+						<li><a href="#">2depth_3</a></li>
+						<li><a href="#">2depth_4</a></li>
+						<li><a href="#">2depth_5</a></li>								
+					</ul>
+				</li>
+				<li>
+					<a href="#">1DEPTH_5</a>
+					<ul>
+						<li><a href="#">2depth_1</a></li>
+						<li><a href="#">2depth_2</a></li>
+						<li><a href="#">2depth_3</a></li>
+						<li><a href="#">2depth_4</a></li>
+						<li><a href="#">2depth_5</a></li>
+					</ul>
+				</li>
+				<li>
+					<a href="#">1DEPTH_6</a>
+					<ul>
+						<li><a href="#">2depth_1</a></li>
+						<li><a href="#">2depth_2</a></li>
+						<li><a href="#">2depth_3</a></li>
+						<li><a href="#">2depth_4</a></li>						
+					</ul>
+				</li>
+			</ul>
+		</nav>
+	</div>
+</body>
+</html>

@@ -1,0 +1,109 @@
+﻿<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Vertical DropDownMenu</title>
+	<script src="https://use.fontawesome.com/releases/v5.2.0/js/all.js"></script>
+	<script type="text/javascript" src="./js/jquery/jquery.js"></script>
+	<script type="text/javascript" src="./js/jquery/external/jquery.alphanumeric.js"></script>
+	<script type="text/javascript">
+
+	</script>
+
+	<style type="text/css">		
+		body {
+
+			margin: 0;
+			padding: 0;			
+			/*font-family:sans-serif;*/
+			/*font-family: Arial,sans-serif;*/
+			/*font-family: Poppins;*/
+		}		
+
+		
+	
+		
+
+		.menu ul{
+			list-style: none;
+			margin:0;
+			padding:0;
+		}
+
+		.menu ul li{
+			
+			padding:15px;
+			position:relative;
+			width:150px;
+			background-color:#34495e;
+			border-top:1px solid #bDc3c7;
+			border-right:5px solid #f1c40f;
+			cursor:pointer;
+		}
+
+		/*.menu ul li:hover{
+			background-color:#2ecc71;
+		}*/
+
+		.menu ul li a{
+			color:#fff;
+			text-decoration: none;
+		}
+
+		.menu > ul > li{
+
+			border-right:5px solid #F1c40f;
+		}
+		.menu ul ul {
+			transition:all 0.3s;
+			opacity:0;
+			
+			border-left: 5px solid #f1c40f;
+			/*visibility:hidden;*/
+			position:absolute;
+			left:100%; /* 숨김*/
+			top:-2%;
+		}
+
+		.menu ul li:hover > ul{
+			opacity:1;
+			/*visibility:visible;*/
+		}
+
+		span {
+			margin-right: 15px;
+		}
+
+		
+	
+	/*.menu > ul > li:nth-of-type(2)::after{
+		content:'+';
+		position:absolute;
+		color:#fff;
+		float:right;
+		font-size:20px;
+		margin-left:35%;
+	}*/
+
+	
+	</style>
+</head>
+<body>
+	<div class="menu">
+		<ul>
+			<li><a href="#"><span class="fa fa-home"></span>Home</a></li>
+			<li><a href="#"><span class="fa fa-users"></span>Users</a>
+				<ul>
+					<li><a href="#"><span class="fa fa-plus"></span>Add</a></li>
+					<li><a href="#"><span class="fa fa-edit"></span>Edit</a></li>
+					<li><a href="#"><span class="fa fa-eraser"></span>Delete</a></li>
+				</ul>
+			</li>
+			<li><a href="#"><span class="fa fa-desktop"></span>Web Design</a></li>
+			<li><a href="#"><span class="fa fa-database"></span>Database</a></li>
+			<li><a href="#"><span class="fa fa-home"></span>Contact</a></li>
+		</ul>
+	</div>
+
+</body>
+</html>

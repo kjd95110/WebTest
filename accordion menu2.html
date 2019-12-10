@@ -1,0 +1,167 @@
+﻿<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Accordion Menu2</title>
+	<script src="https://use.fontawesome.com/releases/v5.2.0/js/all.js"></script>
+	<script type="text/javascript" src="./js/jquery/jquery.js"></script>
+	<script type="text/javascript" src="./js/jquery/external/jquery.alphanumeric.js"></script>
+	<script type="text/javascript">
+
+	</script>
+
+	<style type="text/css">
+		* {
+			margin: 0;
+			padding: 0;		
+			box-sizing:border-box;
+			text-decoration: none;
+		}
+
+		html{
+			
+			font-size:20px;
+		}
+
+		body{
+			font-family:Arial,sans-serif;
+				list-style: none;
+				background-color:#ececec;
+		}
+
+
+		.content {
+			position: absolute;
+			top: 25%;
+			left: 50%;
+			transform: translate(-50%,-50%);
+		}
+
+		/*.content a{
+			text-decoration:none;
+		}*/
+
+		.accordion{
+			width:400px;
+			border-radius:0.5rem;
+			overflow:hidden;
+		}
+
+		.acc-item{
+			border-top:1px solid #18a860;
+			overflow:hidden;
+		}
+
+		.btn{
+			display:block;
+			padding:1rem 1.2rem;
+			background:#1ece76;
+			color:#fff;
+			text-transform:uppercase;
+			position:relative;
+		}
+		.btn:before{
+			content:'';
+			position:absolute;
+			width:1rem;
+			height:1rem;
+			background:#1ece76;
+			left:20px;
+			bottom:-7px;
+			transform:rotate(45deg);
+
+		}
+
+		.btn i{
+			margin-right:0.5rem;
+		}
+
+		.submenu{
+			background:#333;
+			overflow:hidden;
+
+
+			/* Center Point */
+			transition:max-height 0.4s;
+			max-height:0;
+		}
+
+		.submenu a{
+			display:block;
+			padding:1rem 1.5rem;
+			color:#fff;
+			font-size:0.9rem;
+			margin:0.2rem 0;
+			position:relative;
+		}
+
+		.submenu a:before{
+			content:'';
+			position:absolute;
+			width:0.3rem;
+			height:100%;
+			background:#1fd67a;
+			left:0;
+			top:0;
+			transition:0.4s;
+			opacity:0;
+		}
+
+		.submenu a:hover:before {
+			opacity:1;
+		
+		}
+		.acc-item:target .submenu{
+			max-height:12rem;
+		}
+
+	</style>
+</head>
+<body>
+	<div class="content">
+		<div class="accordion">
+            <ul>
+                <li class="acc-item" id="user">
+                    <a href="#user" class="btn"><i class="fas fa-user"></i>UserProfile</a>
+                    <div class="submenu">
+                        <a href="#">UserName</a>
+                        <a href="#">Info</a>
+                    </div>
+                </li>
+
+
+                <li class="acc-item" id="emails">
+                    <a href="#emails" class="btn"><i class="far fa-envelope"></i>Emails</a>
+                    <div class="submenu">
+                        <a href="#">UserName</a>
+                        <a href="#">Info</a>
+                    </div>
+                </li>
+
+                <li class="acc-item" id="settings">
+                    <a href="#settings" class="btn"><i class="fas fa-cog"></i>Settings</a>
+                    <div class="submenu">
+                        <a href="#">UserName</a>
+                        <a href="#">Info</a>
+                    </div>
+                </li>
+                <li class="acc-item" id="memberships">
+                    <a href="#memberships" class="btn"><i class="fas fa-suitcase"></i>MemberShips</a>
+                    <div class="submenu">
+                        <a href="#">UserName</a>
+                        <a href="#">Info</a>
+                    </div>
+                </li>
+                <li class="acc-item">
+                    <a href="#profile" class="btn">
+                        <i class="fas fa-sign-out-alt">
+                        </i>Exit
+                    </a>
+                </li>
+            </ul>
+		</div>
+	</div>
+
+
+</body>
+</html>
