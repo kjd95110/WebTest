@@ -3,6 +3,22 @@
 <head>
 <title>Const변수의 특성</title>
 
+<style type="text/css">
+    body{
+        background-color: peru;
+    }
+    
+    ul li{
+        display: block;
+        border:1px solid #000;
+        height:35px;
+        width:200px;
+        padding:5px 0px 0px 0px;
+        text-align: center;
+    }
+    
+    </style>
+
 <script type="text/javascript" src="../js/index.js"></script>
 <script type="text/javascript" src="../js/jquery/jquery.js"></script>
 <script type="text/javascript" src="../js/jquery/index2.js"></script>
@@ -14,8 +30,6 @@ $(document).ready(function(){
     Home();    
 });
 
-
-
 /*
 
 const를 기본으로 사용한다.
@@ -24,6 +38,16 @@ var 는 될수있는한 사용하지 않는다.
 
 const를 사용하더라도 배열과 오브젝트의 값을 변경하는것은 가능하다.
 재할당만 안된다...
+
+//immutable array를 어떻게 만들지?
+뒤로가기,앞으로가기해서 어떤값을 되돌리기할때 그때마다  데이터를 기존 저장한값으로 
+보여줘야 할때...
+array->  참조가 바뀐다. 복사가 아니라 값이 계속 바뀐다. 이전의 값을 기억할수없다.
+immutable -> array의 단점을 극복할수 있다. 배워보자.
+
+
+리액트에서 state값이 바뀔때  리덕스를 써가지고? 리덕스를 객체를계속 만들어서 상태값을 바꿔서 반환하게될때
+immutable array를 많이 쓴다.
 
 */
 
@@ -36,7 +60,7 @@ function Home(){
 const list=["apple","orange","watermelon"];
     list2 = [].concat(list,'banana');
     console.log(list,list2);
-    console.log(list==list2);
+    console.log(list===list2); //틀린값이다.
 
 function Home_Old(){
     const homename='my house';
@@ -44,31 +68,9 @@ function Home_Old(){
 
     console.log(homename);
 }
-
-
-
-
 </script>
-<style type="text/css">
-body{
-    background-color: peru;
-}
-
-ul li{
-    display: block;
-    border:1px solid #000;
-    height:35px;
-    width:200px;
-    padding:5px 0px 0px 0px;
-    text-align: center;
-}
-
-</style>
-
 </head> 
-
 <body>
-
     <ul>
         <li>Javascript</li>
         <li>Java</li>

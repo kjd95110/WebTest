@@ -1,7 +1,23 @@
 <!doctype html>
 <html>
 <head>
-<title>Scope 실습</title>
+<title>Scope 실습(Closer)포함</title>
+
+<style type="text/css">
+    body{
+        background-color: peru;
+    }
+    
+    ul li{
+        display: block;
+        border:1px solid #000;
+        height:35px;
+        width:200px;
+        padding:5px 0px 0px 0px;
+        text-align: center;
+    }
+    
+    </style>
 
 <script type="text/javascript" src="../js/index.js"></script>
 <script type="text/javascript" src="../js/jquery/jquery.js"></script>
@@ -16,8 +32,18 @@ $(document).ready(function(){
 
 
 /*
-let 블럭Scope로서 블럭내에서만 사용가능
+let 블럭 Scope로서 블럭내에서만 사용가능
 var 함수 Scope로서 함수내에서만 사용가능
+
+
+ list[i].addEventListener('click',function(){
+    xxxxxxxxxxxxxxxxx;
+     xxxxxxxxxxxxxxx;
+     });
+
+   ** 콜백함수는 순차적으로 실행되는 함수가 아니므로
+   ** 콜백함수내의 변수가 콜백외부의  변수를 참조할때는
+   ** 문제가 발생할 여지가 있다.
 
 
 Home() 내의 var i 변수는 closer변수라고 할수있다.
@@ -30,33 +56,17 @@ Home() 내의 var i 변수는 closer변수라고 할수있다.
 function Home(){
 
     var list = document.querySelectorAll('li');
-for(let i=0;i<list.length;i++){
-    list[i].addEventListener('click',function(){
+    for(let i=0;i<list.length;i++){
+        list[i].addEventListener('click',function(){
 
-        console.log(i + "번째 리스트입니다. ");
+            console.log(i + "번째 리스트입니다. ");
 
-    });
-}
+        });
+    }
     
 }
 
 </script>
-<style type="text/css">
-body{
-    background-color: peru;
-}
-
-ul li{
-    display: block;
-    border:1px solid #000;
-    height:35px;
-    width:200px;
-    padding:5px 0px 0px 0px;
-    text-align: center;
-}
-
-</style>
-
 </head> 
 
 <body>

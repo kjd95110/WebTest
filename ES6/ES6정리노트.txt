@@ -1,0 +1,4 @@
+ES6(해외에서 거의 표준으로 사용)
+개선된 JavaScript문법
+ES6 browser compatibility 의 훌륭한 지원.
+ES6를 기반으로 한 JavaScript 생태계의 확산.
