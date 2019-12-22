@@ -1,77 +1,77 @@
-
-��ó:https://bblog.tistory.com/300
+﻿
+출처:https://bblog.tistory.com/300
 
 .forEach
-forEach�� ���� �⺻���� Loop �޼ҵ��Դϴ�.
+forEach는 가장 기본적인 Loop 메소드입니다.
 
-������ ����(�迭�� ¦���� ����ϴ� ���α׷�)�� ���ؼ� for ������ ���� ���ô�.
+간단한 예제(배열의 짝수만 출력하는 프로그램)를 통해서 for 구문과 비교해 봅시다.
 
-// for ���� ����
+// for 구문 버전
 var arr = [3, 9, 4, 2, 7, 6];
 for (var i = 0; i < arr.length; i++) {
     if (arr[i] % 2 == 0) {
         console.log(arr[i]);
     }
 }
-// forEach() ����
+// forEach() 버전
 var arr = [3, 9, 4, 2, 7, 6];
 arr.forEach(function (n) {
     if (n % 2 == 0) {
         console.log(n);
     }
 });
-�ڵ� ������ ���� �����ϴ�. ������ for �������� �ٸ� ���� �˰ڳ���?
+코드 라인의 수는 같습니다. 하지만 for 구문과는 다른 점을 알겠나요?
 
-�������� �������� �ʴ´�.
+스코프를 더럽히지 않는다.
 
-for ������ �迭�� �ε����� �����ϱ� ���� �ӽ� ���� i�� �Ҵ��߽��ϴ�. ��� �� ���α׷��� ���� �۾Ƽ� �ӽ� ���� �Ҵ��ϴ� ���� ū ������ �ȵ˴ϴ�. �׷��� �ý����� Ŀ���� ���������� �ؾ� �Ѵٸ� ���� ������� �𸣴� i ������ �������� �������� �˴ϴ�.
-��� ���� ��� arr[i] vs n
+for 구문은 배열의 인덱스를 저장하기 위한 임시 변수 i를 할당했습니다. 사실 이 프로그램은 아주 작아서 임시 변수 할당하는 것은 큰 문제가 안됩니다. 그러나 시스템이 커지고 유지보수를 해야 한다면 언제 사용한지 모르는 i 때문에 가독성이 떨어지게 됩니다.
+요소 접근 방법 arr[i] vs n
 
-forEach�� �ݹ� �Լ��� ù ��° ���ڷ� �� ����� ���� ���ɴϴ�. ���п� �츮�� ����� ������� �� ����� ���� ���� �� �ֽ��ϴ�.
+forEach의 콜백 함수의 첫 번째 인자로 각 요소의 값이 들어옵니다. 덕분에 우리는 깔끔한 방법으로 각 요소의 값을 얻을 수 있습니다.
 
 
 .map
-���ݺ��� �پ��� ����� �����ϴ� �޼ҵ��� ���캾�ô�.
+지금부터 다양한 기능을 제공하는 메소들을 살펴봅시다.
 
-map �޼ҵ�� ��Ҹ� �ϰ������� �����ϴµ� ȿ�����Դϴ�. ������ ���ô�.
+map 메소드는 요소를 일괄적으로 변경하는데 효과적입니다. 예제를 봅시다.
 
-// ���ڿ� �迭���� ���ڿ� ���̸� ȹ���ϱ�
+// 문자열 배열에서 문자열 길이만 획득하기
 var arr = ['foo', 'hello', 'diamond', 'A'];
 var arr2 = arr.map(function (str) {
     return str.length;
 });
 console.log(arr2); // [3, 5, 7, 1]
-arr���� ���ڿ��� arr2���� ���ڿ��� ���̸� �����ϴ�.
+arr에는 문자열만 arr2에는 문자열의 길이만 담겼습니다.
 
-map�� �ݹ� �Լ��� ������ ��Ƽ� ���ο� �迭�� ����� ���� �����Դϴ�.
+map은 콜백 함수의 리턴을 모아서 새로운 배열을 만드는 것이 목적입니다.
 
-���� ���������� str.length ���ڿ� ���̸� ��ȯ�߱� ������ arr2���� ���ڿ� ���̷� �̷���� ���ο� �迭�� �����ϴ�.
+위의 예제에서는 str.length 문자열 길이만 반환했기 때문에 arr2에는 문자열 길이로 이루어진 새로운 배열이 담겼습니다.
 
-forEach�δ� ������ �� �������? forEach�� map�� �Ϻ��� ����ȣȯ�� ������ �������? �׷��� �ʽ��ϴ�. �츮�� for ���� ��� forEach�� ����ؾ� �ϴ� ��ó�� forEach ��� map�� �ݵ�� �����ؼ� ����ؾ� �ϴ� ������ �ֽ��ϴ�.
+forEach로는 구현할 수 없을까요? forEach가 map의 완벽한 상위호환이 되지는 않을까요? 그렇지 않습니다. 우리가 for 구문 대신 forEach를 사용해야 하는 것처럼 forEach 대신 map을 반드시 구분해서 사용해야 하는 이유가 있습니다.
 
 
 
 .filter
-filter �޼ҵ�� �̸� �״�� ��ҵ��� �ɷ����� ���� �����Դϴ�. ������ ���ô�.
+filter 메소드는 이름 그대로 요소들을 걸러내는 것이 목적입니다. 예제를 봅시다.
 
-// ���� �迭���� 5�� ����� ������ ������
+// 정수 배열에서 5의 배수인 정수만 모으기
 var arr = [4, 15, 377, 395, 400, 1024, 3000];
 var arr2 = arr.filter(function (n) {
     return n % 5 == 0;
 });
 console.log(arr2); // [15, 395, 400, 3000]
-�ݹ� �Լ��� ������ boolean�� �����ϴ�. ������ true�� ��Ҹ� ��Ƽ� ���ο� �迭�� ����ϴ�. �����ϸ�? ������ undefined�̹Ƿ� false�� �˴ϴ�.
+콜백 함수의 리턴은 boolean을 가집니다. 리턴이 true인 요소만 모아서 새로운 배열을 만듭니다. 생략하면? 리턴은 undefined이므로 false가 됩니다.
 
-�����ϴ� ��Ұ� ���ٸ�? �� �迭�� ��ȯ�˴ϴ�.
+만족하는 요소가 없다면? 빈 배열이 반환됩니다.
 
 var arr = [4, 377, 1024];
 var arr2 = arr.filter(function (n) {
     return n % 5 == 0;
 });
 console.log(arr2); // []
-undefined�� �ƴ� �� �迭�� ��ȯ�ϴ� ���� �ſ� ū �ǹ̸� �����ϴ�. ���� �������� �ذ��ϱ� ���ؼ� Array �޼ҵ带 ������ �����Ͽ� ����ϴµ� �� �迭�̶� ��ȯ �����ν� �߰��� ������ ���� �ʰ� ���� Array �޼ҵ带 ����� �� �ֽ��ϴ�.
+undefined도 아닌 빈 배열을 반환하는 것은 매우 큰 의미를 가집니다. 보통 도메인을 해결하기 위해서 Array 메소드를 여러개 연결하여 사용하는데 빈 배열이라도 반환 함으로써 중간에 오류가 나지 않고 다음 Array 메소드를 사용할 수 있습니다.
 
-// 5�� ����� ���ؼ� �� ��Ҹ� 2��
+// 5의 배수만 구해서 각 요소를 2배
 var arr = [4, 15, 377, 395, 400, 1024, 3000];
 var arr2 = arr.filter(function (n) {
     return n % 5 == 0;
@@ -82,17 +82,17 @@ console.log(arr2); // [30, 790, 800, 6000]
 
 
 .find
-find �޼ҵ�� filter�� ��������� �� �ϳ��� ��Ҹ� �����մϴ�. ������ �����?
+find 메소드는 filter와 비슷하지만 단 하나의 요소만 리턴합니다. 예제를 볼까요?
 
-// ���� �迭���� 5�� ����� ���� '�ϳ�' ã��
+// 정수 배열에서 5의 배수인 정수 '하나' 찾기
 var arr = [4, 15, 377, 395, 400, 1024, 3000];
 var arr2 = arr.find(function (n) {
     return n % 5 == 0;
 });
 console.log(arr2); // 15
-�׷��� �ݹ� �Լ��� �� �� ȣ�� �ɱ��? ����� ������ 7��?
+그러면 콜백 함수는 몇 번 호출 될까요? 요소의 갯수인 7번?
 
-// ���� �迭���� 5�� ����� ������ ������
+// 정수 배열에서 5의 배수인 정수만 모으기
 var arr = [4, 15, 377, 395, 400, 1024, 3000];
 var count = 0;
 var arr2 = arr.find(function (n) {
@@ -100,40 +100,40 @@ var arr2 = arr.find(function (n) {
     return n % 5 == 0;
 });
 console.log(count); // 2
-������ 2�� �Դϴ�. ù ��°�� 4�� ���ؼ�, �� ��°�� 15�� ���ؼ� ȣ���ϰ���?
+정답은 2번 입니다. 첫 번째는 4에 대해서, 두 번째는 15에 대해서 호출하겠죠?
 
-��, find�� �ݹ� �Լ��� ������ true�� ��Ҹ� ã�� �� ���� ��ȸ�ϴٰ� ã���� �ű⼭ �����ϴ�. ���� �߰����� ���ϸ�? undefined�� ��ȯ�˴ϴ�.
+즉, find는 콜백 함수의 리턴이 true인 요소를 찾을 떄 까지 순회하다가 찾으면 거기서 끝납니다. 만약 발견하지 못하면? undefined가 반환됩니다.
 
-// ���� �迭���� 5�� ����� ������ ������
+// 정수 배열에서 5의 배수인 정수만 모으기
 var arr = [4,  377, 1024];
 var arr2 = arr.find(function (n) {
     return n % 5 == 0;
 });
 console.log(arr2); // undefined
-filter�� ã�� ���ϸ� �� �迭�� ��ȯ�߽��ϴ�. �׷��� find�� undefined�����? 
-�׷��� �Լ��� �����Ͽ� ����� �� ���� �� �ƴѰ���? ���ݸ� �����غ��� find�� �� �迭�� ��ȯ�� �ʿ䰡 ������ �� �� �ֽ��ϴ�. 
-���������� ��ȯ�ϴ��� �̹� �迭�� �ƴϱ� �����Դϴ�. ���� find�� ��ȯ�� �׻� �迭�� �ƴϱ� ������ ������ �ٸ� Array �޼ҵ�� �����Ͽ� ����� ���� �����ϴ�.
+filter는 찾지 못하면 빈 배열을 반환했습니다. 그런데 find는 undefined라고요? 
+그러면 함수를 연결하여 사용할 수 없는 거 아닌가요? 조금만 생각해보면 find는 빈 배열을 반환할 필요가 없음을 알 수 있습니다. 
+정상적으로 반환하더라도 이미 배열이 아니기 떄문입니다. 따라서 find의 반환은 항상 배열이 아니기 때문에 어차피 다른 Array 메소드와 연결하여 사용할 일이 없습니다.
 
 .reduce
-reduce �޼ҵ�� ������ ���� �޼ҵ带 ��� ��ü�� �� �ִ� ���� ������ �޼ҵ��Դϴ�. map, filter, find�� ������ �� �ִ� ������� reduce�ε� ������ �� �ֽ��ϴ�. 
-������ ��Ȳ�� ���� ������ �޼ҵ带 ����ϴ� ���� ������ ���鿡�� �� �����ϰ���?
+reduce 메소드는 위에서 나온 메소드를 모두 대체할 수 있는 아주 유연한 메소드입니다. map, filter, find로 구현할 수 있는 문제라면 reduce로도 구현할 수 있습니다. 
+하지만 상황에 따라 적절한 메소드를 사용하는 것이 가독성 측면에서 더 유리하겠죠?
 
-���� reduce�� ��� ����� ���ô�. ���� Ư���մϴ�.
+먼저 reduce의 사용 방법을 봅시다. 조금 특이합니다.
 
 arr.reduce(callback[, initialValue])
 
 callback
-previousValue: ���� ������ �ݹ� ȣ�⿡�� ��ȯ�� �� �Ǵ� ���޵� ��� initialValue.
-currentValue: �迭 �� ���� ó���ǰ� �ִ� ���(element).
-currentIndex: �迭 �� ���� ó���ǰ� �ִ� ����� �ε���.
-array: reduce�� ȣ��Ǵ� �迭.
-initialValue: ���û���. callback�� ù ȣ�⿡ ù ��° �μ��� ����ϴ� ��.
-����: https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce
+previousValue: 이전 마지막 콜백 호출에서 반환된 값 또는 공급된 경우 initialValue.
+currentValue: 배열 내 현재 처리되고 있는 요소(element).
+currentIndex: 배열 내 현재 처리되고 있는 요소의 인덱스.
+array: reduce에 호출되는 배열.
+initialValue: 선택사항. callback의 첫 호출에 첫 번째 인수로 사용하는 값.
+참조: https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce
 
-�ٸ� �޼ҵ�ʹ� �ٸ��� �ݹ� �Լ��� initialValue��� �� ��° ���ڸ� ���� �� �ֽ��ϴ�. 
-�� reduce�� ������ �߿��ѵ� �迭�� �� ���� ��� �ϳ��� ���� �� ���� ����ڰ� ���ϴ� �� �������� �� �ֽ��ϴ�. ������ ���߰���?
+다른 메소드와는 다르게 콜백 함수와 initialValue라는 두 번째 인자를 넣을 수 있습니다. 
+또 reduce의 리턴이 중요한데 배열이 될 수도 요소 하나의 값이 될 수도 사용자가 원하는 값 뭐든지될 수 있습니다. 예제를 봐야겠죠?
 
-// �迭 ����� �� ����ϱ�
+// 배열 요소의 합 계산하기
 var arr = [9, 2, 8, 5, 7];
 var sum = arr.reduce(function (pre, value) {
     return pre + value;
@@ -144,209 +144,413 @@ console.log(sum); // 31
 
 
 
-���丮���ϰ� ������Ÿ��
+팩토리패턴과 프로토타입
 
 var card={
-name:'������';
+name:'제로초';
 att:5,
 hp:10,
-type:'ī��',
+type:'카드',
 attack: function(){
-console.log('����!!!');
+console.log('공격!!!');
 },
 defend: function(){
- console.log(���!!!');
+ console.log(방어!!!');
 },
 };
 
 var card2={
-name:'����';
+name:'무지';
 att:1,
 hp:3,
-type:'ī��',
+type:'카드',
 attack: function(){
-console.log('����!!!');
+console.log('공격!!!');
 },
 defend: function(){
- console.log(���!!!');
+ console.log(방어!!!');
 },
 };
 
 var card3={
-name:'������';
+name:'제로초';
 att:3,
 hp:2,
-type:'�䳢',
+type:'토끼',
 attack: function(){
-console.log('����!!!');
+console.log('공격!!!');
 },
 defend: function(){
- console.log(���!!!');
+ console.log(방어!!!');
 },
 };
 
 
 var card4={
-name:'������';
+name:'제로초';
 att:5,
 hp:3,
-type:'�䳢',
+type:'토끼',
 attack: function(){
-console.log('����!!!');
+console.log('공격!!!');
 },
 defend: function(){
- console.log(���!!!');
+ console.log(방어!!!');
 },
 };
 
-*************���丮 ����*******************************
+*************팩토리 패턴*******************************
 
-function ī�����(name,att,hp){
+function 카드공장(name,att,hp){
 return{
 name:name,
 att:att,
 hp:hp,
-type:'ī��',
+type:'카드',
 attact: function(){},
 defind: function(){},
 };
 }
 
-var card=ī�����('������',10,10);
-var card2= ī�����('����',1,2);
+var card=카드공장('제로초',10,10);
+var card2= 카드공장('무지',1,2);
 
 
-**************** ������Ÿ�� �ߺ����� ********************************
+**************** 프로토타입 중복제거 ********************************
 
 var prototype3={
-   type:'ī��',
+   type:'카드',
    attacck: function(){},
    defind: function(){},
 }
 
 var card={
-   name:'������',
+   name:'제로초',
    att,10,
    hp:10,
 }
 
-__proto__           ===> console.log�� �̳��� ��ü��????
+__proto__           ===> console.log의 이놈의 정체는????
 
 card.__proto__ =prototype3
 
-���ٹ�
+접근법
 card.__proto__.type
 
 card.__proto__.__proto__.toString()
 
-__proto__ �� ������ ������,  ����: �Ӽ��� ã���� 2�ܰ迡�� ã�Ƽ� �о��.
+__proto__ 는 생략이 가능함,  이유: 속성을 찾을때 2단계에서 찾아서 읽어옴.
  
-����
+고로
 card.type;
-card.toString() ���� ��� ������.
+card.toString() 으로 사용 가능함.
 
 
 
 **********************************************************************
-var ������Ÿ�� = {
-     type:'ī��',
+var 프로토타입 = {
+     type:'카드',
      attack: function() { } ,
      defend: function() { },
 };
 
-function ī�����(name,att,hp){
-var ī��={
+function 카드공장(name,att,hp){
+var 카드={
     name:name,
 att:att,
 hp:hp,
 }
-ī��.__proto__ = ������Ÿ��   ---->>>>> *************** ���� ***************
-return ī��;
+카드.__proto__ = 프로토타입   ---->>>>> *************** 참조 ***************
+return 카드;
 }
 
 
-ī�����('������',50,30);
+카드공장('제로초',50,30);
 
 ***********************************************************************
-var card1= ī�����('������');
-var card2= ī�����('����');
-var card3= ī�����('�䳢');
+var card1= 카드공장('제로초');
+var card2= 카드공장('무지');
+var card3= 카드공장('토끼');
 ...
 
-var card30000= ī�����('����');
+var card30000= 카드공장('졸려');
 
 
-��ġ�°���...������
+미치는거죠...ㅋㅋㅋ
 
 card1.att=30
 card2.att=30
 card30000.att=30
 
 
-��ġ�� ����???
+미치는 거죠???
 
-card1.type -> 'ī��'
-card2.type -> 'ī��'
-card3.type -> 'ī��'
-card4.type -> 'ī��'
-card30000.type -> 'ī��'
-�˴ϴ�.
-
-
-ī��.__proto__ = ������Ÿ�� ; 
-
- ����
-������Ÿ��.type => 'ī��' �ε�
-
-������Ÿ��.type= '�峭��';
-
-���ٷ� 30000���� ��� 
-
-card1~ card30000 ��� '�峭��'���� �ٲ��.
+card1.type -> '카드'
+card2.type -> '카드'
+card3.type -> '카드'
+card4.type -> '카드'
+card30000.type -> '카드'
+됩니다.
 
 
+카드.__proto__ = 프로토타입 ; 
 
-�߰� �ش޷� ��û
-width, height ���� �߰���û
+ 에서
+프로토타입.type => '카드' 인데
 
-������Ÿ��.width=100;
-������Ÿ��.height=300;
+프로토타입.type= '장난감';
 
-2�ٷ� �ذ�(6�����Ұ���)
+한줄로 30000만줄 모두 
 
-�ٵ� �ǹ����� __proto__ �� ����ϸ� �ȵȴ�????
-���ŷ��ִ� MDN web site������ ����...��ǥ���̶���....�Ƴ�...
-�ٵ� ũ���� �� �����ѵ���....�Ƴ�....
+card1~ card30000 모두 '장난감'으로 바뀐다.
 
-var ������Ÿ��={
-type:'ī��',
+
+
+추가 해달로 요청
+width, height 길이 추가요청
+
+프로토타입.width=100;
+프로토타입.height=300;
+
+2줄로 해결(6만번할것을)
+
+근데 실무에서 __proto__ 를 사용하면 안된다????
+공신력있는 MDN web site에가서 보면...비표준이란다....아낙...
+근데 크롬은 잘 지원한덴다....아낙....
+
+var 프로토타입={
+type:'카드',
 attack:function(){},
 defend: function() {},
 };
 
-function ī�����(name,att,hp){
-var ī��= object.create(������Ÿ��);
- ī��.name= name;
-ī��.att=att;
-ī��.hp=hp;
- return ī��;
+function 카드공장(name,att,hp){
+var 카드= object.create(프로토타입);
+ 카드.name= name;
+카드.att=att;
+카드.hp=hp;
+ return 카드;
 }
 
 
-Object.assign({}, Object.create(������Ÿ��)); 
+Object.assign({}, Object.create(프로토타입)); 
 
-���� ������
+위의 내용은
 
   object.keys(obj).forEach(function(key)){
            obj2[key]=obj[key];
-       });  --> �ϴܰ躹��
+       });  --> 일단계복사
 
-�̳����� ���ΰ��̴�.
+이내용을 줄인것이다.
 
 
 
 
 ***************************************************************************************
+
+자바스크립트 는  콜바이레퍼런스 가 아니다???? 없다....
+function 함수(매개변수){
+    매개변수 = 8;
+    console.log(매개변수);
+}
+
+var 인자={a : 5} ;
+
+함수(인자);
+ console.log(인자);
+
+
+결과는 ? 매개변수 => 8
+         인자=> a:5
+
+         이유는 함수내에서 매개변수 자체를 바꿨기 때문에  -> Call by Value (참조관계가 깨짐) 콜바이 쉐어링(sharing)....정식용어가 아니므로 콜바이 밸류로 ....
+         함수내에서 매개변수 속성을 바꾼다면... 참조관계유지
+
+
+
+function 함수(매개변수){
+    매개변수.a = 10;
+    console.log(매개변수);
+}
+
+var 인자={a : 5} ;
+
+함수(인자);
+ console.log(인자);
+
+   함수내에서 매개변수 속성을 바꾼다면... 참조관계유지됨.
+ 
+ *****************************************************************************************
+
+
+
+
+
+
+var prototype={
+    type:'카드',
+}
+
+function 카드공장(name,att,hp){
+    var card=Object.create(prototype);
+    card.name=name;
+    card.att=att;
+    card.hp=hp;
+    return card;
+}
+
+
+// ****************** prototype형식의 패턴 *****************************************************
+
+Card.prototype= prototype;
+
+//*******************생성자(객체) 패턴***************************************************************** */
+
+
+function Card(name,att,hp){
+    this.name=name;
+    this.att=att;
+    this.hp=hp;
+}
+
+
+
+//Card('제로초',5,10);// 이렇게 하면 큰 의미가 없다.생성자입장에서
+
+new Card('제로초',5,10); //객체로 생성(메모리 할당)되면서 첫문자 대문자 불문율....
+
+
+var 제로초=new Card('제로초',5,10); 
+
+var 무지= new Card('무지',1,2);
+
+
+console.log('찍으면');
+//Card { name,"제로초",att:5, hp:10 }
+
+객체앞에 Card 라는 이름이 있다는것을 알수있다.
+//********************************************************************************************************* */
+
+
+var prototype={type:'카드'}
+function Card(name,att,hp){
+    "use strict"  /// Card 함수만 엄격모드 로 바뀐다.
+    this.name=name;
+    this.att=att;
+    this.hp=hp;
+}
+
+Card.prototype= prototype;
+
+var 제로초=Card('제로초',5,10); //new 가 빠져있다.
+
+// this -> undefined 가된다. 엄격모드일때...
+//일반적으로 this => ( window )가 됨의 유의한다.
+
+
+
+//"use strict"  /// 전체가 엄격모드 로 바뀐다. "use strick" 문구 아래에 있는것들은 모두 적용된다고 보면 된다.
+var prototype={type:'카드'}
+function Card(name,att,hp){    
+    this.name=name;
+    this.att=att;
+    this.hp=hp;
+}
+
+Card.prototype= prototype;
+
+
+//*********************************************************************************************** */
+
+var prototype={type:'카드'}
+function Card(name,att,hp){    
+    this.name=name;
+    this.att=att;
+    this.hp=hp;
+}
+
+Card.prototype= prototype;
+
+var 제로초= new Card('제로초',5,10); //new 가 있다.
+
+
+//this는 제로초 자체가 된다.
+
+//******************************************************************************************************
+
+
+Math.floor() : 소수점 이하를 버림한다.
+Math.ceil() : 소수점 이하를 올림한다.
+Math.round() : 소수점 이하를 반올림한다.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
