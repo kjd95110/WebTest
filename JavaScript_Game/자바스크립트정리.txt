@@ -550,8 +550,8 @@ result:
 
 
 
-Block Format Context (BFC) 블럭 서식 
-컨테이닝 블럭 찾는 연습 많이 할것.
+
+**컨테이닝 블럭 ** 찾는 연습 많이 할것.
 찾는 연습많이 할것
 
 CSS 컨테이닝 블록 이란?
@@ -634,8 +634,57 @@ ID 금메달 클래스속성 은메달 태그 동메달
 동메달끼리는 동메달많은 순...뭐..이런식...ㅋ
 
 
+************블럭포매팅 컨텍스트(Block formatting context) -블럭서식문맥 *****************
+컨테이닝 블럭이 자식기준으로 부모가 누구인가를 결정하는것이였다면
+부모입장(기준)에서 누구까지 자식으로  포함해야하나?? 그런것을 결정하는것이라고 보면 된다.
+1.display:block 일때는 안생기고 display:inline-block일때 생성된다.
+2.overflow가 visible 이 아닌요소에 생긴다. (auto,hidden...기타는 부모로서 역할을 다할수 있다. 자식을 감싸줄수 있다.)
+
+****3.float(float 이 none) 이 아닌 요소에 생긴다. **** 
+-> float:left or right 해버리면 이놈은 부모가  자식으로 감싸줄수 없으므르(블럭서식문맥에서 벗어나므로) 
+해결하는 방법은 overflow:auto 나 none 등등의 방법으로 자식으로 감싸줄수 있도록 해준다.
+
+4.절대위치로 지정된 요소:position:absolute or fixed
+그외
+5.루트 또는 이를 포함하는 요소
+6.display:table-cell 인 요소
+7.flex box(display:flex 또는 inline-flex)에 발생
 
 
+*****마진 상쇄 정복(Margin Collapsing )*****
 
+블록의 top 및 bottom 마진은 때로는 (결합되는 마진 중 크기가) 가장 큰 한 마진으로 결합(combine, 상쇄(collapsed))됩니다, 마진 상쇄(margin collapsing)로 알려진 행동.
+
+이렇게 만든이유:  이유는 모르겠고...불편하다
+
+1.인접 형제요소 -형제간에 마진이 있는경우
+-> 작은마진이 큰마진속으로 흡수되버린다.
+
+
+2.부모 및 맡이/막내요소 - FirstChild,LastChild에 마진 Collapsing 있을수 있다.
+부모를 뚫고? 나가버린다.
+
+3.빈블록
+빈블록이 형제적으로 있는경우 
+서로의 경계를 넘어버린다.
+
+이세가지를 극복하는 방법이 부모를 블럭서식문맥 으로 만들어 자식을 감싼다.overflow:auto or overlfow:hidden 뭐 이런씩인데
+이방법보다는 float:left 쓰고 width:100%를 주는 방법도 있다.
+또한 position:absolute 방법도있다.
+
+***가장확실한 3가지를해결하는 방법:****
+display:inline-block
+width:100%
+
+
+깊은복사 얕은 복사란
+
+array 또는 객체를 할당할때 call by value가 아닌 call by reference형식으로 복사되기때문에
+단순 할당했다하더라도  할당받은 녀석이 다른곳에서 사용되어 변화하게 되면 
+원본의 array나 객체가 영향을 받아 원본 훼손?이 되는 현상인데
+이때 원본훼손이 안되게 array.slice() 나 JSON형태로 변환 해서 할당하면
+원본훼손이 이루어 지지않는데 이를 깊은복사라 한다.
+반대로 얕은 복사는 깊은복사와 반대로 원본객체와 같은 주소?를 사용하기때문에 다른곳에서
+변화를 시도하게되면 원본도 같이 변화하게 되는것을 얕은복사라 한다. 
 
 
