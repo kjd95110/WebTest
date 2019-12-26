@@ -25,7 +25,7 @@ let obj={
 
 
 let {name:myName,age:myAge,address:myadd}=obj;
-console.log(myName,myAge,myadd);
+console.log(myName,myAge,myadd,obj);
 
 
 }
@@ -42,12 +42,20 @@ let obj={
 let {name,age}=obj;
 console.log(name,age);
 
+//object의 특정값은 뽑아내는 방법
+
 }
 
 function Home(){
     let data=["crong","honux","jk","jinny"];
 
 let [jisu,,jung]=data;
+
+// jisu, skip , jung
+
+//"crong", skip, "jk"
+
+// 배열의 특정값에다가   깊은 copy가 됨을 주의한다.
 
 console.log(jisu,jung);
 

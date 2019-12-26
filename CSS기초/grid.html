@@ -1,0 +1,78 @@
+<!doctype html>
+<html>
+<head>
+<title>float 개념</title>
+
+<style type="text/css">
+body{
+    background-color: #222;
+
+}
+.grid{
+    /* width:500px;
+    margin:0 auto; */
+    background-color: skyblue;
+    display: grid ;   /* 최신속성 */
+    grid-template-columns: auto auto 100px 200px;
+    justify-content: center;
+}
+
+
+#first{
+    background-color: plum;
+}
+
+.grid-item{    
+    height: 100px;    
+    vertical-align:top;
+     
+}
+
+.grid-item.a{ background-color: orange;padding: 0 50px;}
+.grid-item.b{ background-color: orangered;}
+.grid-item.c{ background-color: red;}
+
+.contents{
+    border: 10px solid blue;
+}
+/* float:left 했을때 부모를 뛰어넘어버리는 ? 문제 해결법;
+1. grid(부모요소에 ) height:200px 같은 값을 임의로 주는 방법
+유지보수해결에 악영향.1차원적인 방법.
+2.grid(부모요소에) overflow:hidden;해서 부모를 부모로 인식시키는방법.
+
+
+
+*/
+
+</style>
+
+</head>
+
+<body>
+
+    <div id="first">Apple
+        Banana
+        Cherry</div>
+
+    <div class="grid">
+        <div class="grid-item a"></div>
+        <div class="grid-item b"></div>
+        <div class="grid-item c"></div>
+        <div class="contents">wow wow wow wow wow wow wow wow 
+            wow wow wow wow wow wow wow wow wow wow 
+            wow wow wow wow wow wow wow wow wow wow wow wow wow 
+            wow wow wow wow wow wow wow wow wow wow wow wow wow 
+            wow wow wow wow wow wow wow wow wow wow wow wow wow wow 
+            wow wow wow wow wow wow wow wow wow wow wow wow wow wow wow wow 
+            wow wow wow wow wow wow wow wow wow wow wow wow wow wow wow wow 
+            wow wow wow wow wow wow wow wow wow wow 
+            wow wow wow wow wow wow wow wow wow wow wow wow wow wow wow wow 
+
+        </div>
+    </div> 
+
+
+</body>
+
+</html> 
+    

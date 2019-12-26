@@ -11,22 +11,16 @@
 
 $(document).ready(function(){
 
-   var obj= getObj();
-   //console.log(obj.getName());
+   var obj= new getObj();
+   obj.name='kjd';
+   console.log(obj.name);
    console.log(obj);
-
-
-   // another Example
-   const data={
-       name,getName(){
-           //data
-       },age }
        
 });
 
 
 function getObj(){
-    const name="crong";
+     const  name="crong1";
     const getName=function(){
         return name;
     }
@@ -39,16 +33,16 @@ function getObj(){
         console.log(name);
     }
 
-//     return{
-//         getName:getName,
-//         setName:setName
-//     }
+    return{
+        getName:getName,
+        setName:setName, 
+        name:name,       
+    }
 
 //이름이 같을경우 하나만 써도 된다.
-return{getName,setName,name}
+// return{getName,setName,name}
 
- }
-
+  }
 
 
 </script>

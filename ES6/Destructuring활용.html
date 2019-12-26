@@ -37,17 +37,33 @@ var news=[
 
 $(document).ready(function(){
 
- Home();
+ //Home();
+ document.querySelector('#root').addEventListener("click",function({type,target}){
+     console.log(type,target.tagName);
+
+ });
+
+ useFunctionEvent(news);
        
 });
 
-
+function useFunctionEvent([,{newslist}]){
+    console.log(newslist);
+}
 
 function Home(){
-    let [,mbc] = news;
-    
-    let{title,imgurl}=mbc;
-    console.log(title,imgurl);
+
+    // 1.method
+    // let [,mbc] = news;
+    // console.log(mbc);
+    // let{title,imgurl}=mbc;
+    // console.log(title,imgurl);
+
+
+    //2.method
+
+    let [, {title,imgurl}] =news;
+    console.log(imgurl);
 }
 
 
@@ -60,11 +76,17 @@ body{
 h1{
     color:#fff;
 }
+#root{
+    width:100px;
+    height:100px;
+    background-color: blueviolet;
+}
 </style>
 
 </head> 
 
 <body>
+    <div id="root">나는 루트다</div>
 <ul>
     <li>apple</li>
     <li>orang</li>

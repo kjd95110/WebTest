@@ -1,0 +1,64 @@
+<!doctype html>
+<html>
+<head>
+<title>Inline-block 과 float 차이점</title>
+
+<style type="text/css">
+.grid{
+    width:500px;
+    margin:0 auto;    
+    background-color: skyblue; 
+    vertical-align:top;   
+}
+
+/* 
+ 1. font-size: 0px; 브라우저에 따라 안될수도 있음. 
+2. 엔터를 빼고 저장....편법?ㅋ
+3. (중간) b 에 마진을 margin: 0 -4px;
+-> 폰트종류,폰트크기에 따라 -4px가 달라질수 있다.
+4.vertical-align:top;
+
+완벽한 방법은 존재하지않는다.
+inline-block의 특징을 안고 사용해야 할것.
+가변적으로 width의 크기를 가질수있는등(padding:5px)의
+장점을 알고 사용하면 됨.
+
+*/
+
+#first{
+    background-color: plum;
+}
+
+.grid-item{
+    width:100px;
+    height: 100px;
+    display: inline-block;
+    vertical-align:top;
+}
+
+.grid-item.a{ background-color: orange;}
+.grid-item.b{ background-color: orangered;}
+.grid-item.c{ background-color: red;}
+
+</style>
+
+</head>
+
+<body>
+
+    <div id="first">Apple
+        Banana
+        Cherry</div>
+
+    <div class="grid">
+        <div class="grid-item a"></div>
+        <div class="grid-item b"></div>
+        <div class="grid-item c"></div>
+        dfsdfsdfyyyyppppaag
+    </div> 
+
+
+</body>
+
+</html> 
+    
