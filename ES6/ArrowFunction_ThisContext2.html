@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+<head>
+<title>2ArrowFunction's This Context2 </title>
+
+
+<script type="text/javascript" src="../js/jquery/jquery.js"></script>
+
+
+<style type="text/css">
+body{
+    background-color: peru;
+}
+
+h1{
+    color:#fff;
+}
+
+p{
+    width:200px;
+    height:100px;
+    display: block;
+    border:solid 1px #000;
+}
+</style>
+
+</head> 
+
+<body>
+
+   <p>mydiv</p>
+
+</body>
+
+
+<script type="text/javascript">
+
+  const el = document.querySelector('p');
+  const myObj={
+      register(){
+          el.addEventListener('click',(evt) => {
+              this.printData(evt.target);
+          });   //.bind(this)); => 화살 함수를 사용하지않을때 .bind를 사용해야함.
+      },
+      printData(el){
+          console.log('clicked'+el.innerText);
+      }
+  }
+
+  myObj.register();
+    
+    </script>
+
+</html> 

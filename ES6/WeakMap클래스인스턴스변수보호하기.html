@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+<head>
+<title>WeakMap클래스인스턴스변수보호하기</title>
+
+
+<script type="text/javascript" src="../js/jquery/jquery.js"></script>
+
+
+<script type="text/javascript">
+//WeakMap 활용
+
+function Area(height,width){
+    this.height=height;
+    this.width=width;
+}
+
+Area.prototype.getArea = function(){
+    return this.height * this.width;
+}
+
+let myarea=new Area(10,20);
+console.log(myarea.getArea());
+console.log(myarea.height);
+
+
+
+</script>
+<style type="text/css">
+body{
+    background-color: peru;
+}
+
+h1{
+    color:#fff;
+}
+</style>
+
+</head> 
+
+<body>
+
+    <ul>
+        <li>Javascript</li>
+        <li>Java</li>
+        <li>python</li>
+        <li>django</li>
+    </ul>
+
+</body>
+
+</html> 

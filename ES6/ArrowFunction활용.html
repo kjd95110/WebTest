@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+<head>
+<title>ArrowFunction활용 </title>
+
+
+<script type="text/javascript" src="../js/jquery/jquery.js"></script>
+
+
+<style type="text/css">
+body{
+    background-color: peru;
+}
+
+h1{
+    color:#fff;
+}
+</style>
+
+</head> 
+
+<body>
+
+   <div id="message">test</div>
+
+</body>
+
+
+<script type="text/javascript">
+
+    setTimeout(() => {
+        console.log("settimeout arrow function");
+        
+    }, 1000);
+
+    let newArr=[1,2,3,4,5].map(function(value,index,object){
+        return value *2;
+
+    });
+
+
+    let newArr2=[1,2,3,4,5].map((v) => {
+        return v *2;
+    });
+    let newArr3=[1,2,3,4,5].map((v) => v * 2);//let newArr3=[1,2,3,4,5].map((v) => (v * 2));
+
+
+    console.log(newArr);
+    console.log(newArr2);
+    console.log(newArr3);
+    
+    
+    </script>
+
+</html> 

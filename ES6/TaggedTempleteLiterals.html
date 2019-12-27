@@ -1,0 +1,77 @@
+<!doctype html>
+<html>
+<head>
+<title>Tagged Templete Literals </title>
+
+
+<script type="text/javascript" src="../js/jquery/jquery.js"></script>
+
+
+<style type="text/css">
+body{
+    background-color: peru;
+}
+
+h1{
+    color:#fff;
+}
+</style>
+
+</head> 
+
+<body>
+
+   <div id="message">test</div>
+
+</body>
+
+
+<script type="text/javascript">
+
+    const data=[
+        {
+            name:'coffee-bean',
+            order:true,
+            items:['americano','milk','green-tea'],
+        },{
+            name:'starbucks',
+            order:false,
+        },
+        {
+            name:'coffee-king',
+            order:true,
+            items:['americano','latte'],
+        }
+    
+    ];
+    
+    function fn(tags,name,items){
+        console.log('tags:',tags);
+        console.log('name:',name);
+        console.log('items:',items);
+    
+        if(typeof items=== 'undefined'){
+            items="<span style='color:red'>주문가능한 상품이 없습니다.</span>";
+        }
+        return (tags[0] + name + tags[1]+ items + tags[2]);
+    
+    }
+    
+    data.forEach((v) => {
+    
+        let Templete = fn `<h2>welcome ${v.name} !! </h2> <h4>주문가능항목</h4><div>${v.items}</div>`;
+        //let test = document.querySelector('#message');
+    
+        //console.log(test);
+    
+         document.querySelector('#message').innerHTML += Templete;
+        // document.getElementById('message').innerHTML += Templete;
+    
+        
+        //console.log(Templete);
+    
+    });
+    
+    </script>
+
+</html> 

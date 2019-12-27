@@ -1,0 +1,62 @@
+<!doctype html>
+<html>
+<head>
+<title>Rest Parameters </title>
+<script type="text/javascript" src="../js/jquery/jquery.js"></script>
+<style type="text/css">
+body{
+    background-color: peru;
+}
+
+h1{
+    color:#fff;
+}
+
+p{
+    width:200px;
+    height:100px;
+    display: block;
+    border:solid 1px #000;
+}
+</style>
+
+</head> 
+
+<body>
+
+   <p>mydiv</p>
+
+</body>
+
+
+<script type="text/javascript">
+
+//rest parameters
+
+function checkNum(){
+    const argArray=Array.prototype.slice.call(arguments);  //가짜배열....
+    console.log(argArray);
+    console.log(toString.call(argArray));  //type 체크
+
+
+    const result=argArray.every((v) => typeof v === "number")
+    console.log(result);
+}
+
+function checkNum2(...argArray){   //진짜배열....restParameter 이다. 스프레드 오퍼레이터와 틀리다. 가변적인 아규먼트를 받을때 유용하다.
+    const argArray2=Array.prototype.slice.call(argArray);
+    
+    const result=argArray2.every((v) => typeof v === "number")
+    console.log(result);
+}
+
+//const result=checkNum(10,2,3,4,5,"55"); //false
+
+//const result=checkNum(10,2,3,4,5,NaN); //true
+const result=checkNum2(10,2,3,4,5); //true
+ 
+    
+    
+    </script>
+
+</html> 

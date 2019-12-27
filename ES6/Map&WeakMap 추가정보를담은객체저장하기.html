@@ -1,0 +1,63 @@
+<!doctype html>
+<html>
+<head>
+<title>Map&WeakMap 추가정보를 담은 객체저장하기</title>
+
+
+<script type="text/javascript" src="../js/jquery/jquery.js"></script>
+
+
+<script type="text/javascript">
+//map & WeakMap
+//Object타입을 중복없이 사용하려고 할때 유용하다.
+// Array-> Set,WeakSet
+//Object->map,WeakMap
+
+//map은 key/value
+//
+
+let wm=new WeakMap();
+let myfun=function(){};
+//이함수가 얼마나 실행됐지?를 알려고 할때.
+
+
+wm.set(myfun,0);
+console.log(wm);
+let count=0;
+for(let i=0;i<10;i++){
+    count=wm.get(myfun);
+    count++;
+    wm.set(myfun,count);
+}
+console.log(wm);
+console.log(wm.get(myfun));
+
+myfun=null;
+console.log(wm.get(myfun)); //초기화된후에는 undefined
+console.log(wm.has(myfun));
+
+</script>
+<style type="text/css">
+body{
+    background-color: peru;
+}
+
+h1{
+    color:#fff;
+}
+</style>
+
+</head> 
+
+<body>
+
+    <ul>
+        <li>Javascript</li>
+        <li>Java</li>
+        <li>python</li>
+        <li>django</li>
+    </ul>
+
+</body>
+
+</html> 

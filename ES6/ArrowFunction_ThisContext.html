@@ -1,0 +1,66 @@
+<!doctype html>
+<html>
+<head>
+<title>ArrowFunction's This Context </title>
+
+
+<script type="text/javascript" src="../js/jquery/jquery.js"></script>
+
+
+<style type="text/css">
+body{
+    background-color: peru;
+}
+
+h1{
+    color:#fff;
+}
+</style>
+
+</head> 
+
+<body>
+
+   <p>mydiv</p>
+
+</body>
+
+
+<script type="text/javascript">
+
+   const myObj={
+       runTimeout(){
+           setTimeout(function(){
+               console.log(this===window);
+               this.printData();  //-> .bind(this)안쓰면 this.printData is not a function 왜?this ==window니까...
+           }.bind(this),200);
+       },
+
+       printData(){
+           console.log("hi codesquad!");
+       }
+   }
+
+
+   const myObj2={
+       runTimeout(){
+           setTimeout(() =>{
+               console.log(this);
+               this.printData();
+           },200);  //.bind를 생략하고도 this==window가 아니다 this는 객체자신이 되는것을 알수있다.  Arror 함수의 장점....
+       },
+
+       printData(){
+           console.log("hi codesquad!");
+       }
+   }
+
+   myObj.runTimeout();
+   myObj2.runTimeout();
+
+
+    
+    
+    </script>
+
+</html> 

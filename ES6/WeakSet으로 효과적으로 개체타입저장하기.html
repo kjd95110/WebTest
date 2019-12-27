@@ -1,0 +1,65 @@
+<!doctype html>
+<html>
+<head>
+<title>WeakSet으로 효과적으로 개체타입저장하기</title>
+
+
+<script type="text/javascript" src="../js/jquery/jquery.js"></script>
+
+
+<script type="text/javascript">
+//WeakSet
+//참조를 가지고 있는 객체만 저장이 가능하다.
+//참조를 모니터링한다.가베지 콜렉토 확인시 유용
+//객체형태를 중복없이 저장하려고 할때 유용하다.ㅏ
+let arr=[1,2,3,4];
+let arr2=[5,6,7,8]
+let obj={arr,arr2};
+let ws=new WeakSet();
+
+
+ws.add(arr);
+
+
+ws.add(arr2);
+ws.add(obj);
+
+arr=null;
+//arr2=null;
+
+
+//ws.add(111);  //x
+//ws.add("111"); //x
+//ws.add(null);  //x
+ws.add(function(){});  //O
+
+console.log(ws);
+console.log(ws.has(arr), ws.has(arr2));
+//ws내에서는 값을 가지고 있지만 사실은 유효한 객체가 아니란것을 인식한다는것.
+
+
+</script>
+<style type="text/css">
+body{
+    background-color: peru;
+}
+
+h1{
+    color:#fff;
+}
+</style>
+
+</head> 
+
+<body>
+
+    <ul>
+        <li>Javascript</li>
+        <li>Java</li>
+        <li>python</li>
+        <li>django</li>
+    </ul>
+
+</body>
+
+</html> 

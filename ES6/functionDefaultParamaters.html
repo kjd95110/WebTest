@@ -1,0 +1,76 @@
+<!doctype html>
+<html>
+<head>
+<title>FunctionDefaultParamaters </title>
+<script type="text/javascript" src="../js/jquery/jquery.js"></script>
+<style type="text/css">
+body{
+    background-color: peru;
+}
+
+h1{
+    color:#fff;
+}
+
+p{
+    width:200px;
+    height:100px;
+    display: block;
+    border:solid 1px #000;
+}
+</style>
+
+</head> 
+
+<body>
+
+   <p>mydiv</p>
+
+</body>
+
+
+<script type="text/javascript">
+
+  //default parameters
+
+function sum(value,size){
+    return value * size;
+}
+
+console.log(sum(3,10));
+
+
+
+function sum2(value,size){
+    return value * size;
+}
+
+console.log(sum2(3));
+
+
+function sum3(value,size=1){  //default 파마메트다....
+    return value * size;
+}
+
+console.log(sum3(3));
+
+
+
+function sum4(value,size={value:1}){  //default 파마메트다....
+    return value * size.value;
+}
+
+console.log(sum4(3,{value:3}));
+    
+
+function sum5(value,size={value:1}){  //default 파마메트다....
+    return value * size.value;
+}
+
+console.log(sum5(3));
+    
+    
+    
+    </script>
+
+</html> 
