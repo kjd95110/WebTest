@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+<head>
+<title>Object assign 으로 Immutable객체만들기 </title>
+<script type="text/javascript" src="../js/jquery/jquery.js"></script>
+<style type="text/css">
+body{
+    background-color: peru;
+}
+
+h1{
+    color:#fff;
+}
+
+p{
+    width:200px;
+    height:100px;
+    display: block;
+    border:solid 1px #000;
+}
+</style>
+
+</head> 
+
+<body>
+
+   <p>mydiv</p>
+
+</body>
+
+<script type="text/javascript">
+const previousObj={
+    name:"crong",
+    lastTime:"12:20",
+}
+
+const youHealth=Object.assign({/* prototype에 들어가는 자리.. */},previousObj,{
+    "lastTime":"12:50",
+    "name":"honux",
+    "age":45,
+});
+
+
+console.log(youHealth);
+console.log(previousObj===youHealth)
+
+</script>
+
+
+</html> 

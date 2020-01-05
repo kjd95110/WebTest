@@ -1,0 +1,58 @@
+<!doctype html>
+<html>
+<head>
+<title>Object assign 으로 JS객체만들기 </title>
+<script type="text/javascript" src="../js/jquery/jquery.js"></script>
+<style type="text/css">
+body{
+    background-color: peru;
+}
+
+h1{
+    color:#fff;
+}
+
+p{
+    width:200px;
+    height:100px;
+    display: block;
+    border:solid 1px #000;
+}
+</style>
+
+</head> 
+
+<body>
+
+   <p>mydiv</p>
+
+</body>
+
+<script type="text/javascript">
+//Object assign 메소드
+const healthObj={
+    showHealth:function(){
+        console.log("오늘 운동시간: " + this.healthTime);
+    }
+}
+
+const myHealth=Object.create(healthObj);
+//프로토타입기반의 객체를 생성
+
+myHealth.healthTime="11:20";
+myHealth.name="crong";
+
+const youHealth=Object.assign(Object.create(healthObj),{
+    name:"Pororo",
+    lastTime:"11:20",
+}); //같은결과....
+
+//클래스변수형식으로 값을 지정함.
+console.log(myHealth);
+console.log(youHealth);
+
+
+</script>
+
+
+</html> 
