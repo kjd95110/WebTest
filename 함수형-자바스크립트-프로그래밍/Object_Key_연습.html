@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>object.key 테스트</title>
+  <script src="js/partial.js"></script>
+  <script src="js/_.js"></script>
+
+</head>
+<body>
+
+<script>
+
+// var person = {
+// 	name : '홍길동',
+//     age : 29,
+//     print : function(){
+//     	console.log('name : ' + name + ', age : ' + age);
+//     }
+// }
+
+
+// //객체 생성 후 프로퍼티 추가1
+// var person = {}; //또는 var person = new Object();
+// person.name = '홍길동';
+// person.age = 29;
+
+// //객체 생성 후 프로퍼티 추가2
+// person["name"] = '홍길동';
+// person["age"] = 29;
+
+// //객체의 Key값을 동적으로 생성하는 방법
+// var keyArr = ['pk11', 'pk22'];
+// var personArr = [{name:'홍길동',age:29}, {name:'손흥민', age:33}];
+// for(var i=0; i<keyArr.length; i++){
+//   var key = keyArr[i];
+//   person[key] = personArr[i];
+// }
+
+
+//함수를 이용해서 객체 생성(거의 잘 사용하지 않는 방법)
+// function Person(name, age){
+// 	this.name = name;
+//     this.age = age;
+// }
+// var person = new Person('홍길동', 29);
+
+// var jsonObj  = {
+//  pk11 : {name : '홍길동', age : 29},
+//  pk22 : {name : '손흥민', age : 34},
+//  pk33 : {name : '배수도', age : 33}
+// }
+
+var jsonObj = {
+ pk11 : { id: 10, name: 'ID', age: 36 },
+ pk22 : { id: 20, name: 'BJ', age: 32 },
+ pk33 :  { id: 30, name: 'JM', age: 32 },
+ pk44 : { id: 40, name: 'PJ', age: 27 },
+ pk55 : { id: 50, name: 'HA', age: 25 },
+ pk66 : { id: 60, name: 'JE', age: 26 },
+ pk77 : { id: 70, name: 'JI', age: 31 },
+ pk88 : { id: 80, name: 'MP', age: 23 }
+};
+// var pk = 'pk11';  
+// var personObj = jsonObj[pk];  // '객체명[변수]'형태로 사용하면 됩니다. 
+// console.log(personObj.name + ", " + personObj.age); 
+//결과 : 홍길동, 29 
+
+
+for(var key in jsonObj){
+  var personObj = jsonObj[key]; 
+  console.log(key + ", " + personObj.name + ", " + personObj.age);  
+  //결과 : 
+  //pk11, 홍길동, 29 
+  //pk22, 손흥민, 34
+  //pk33, 배수도, 33
+}
+
+var objKeyArr = Object.keys(jsonObj);   //객체의 key값들을 배열로 리턴
+console.log('결과 개수 : ' + objKeyArr.length);
+
+
+
+
+</script>
+
+
+
+
+</body> 
+
+</html>
