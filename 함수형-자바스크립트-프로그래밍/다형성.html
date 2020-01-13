@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>다형성</title>
+  <script src="js/partial.js"></script>
+  <script src="js/_.js"></script>
+
+</head>
+<body>
+<script>
+
+    console.log(
+        [1,2,3,4].filter(function(val){
+            return val % 2;
+        })
+    );
+
+
+    // console.log(
+    //     document.querySelectorAll('*').map(function(node){
+    //         return node.nodeName;
+    //     })
+    // );
+
+
+    console.log(document.querySelectorAll("*"));
+
+    console.log(
+        _map(document.querySelectorAll('*'), function(node){
+            return node.nodeName;
+        })
+    );
+
+ function _map(list, mapper) {
+  var new_list = [];
+  _each(list, function(val, key) {
+    new_list.push(mapper(val, key));
+  });
+  return new_list;
+}
+
+/*
+
+fallback function : 무조건 잡을 다수행하고 다시 돌려주는 함수
+
+predicate function: 어떤 조건을 돌려주는 함수
+
+iterate :돌면서 반복적으로 실행되는함수
+
+mapper: 무언가무언가 사이를 매핑하는 함수
+
+*/
+_map([1,2,3,4], function(v){
+    return v + 10;
+})
+
+</script>
+</body> 
+</html> 
