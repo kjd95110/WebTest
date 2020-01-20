@@ -46,7 +46,7 @@ var form = document.createElement('form');
     form.addEventListener('submit',function callback(event){
         event.preventDefault(); // 기본적인 submit동작 Refresh작동을 막아준다.
 
-        if(result==Number(input.value)){
+        if(result===Number(input.value)){
             resultWindow.textContent='딩동댕';
              num1=Math.ceil(Math.random() * 9);
              num2=Math.ceil(Math.random() * 9);
@@ -59,8 +59,6 @@ var form = document.createElement('form');
             input.value='';
             input.focus();
         }
-
-
     });
 
 });

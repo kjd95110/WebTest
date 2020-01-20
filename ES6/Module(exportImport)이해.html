@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>모듈의 이해</title>
+  
+</head>
+<body>
+    <div id="root"></div>
+    <div>1️⃣ CORS
+      HTML에 module 적용하기에 소개된 방식을 로컬에서 직접 실행해보면
+      
+      <div>index.html:1 Access to script at '경로/js/index.js' from origin 'null' has been blocked by CORS policy: Cross origin requests are only supported for protocol schemes: http, data, chrome, chrome-extension, https.
+      </div>
+      와 같은 에러가 발생합니다. 
+      이를 해결하기 위해선 CORS에 대한 이해가 필요합니다.
+      
+      CORS란?
+      <div> CORS란 Cross Origin Resource Sharing 의 줄임말로 Cross-site Http Request를 가능하게 하는 표준 규약 이다.</div>
+      <div>HTTP 요청은 기본적으로 Cross-Site Http Requests 가 가능하지만 자바스크립트 (XMLHttpRequest)로 다른 웹페이지에 접근할 때는 Same Origin Policy 로 인해 요청이 불가능하다.</div>
+      <div>예를들어 img 태그로 다른 도메인의 이미지파일을 가져오거나, 링크태그로 다른 도메인의 CSS 를 가져오거나 script태그로 다른 도메인의 JavaScript라이브러리를 가져오는 것은 가능합니다.</div>
+      <div>하지만 script태그로 둘러싸여 있는 스크립트에서 생성된 Cross-Site HTTP Request는 Same Origin Policy를 적용받기 때문에 Cross-Site HTTP Request가 불가능하다.</div>
+      <div>즉, 자바스크립트 내에서 발생하는 Cross-Site Http Requests는 프로토콜, 호스트, 포트 가 같아야지 요청이 가능하다. </div>
+      <div>더 쉽게 말하면 웹페이지의 스크립트는 그 페이지와 같은 서버에 있는 주소로만 ajax 요청이 가능하다.</div>
+      <div>CORS 요청의 종류</div>
+      <div>Simple Request
+          Preflight Request
+          Request with Credential
+          Request without Credential
+    </div>
+      
+      <div>결론</div>
+      <div>CORS를 쓰면 AJAX로도 Same Origin Policy 의 제약을 넘어 다른 도메인의 자원을 사용할수있음.</div>
+      <div>CORS를 사용하려면 클라이언트에서 Access-Control-**류의 HTTP Header를 서버에 보내야 하고, 서버도 Access-Control-**류의 HTTP Header를 클라이언트에 회신하게 되어 있어야 함.</div>
+      
+      
+      <div>NPM 웹서버만들기옵션</div>
+      <div>npm install http-server -g </div>
+      <div>작업폴더 가서
+      npx http-server 엔터 
+      npx http-server -p 8090 엔터  포트변경
+      업데이트되기위해서는 다른환경에서 조회해야한다.
+      <div>포트를 변경하면 화면에서 주소를 클릭했을때 신뢰할수있는사이트를 클릭하여 포트등록하고 하면됩니다.</div>
+      현재작업폴더가 웹서버에서 실행됨.</div>
+<script type="module" src='./app.js' > 
+
+</script>

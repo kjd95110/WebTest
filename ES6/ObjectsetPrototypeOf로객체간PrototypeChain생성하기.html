@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+<head>
+<title>Object setPrototypeOf 로 객체간 PrototypeChain생성하기 </title>
+<script type="text/javascript" src="../js/jquery/jquery.js"></script>
+<style type="text/css">
+body{
+    background-color: peru;
+}
+
+h1{
+    color:#fff;
+}
+
+p{
+    width:200px;
+    height:100px;
+    display: block;
+    border:solid 1px #000;
+}
+</style>
+
+</head> 
+
+<body>
+
+
+</body>
+
+<script type="text/javascript">
+const healthObj={
+    showHealth: function(){
+        console.log('오늘 운동시간: ' + this.healthTime);
+    },
+    setHealth:function(newtime){
+        this.healthTime=newTime;
+    }
+}
+
+// const myHealth={    
+//     "name":"crong",
+//     "lastTime":"11:20",
+// };
+// Object.setPrototypeOf(myHealth,healthObj);
+
+const newobj = Object.setPrototypeOf({    
+    "name":"crong",
+    "lastTime":"11:20",
+},healthObj);
+
+//console.log("myhealth is" ,myHealth);
+console.log(" newobj is" ,newobj);
+
+</script>
+</html> 
