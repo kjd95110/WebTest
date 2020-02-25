@@ -1,0 +1,93 @@
+<!doctype html>
+<html>
+<head>
+    <title> 탭메뉴 만들기</title>
+   
+	<style type="text/css">
+		*{ padding:0; 
+            margin:0;
+            list-style:none;
+        }
+        body{ padding:30px; }
+
+        .tab_type1 ul{ 
+            display: flex;
+            height:60px;
+            border-bottom:1px solid #5da62b;
+        }
+        .tab_type1 ul li{ 
+            flex:1;            
+        }
+        .tab_type1 ul li:first-child{
+            border-left:1px solid #ddd;
+        }
+        .tab_type1 ul li a{
+            display: block; 
+            height:59px;
+            border:1px solid #ddd;
+            border-left:none;
+            border-bottom: none;
+            text-decoration: none;
+            text-align: center;
+            line-height: 59px; 
+            color:#505050;
+            font-size: 14px;
+            
+        }
+
+        .tab_type1 ul li a.on{
+            position: relative;
+            height:56px;
+            border-color: #5da62b;
+            border-top-width: 2px;
+            line-height:58px;
+            border-top:3px solid#5da62b;
+			border-right:1px solid #5da62b;			
+            border-bottom: 2px solid #fff;
+        }
+
+
+        .tab_type1 ul li a.on:before{
+            content:"";
+            position: absolute;
+            left:-1px;
+            top:-2px;
+            width:1px;
+            border-top:2px solid #5da62b;
+        }
+    </style>
+     <script type="text/javascript" src="./../js/jquery/jquery.js"></script>
+     <script type="text/javascript" src="./../js/jquery/external/jquery.alphanumeric.js"></script>
+    <script type="text/javascript">
+
+		$(document).ready(function () {
+
+			$('.tab_type1 ul li a').click(function (e) {				
+
+				$('.tab_type1 ul li a').removeClass('on');
+				$(this).addClass('on');
+
+            });
+                        
+
+		});
+
+
+	</script>
+
+</head>
+
+<body>
+	<nav class="tab_type1">
+        <ul>
+            <li><a href="#" >브랜드별</a></li>
+            <li><a href="#"  class="on">일반기능도료</a></li>
+            <li><a href="#">특수기능도료</a></li>
+            <li><a href="#">DIY(가정용)</a></li>
+            <li><a href="#">KS규격도료</a></li>
+        </ul>
+    </nav>
+
+</body>
+
+</html> 
